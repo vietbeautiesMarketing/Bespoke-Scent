@@ -507,8 +507,6 @@
   const pourStatusText = document.getElementById("pour-status-text");
   const quickPourBtn = document.getElementById("quick-pour-all-btn");
   const craftBtn = document.getElementById("craft-btn");
-  const userNameInput = document.getElementById("user-name-input");
-  const finalBottleOwner = document.getElementById("final-bottle-owner");
   const finalBottleRatio = document.getElementById("final-bottle-ratio");
   const resultModal = document.getElementById("result-modal");
 
@@ -1051,14 +1049,6 @@
     });
   });
 
-  // Owner Name Input
-  userNameInput.addEventListener("input", () => {
-    const val = userNameInput.value.trim();
-    finalBottleOwner.textContent = val
-      ? val.toUpperCase().slice(0, 16)
-      : "BESPOKE SCENT";
-  });
-
   // Random Pick Button in HUD
   document.getElementById("random-spin-btn").addEventListener("click", () => {
     const allNotes = [];
@@ -1183,7 +1173,6 @@
     const top = slots.top.note;
     const heart = slots.heart.note;
     const base = slots.base.note;
-    const ownerName = userNameInput.value.trim() || "Bạn";
 
     const wTop = selectedFormula.top;
     const wHeart = selectedFormula.heart;
@@ -1238,7 +1227,7 @@
     document.getElementById("result-serial").textContent =
       `MIYAKO BESPOKE NO. ${codeNum} · CÔNG THỨC TỶ LỆ ${selectedFormula.code} (${selectedFormula.name.toUpperCase()})`;
     document.getElementById("result-owner").textContent =
-      `Chế tác độc bản dành riêng cho: ${ownerName}`;
+      "Chế tác độc bản dành riêng cho bạn";
     document.getElementById("result-scent-name").textContent = bespokeName;
     document.getElementById("result-poetic-sub").textContent =
       `Pha chế theo tỷ lệ ${selectedFormula.code}: ${top.name} (${wTop}%) · ${heart.name} (${wHeart}%) · ${base.name} (${wBase}%).`;
