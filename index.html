@@ -1,0 +1,2554 @@
+<!doctype html>
+<html lang="vi" style="--header-height: 82px; --dock-height: 0px">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Miyako Home — Hương Việt</title>
+    <meta
+      name="description"
+      content="Hương Việt — Bộ sưu tập của Miyako Home. Khám phá SẮC, NÉT, DẤU và ÁNH NGÂN MỘC."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%237a201d'/%3E%3Ctext x='7' y='29' font-size='28' fill='%23f5ead6' font-family='serif'%3EM%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="" data-published="true">
+    <header>
+      <a class="brand" href="#home" aria-label="Miyako Home — về đầu trang"
+        ><img
+          id="brand-logo"
+          src="assets/custom-01.webp"
+          alt="Logo Miyako Home — Hương Việt"
+          width="2172"
+          height="724"
+          decoding="async"
+        /><span id="brand-wordmark" hidden=""
+          >Miyako Home<small>HƯƠNG VIỆT</small></span
+        ></a
+      >
+      <nav>
+        <a href="#story">Câu chuyện</a><a href="#sac">Bộ sưu tập</a
+        ><a href="#services">Dịch vụ</a><a href="#more1">Sản phẩm</a
+        ><a href="bespoke-scent.html" class="nav-bespoke-cta"
+          >✦ Chế tác hương</a
+        >
+      </nav>
+      <button id="edit" hidden="">Chỉnh sửa</button>
+    </header>
+    <div id="editor" hidden="">
+      <span
+        >Bấm chữ để sửa; bấm ảnh hoặc khung trống để thêm ảnh. “Tải bản đã chỉnh
+        sửa” để lưu file HTML.</span
+      ><button id="logo-change" type="button">Tải / thay logo</button
+      ><button id="logo-remove" type="button">Xóa logo ảnh</button
+      ><button id="download">Tải bản đã chỉnh sửa</button
+      ><label class="contact-setting"
+        >Số gọi<input
+          id="contact-phone-input"
+          type="tel"
+          placeholder="Nhập số điện thoại" /></label
+      ><label class="contact-setting"
+        >Số Zalo<input
+          id="contact-zalo-input"
+          type="tel"
+          placeholder="Nhập số Zalo" /></label
+      ><label class="contact-setting"
+        >Link Facebook tư vấn<input
+          id="contact-facebook-input"
+          type="url"
+          placeholder="https://www.facebook.com/ten-trang" /></label
+      ><button id="done">Xong</button>
+    </div>
+    <input
+      id="upload"
+      type="file"
+      accept="image/png,image/jpeg,image/webp"
+      multiple=""
+      hidden=""
+    />
+    <input id="gif-upload" type="file" accept="image/gif,.gif" hidden="" />
+    <input
+      id="video-upload"
+      type="file"
+      accept="video/mp4,video/webm,.mp4,.webm"
+      hidden=""
+    />
+    <input
+      id="logo-upload"
+      type="file"
+      accept="image/png,image/jpeg,image/webp,image/svg+xml,.svg"
+      hidden=""
+    />
+    <main>
+      <section id="home" class="hero dark">
+        <div class="hero-copy has-video">
+          <video
+            id="hero-video"
+            muted
+            loop
+            playsinline
+            webkit-playsinline
+            preload="metadata"
+            aria-hidden="true"
+            tabindex="-1"
+            controlslist="nofullscreen noremoteplayback nodownload"
+            disablepictureinpicture
+            disableremoteplayback
+            x-webkit-airplay="deny"
+            src="assets/custom-02.mp4"
+          ></video
+          ><img
+            id="hero-mobile-bg"
+            src="assets/hero-mobile-bg.webp"
+            alt="Miyako Home — Hương Việt"
+            aria-hidden="true"
+            draggable="false"
+          />
+          <div class="hero-video-shade" aria-hidden="true"></div>
+          <span
+            class="eyebrow"
+            data-edit=""
+            style="--motion-delay: 170ms"
+            data-motion="from-left"
+            >MIYAKO HOME · BỘ SƯU TẬP</span
+          >
+          <h1 class="hero-typewriter" data-edit="">HƯƠNG VIỆT</h1>
+          <p
+            class="hero-tagline"
+            data-edit=""
+            style="--motion-delay: 255ms"
+            data-motion="rise"
+          >
+            Một hơi thở Việt, Một dấu ấn riêng
+          </p>
+          <a
+            class="link"
+            href="#about"
+            style="--motion-delay: 255ms"
+            data-motion="rise"
+            >Khám phá Miyako Home <span>↓</span></a
+          ><span class="number">01 / 13</span>
+          <div class="hero-video-tools editor-only">
+            <button id="video-change" class="editor-only" type="button">
+              Tải / thay video nền</button
+            ><button id="video-remove" class="editor-only" type="button">
+              Xóa video</button
+            ><span class="editor-only"
+              >Video MP4 / WebM khoảng 5–8 giây, tối đa 30 MB.</span
+            >
+          </div>
+        </div>
+      </section>
+      <section id="about" class="about-miyako cream">
+        <div
+          class="section-top"
+          style="--motion-delay: 0ms"
+          data-motion="from-left"
+        >
+          <span>02 / 13</span><span data-edit="">GIỚI THIỆU MIYAKO HOME</span>
+        </div>
+        <div class="about-layout">
+          <div>
+            <span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 0ms"
+              data-motion="from-left"
+              >HƯƠNG THƠM · CHĂM SÓC · KHÔNG GIAN</span
+            >
+            <h2
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="soft-focus"
+            >
+              Miyako Home
+            </h2>
+            <p
+              class="about-subline"
+              data-edit=""
+              style="--motion-delay: 170ms"
+              data-motion="rise"
+            >
+              Chăm chút từng trải nghiệm.<br /><em
+                >Lưu giữ một dấu ấn riêng.</em
+              >
+            </p>
+          </div>
+          <div class="about-copy">
+            <p
+              class="lead"
+              data-edit=""
+              style="--motion-delay: 0ms"
+              data-motion="rise"
+            >
+              Hương thơm đồng hành cùng đời sống.
+            </p>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Miyako Home cung cấp các sản phẩm chăm sóc cá nhân và giải pháp
+              hương thơm dành cho không gian sống, làm việc và kinh doanh. Từ
+              hóa mỹ phẩm, nước hoa đến máy khuếch tán và các dòng tinh dầu, mỗi
+              nhóm sản phẩm mang đến một cách đưa hương thơm vào những trải
+              nghiệm thường ngày.
+            </p>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 170ms"
+              data-motion="rise"
+            >
+              Với khách hàng doanh nghiệp, Miyako Home đồng hành từ khảo sát
+              không gian, trải nghiệm mùi hương đến lắp đặt máy khuếch tán, giúp
+              lựa chọn giải pháp phù hợp với nhu cầu sử dụng và cảm nhận muốn
+              gửi đến mỗi vị khách.
+            </p>
+          </div>
+        </div>
+        <div class="about-pillars">
+          <div>
+            <span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 0ms"
+              data-motion="from-left"
+              >CHĂM SÓC CÁ NHÂN</span
+            >
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Hóa mỹ phẩm &amp; nước hoa
+            </p>
+          </div>
+          <div>
+            <span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 0ms"
+              data-motion="from-left"
+              >HƯƠNG THƠM KHÔNG GIAN</span
+            >
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Máy khuếch tán &amp; tinh dầu
+            </p>
+          </div>
+          <div>
+            <span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 0ms"
+              data-motion="from-left"
+              >ĐỒNG HÀNH CÙNG DOANH NGHIỆP</span
+            >
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Khảo sát · Test hương · Lắp đặt
+            </p>
+          </div>
+        </div>
+        <a
+          class="link"
+          href="#brand"
+          style="--motion-delay: 255ms"
+          data-motion="rise"
+          >Câu chuyện của Miyako Home ↓</a
+        >
+      </section>
+      <section id="brand" class="intro cream">
+        <div
+          class="section-top"
+          style="--motion-delay: 0ms"
+          data-motion="from-left"
+        >
+          <span>03 / 13</span><span data-edit="">CÂU CHUYỆN THƯƠNG HIỆU</span>
+        </div>
+        <div class="intro-grid">
+          <h2
+            data-edit=""
+            class=""
+            style="--motion-delay: 0ms"
+            data-motion="soft-focus"
+          >
+            Hương thơm<br />cho những<br /><em>chốn thân quen.</em>
+          </h2>
+          <div>
+            <p
+              class="lead"
+              data-edit=""
+              style="--motion-delay: 0ms"
+              data-motion="rise"
+            >
+              Kể chuyện Việt bằng hương thơm.
+            </p>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Với Miyako Home, mùi hương là một phần của cảm giác thuộc về. Đó
+              có thể là khoảnh khắc bước qua ngưỡng cửa, tìm lại sự dễ chịu quen
+              thuộc và nhận ra: mình đã về nhà.
+            </p>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 170ms"
+              data-motion="rise"
+            >
+              Từ sự trân trọng những giá trị Việt, Miyako Home theo đuổi hành
+              trình đưa ký ức, văn hóa và cảm xúc vào không gian sống bằng ngôn
+              ngữ hương thơm. Để giữa nhịp sống hôm nay, những điều thân thuộc
+              vẫn có một chỗ ở lại.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="story" class="story dark">
+        <div
+          class="section-top"
+          style="--motion-delay: 0ms"
+          data-motion="from-left"
+        >
+          <span>04 / 13</span><span data-edit="">CÂU CHUYỆN HƯƠNG VIỆT</span>
+        </div>
+        <h2
+          data-edit=""
+          class=""
+          style="--motion-delay: 85ms"
+          data-motion="soft-focus"
+        >
+          Nét Việt ở lại.<br /><em>Hương thơm lan xa.</em>
+        </h2>
+        <p
+          class="story-text"
+          data-edit=""
+          style="--motion-delay: 170ms"
+          data-motion="rise"
+        >
+          Có một Việt Nam trong nắng trên hiên, trong sắc đêm sâu, trong khung
+          cửa gỗ và vầng trăng tĩnh lặng. Hương Việt gợi lại những điều thân
+          quen ấy qua bốn cách biểu đạt — để bản sắc hiện diện nhẹ nhàng trong
+          không gian đương đại.
+        </p>
+        <div class="collection-links">
+          <a href="#sac" class="" style="--motion-delay: 0ms" data-motion="rise"
+            ><span>01</span>SẮC</a
+          ><a
+            href="#net"
+            class=""
+            style="--motion-delay: 85ms"
+            data-motion="rise"
+            ><span>02</span>NÉT</a
+          ><a
+            href="#dau"
+            class=""
+            style="--motion-delay: 170ms"
+            data-motion="rise"
+            ><span>03</span>DẤU</a
+          ><a
+            href="#anh"
+            class=""
+            style="--motion-delay: 255ms"
+            data-motion="rise"
+            ><span>04</span>ÁNH NGÂN MỘC</a
+          >
+        </div>
+        <div id="huong-viet-film" class="gif-panel">
+          <img
+            class="gif-background"
+            alt="Phim ngắn Hương Việt — Một miền ký ức, Một hơi thở Việt"
+            aria-hidden="true"
+            src="assets/custom-03.webp"
+            width="480"
+            height="270"
+            decoding="async"
+          />
+          <div class="gif-shade" aria-hidden="true"></div>
+          <div class="gif-copy">
+            <span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 0ms"
+              data-motion="from-left"
+              >HƯƠNG VIỆT · MIYAKO HOME</span
+            >
+            <h2
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="soft-focus"
+            >
+              Một miền ký ức.<br /><em>Một hơi thở Việt.</em>
+            </h2>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 170ms"
+              data-motion="rise"
+            >
+              Từ vệt nắng bên hiên đến khoảng lặng trong ngôi nhà quen, Hương
+              Việt gợi lại những điều thân thuộc bằng hương thơm và thiết kế
+              đương đại. Để giữa nhịp sống hôm nay, một nét Việt vẫn nhẹ nhàng ở
+              lại.
+            </p>
+          </div>
+          <div class="gif-tools">
+            <button id="gif-change" class="editor-only" type="button">
+              Tải / thay GIF nền</button
+            ><button id="gif-remove" class="editor-only" type="button">
+              Xóa GIF</button
+            ><span class="editor-only gif-help"
+              >Chọn GIF tối đa 25 MB. Chữ phía trước có thể chỉnh sửa trực
+              tiếp.</span
+            >
+          </div>
+        </div>
+      </section>
+      <section id="sac" class="product cream">
+        <figure class="product-showcase catalog-card">
+          <div
+            class="category-gallery"
+            role="region"
+            aria-roledescription="bộ ảnh"
+            aria-label="SẮC"
+            tabindex="0"
+          >
+            <figure class="image-slot">
+              <div class="slot-label">
+                <span>＋</span>
+                <p>Thêm ảnh thiết kế</p>
+              </div>
+              <img
+                loading="lazy"
+                src="assets/custom-04.webp"
+                alt="Bộ sưu tập SẮC — Bình khuếch tán gốm và thủy tinh vân kim cương"
+                width="1280"
+                height="1920"
+                decoding="async"
+              /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                ×
+              </button>
+            </figure>
+            <figure class="image-slot" hidden="">
+              <img
+                src="assets/custom-05.webp"
+                alt="Bình khuếch tán Đêm Huyền Sắc — Bộ sưu tập SẮC"
+                width="1086"
+                height="1448"
+                decoding="async"
+              /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                ×
+              </button>
+            </figure>
+            <figure class="image-slot" hidden="">
+              <img
+                src="assets/custom-06.webp"
+                alt="Bình khuếch tán Ngọc Sương Mai — Bộ sưu tập SẮC"
+                width="1086"
+                height="1448"
+                decoding="async"
+              /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                ×
+              </button>
+            </figure>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 3</span
+              ><button type="button" aria-label="Ảnh tiếp theo">›</button>
+            </div>
+          </div>
+          <button class="add-category editor-only">+ Thêm ảnh cận cảnh</button>
+        </figure>
+        <div class="product-copy">
+          <span
+            class="eyebrow"
+            style="--motion-delay: 0ms"
+            data-motion="from-left"
+            >05 / 13 · BỘ SƯU TẬP HƯƠNG VIỆT</span
+          >
+          <h2
+            data-edit=""
+            class=""
+            style="--motion-delay: 85ms"
+            data-motion="soft-focus"
+          >
+            SẮC
+          </h2>
+          <h3
+            data-edit=""
+            class=""
+            style="--motion-delay: 170ms"
+            data-motion="rise"
+          >
+            Sắc đêm sâu.<br />Sương mai trong trẻo.
+          </h3>
+          <p
+            data-edit=""
+            class=""
+            style="--motion-delay: 255ms"
+            data-motion="rise"
+          >
+            Từ vẻ trầm lắng của đêm đến ánh sáng dịu dàng của một ngày mới, SẮC
+            kể câu chuyện Việt qua thủy tinh, màu sắc và hương thơm. Bề mặt gai
+            kim cương đón ánh sáng trên từng chi tiết, tạo nên điểm nhấn riêng
+            cho không gian.
+          </p>
+          <div
+            class="details"
+            data-edit=""
+            style="--motion-delay: 255ms"
+            data-motion="rise"
+          >
+            Đêm Huyền Sắc<br />Ngọc Sương Mai
+          </div>
+          <a
+            class="link"
+            href="#net"
+            style="--motion-delay: 255ms"
+            data-motion="rise"
+            >Tiếp nối với NÉT ↓</a
+          >
+          <div class="collection-privileges">
+            <span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 0ms"
+              data-motion="from-left"
+              >DẤU ẤN DÀNH RIÊNG CHO BẠN</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Chỉn chu trong từng món quà.
+            </h3>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 170ms"
+              data-motion="rise"
+            >
+              Đi kèm hộp đựng cao cấp, mỗi bình khuếch tán đều được hỗ trợ in
+              tên theo yêu cầu — để món quà mang dấu ấn riêng của người trao và
+              người nhận.
+            </p>
+            <div class="collection-offer">
+              <span
+                class="eyebrow"
+                data-edit=""
+                style="--motion-delay: 0ms"
+                data-motion="from-left"
+                >ĐIỀU KIỆN SỞ HỮU</span
+              >
+              <p
+                data-edit=""
+                class=""
+                style="--motion-delay: 85ms"
+                data-motion="rise"
+              >
+                Khi mua 1 chai tinh dầu khuếch tán 1.000 ml, bạn được lựa chọn 1
+                mẫu bình khuếch tán thuộc 4 thiết kế: SẮC, NÉT, DẤU hoặc ÁNH
+                NGÂN MỘC.
+              </p>
+              <small data-edit=""
+                >Mẫu bình được lựa chọn tùy theo số lượng còn lại tại thời điểm
+                đặt hàng.</small
+              >
+            </div>
+          </div>
+          <div class="edition-cta">
+            <div
+              class="edition-marquee"
+              aria-label="Limited Edition · Số lượng có hạn"
+            >
+              <div class="edition-track" aria-hidden="true">
+                <div class="edition-group">
+                  <span>LIMITED EDITION</span><span>·</span
+                  ><span>SỐ LƯỢNG CÓ HẠN</span><span>·</span>
+                </div>
+                <div class="edition-group">
+                  <span>LIMITED EDITION</span><span>·</span
+                  ><span>SỐ LƯỢNG CÓ HẠN</span><span>·</span>
+                </div>
+              </div>
+            </div>
+            <a
+              class="buy-now"
+              role="link"
+              tabindex="0"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/MiyakoHomee?locale=vi_VN"
+              >MUA NGAY ↗</a
+            >
+          </div>
+          <label class="facebook-setting editor-only"
+            >Link Facebook nhận đặt hàng<input
+              class="facebook-url"
+              type="url"
+              placeholder="https://www.facebook.com/ten-trang"
+          /></label>
+        </div>
+      </section>
+      <section id="net" class="product reverse cream">
+        <figure class="product-showcase catalog-card">
+          <div
+            class="category-gallery"
+            role="region"
+            aria-roledescription="bộ ảnh"
+            aria-label="NÉT"
+            tabindex="0"
+          >
+            <figure class="image-slot">
+              <div class="slot-label">
+                <span>＋</span>
+                <p>Thêm ảnh thiết kế</p>
+              </div>
+              <img
+                loading="lazy"
+                src="assets/custom-07.webp"
+                alt="Bộ sưu tập NÉT — Sắc Lam Trời và Nắng Trên Hiên"
+                width="1280"
+                height="1920"
+                decoding="async"
+              /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                ×
+              </button>
+            </figure>
+            <figure class="image-slot" hidden="">
+              <img
+                src="assets/custom-08.webp"
+                alt="Bình khuếch tán NÉT — Sắc Lam Trời trong không gian đương đại"
+                width="1024"
+                height="1536"
+                decoding="async"
+              /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                ×
+              </button>
+            </figure>
+            <figure class="image-slot" hidden="">
+              <img
+                src="assets/custom-09.webp"
+                alt="Bình khuếch tán NÉT — Nắng Trên Hiên ấm áp"
+                width="1280"
+                height="1920"
+                decoding="async"
+              /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                ×
+              </button>
+            </figure>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 3</span
+              ><button type="button" aria-label="Ảnh tiếp theo">›</button>
+            </div>
+          </div>
+          <button class="add-category editor-only">+ Thêm ảnh cận cảnh</button>
+        </figure>
+        <div class="product-copy">
+          <span
+            class="eyebrow"
+            style="--motion-delay: 0ms"
+            data-motion="from-left"
+            >06 / 13 · BỘ SƯU TẬP HƯƠNG VIỆT</span
+          >
+          <h2
+            data-edit=""
+            class=""
+            style="--motion-delay: 85ms"
+            data-motion="soft-focus"
+          >
+            NÉT
+          </h2>
+          <h3
+            data-edit=""
+            class=""
+            style="--motion-delay: 170ms"
+            data-motion="rise"
+          >
+            Một nét xưa,<br />trong nhịp sống mới.
+          </h3>
+          <p
+            data-edit=""
+            class=""
+            style="--motion-delay: 255ms"
+            data-motion="rise"
+          >
+            Thủy tinh trong trẻo ôm lấy sắc lam sâu lắng và sắc cam ấm áp. NÉT
+            gợi một khoảng hiên đầy nắng, nơi vẻ đẹp truyền thống gặp tinh thần
+            hiện đại.
+          </p>
+          <div
+            class="details"
+            data-edit=""
+            style="--motion-delay: 255ms"
+            data-motion="rise"
+          >
+            Sắc Lam Trời<br />Nắng Trên Hiên
+          </div>
+          <a
+            class="link"
+            href="#dau"
+            style="--motion-delay: 255ms"
+            data-motion="rise"
+            >Khám phá DẤU ↓</a
+          >
+          <div class="collection-privileges">
+            <span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 0ms"
+              data-motion="from-left"
+              >DẤU ẤN DÀNH RIÊNG CHO BẠN</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Chỉn chu trong từng món quà.
+            </h3>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 170ms"
+              data-motion="rise"
+            >
+              Đi kèm hộp đựng cao cấp, mỗi bình khuếch tán đều được hỗ trợ in
+              tên theo yêu cầu — để món quà mang dấu ấn riêng của người trao và
+              người nhận.
+            </p>
+            <div class="collection-offer">
+              <span
+                class="eyebrow"
+                data-edit=""
+                style="--motion-delay: 0ms"
+                data-motion="from-left"
+                >ĐIỀU KIỆN SỞ HỮU</span
+              >
+              <p
+                data-edit=""
+                class=""
+                style="--motion-delay: 85ms"
+                data-motion="rise"
+              >
+                Khi mua 1 chai tinh dầu khuếch tán 1.000 ml, bạn được lựa chọn 1
+                mẫu bình khuếch tán thuộc 4 thiết kế: SẮC, NÉT, DẤU hoặc ÁNH
+                NGÂN MỘC.
+              </p>
+              <small data-edit=""
+                >Mẫu bình được lựa chọn tùy theo số lượng còn lại tại thời điểm
+                đặt hàng.</small
+              >
+            </div>
+          </div>
+          <div class="edition-cta">
+            <div
+              class="edition-marquee"
+              aria-label="Limited Edition · Số lượng có hạn"
+            >
+              <div class="edition-track" aria-hidden="true">
+                <div class="edition-group">
+                  <span>LIMITED EDITION</span><span>·</span
+                  ><span>SỐ LƯỢNG CÓ HẠN</span><span>·</span>
+                </div>
+                <div class="edition-group">
+                  <span>LIMITED EDITION</span><span>·</span
+                  ><span>SỐ LƯỢNG CÓ HẠN</span><span>·</span>
+                </div>
+              </div>
+            </div>
+            <a
+              class="buy-now"
+              role="link"
+              tabindex="0"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/MiyakoHomee?locale=vi_VN"
+              >MUA NGAY ↗</a
+            >
+          </div>
+          <label class="facebook-setting editor-only"
+            >Link Facebook nhận đặt hàng<input
+              class="facebook-url"
+              type="url"
+              placeholder="https://www.facebook.com/ten-trang"
+          /></label>
+        </div>
+      </section>
+      <section id="dau" class="product green">
+        <figure class="product-showcase catalog-card">
+          <div
+            class="category-gallery"
+            role="region"
+            aria-roledescription="bộ ảnh"
+            aria-label="DẤU"
+            tabindex="0"
+          >
+            <figure class="image-slot">
+              <div class="slot-label">
+                <span>＋</span>
+                <p>Thêm ảnh thiết kế</p>
+              </div>
+              <img
+                loading="lazy"
+                src="assets/custom-10.webp"
+                alt="Bộ sưu tập DẤU — Bộ ba bình nhôm Lục Sắc, Ngân Sắc và Sắc Mặc"
+                width="1280"
+                height="1920"
+                decoding="async"
+              /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                ×
+              </button>
+            </figure>
+            <figure class="image-slot" hidden="">
+              <img
+                src="assets/custom-11.webp"
+                alt="Bình khuếch tán DẤU — Lục Sắc Sơn Hà"
+                width="1280"
+                height="1920"
+                decoding="async"
+              /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                ×
+              </button>
+            </figure>
+            <figure class="image-slot" hidden="">
+              <img
+                src="assets/custom-12.webp"
+                alt="Bình khuếch tán DẤU — Ngân Sắc Kim"
+                width="1280"
+                height="1920"
+                decoding="async"
+              /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                ×
+              </button>
+            </figure>
+            <figure class="image-slot" hidden="">
+              <img
+                src="assets/custom-13.webp"
+                alt="Bình khuếch tán DẤU — Sắc Mặc Đương Đại"
+                width="1280"
+                height="1920"
+                decoding="async"
+              /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                ×
+              </button>
+            </figure>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 4</span
+              ><button type="button" aria-label="Ảnh tiếp theo">›</button>
+            </div>
+          </div>
+          <button class="add-category editor-only">+ Thêm ảnh cận cảnh</button>
+        </figure>
+        <div class="product-copy">
+          <span
+            class="eyebrow"
+            style="--motion-delay: 0ms"
+            data-motion="from-left"
+            >07 / 13 · BỘ SƯU TẬP HƯƠNG VIỆT</span
+          >
+          <h2
+            data-edit=""
+            class=""
+            style="--motion-delay: 85ms"
+            data-motion="soft-focus"
+          >
+            DẤU
+          </h2>
+          <h3
+            data-edit=""
+            class=""
+            style="--motion-delay: 170ms"
+            data-motion="rise"
+          >
+            Một dấu ấn riêng<br />giữa không gian quen.
+          </h3>
+          <p
+            data-edit=""
+            class=""
+            style="--motion-delay: 255ms"
+            data-motion="rise"
+          >
+            Lấy cảm hứng từ hình dáng thùng phi, DẤU đưa chất liệu nhôm vào một
+            thiết kế gọn, khỏe và phóng khoáng. Sắc xanh, bạc và đen tạo nên ba
+            biểu đạt riêng, cùng một vẻ mạnh mẽ và có chiều sâu.
+          </p>
+          <div
+            class="details"
+            data-edit=""
+            style="--motion-delay: 255ms"
+            data-motion="rise"
+          >
+            Lục Sắc Sơn Hà · Ngân Sắc Kim<br />Sắc Mặc Đương Đại
+          </div>
+          <a
+            class="link"
+            href="#anh"
+            style="--motion-delay: 255ms"
+            data-motion="rise"
+            >Gặp ÁNH NGÂN MỘC ↓</a
+          >
+          <div class="collection-privileges">
+            <span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 0ms"
+              data-motion="from-left"
+              >DẤU ẤN DÀNH RIÊNG CHO BẠN</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Chỉn chu trong từng món quà.
+            </h3>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 170ms"
+              data-motion="rise"
+            >
+              Đi kèm hộp đựng cao cấp, mỗi bình khuếch tán đều được hỗ trợ in
+              tên theo yêu cầu — để món quà mang dấu ấn riêng của người trao và
+              người nhận.
+            </p>
+            <div class="collection-offer">
+              <span
+                class="eyebrow"
+                data-edit=""
+                style="--motion-delay: 0ms"
+                data-motion="from-left"
+                >ĐIỀU KIỆN SỞ HỮU</span
+              >
+              <p
+                data-edit=""
+                class=""
+                style="--motion-delay: 85ms"
+                data-motion="rise"
+              >
+                Khi mua 1 chai tinh dầu khuếch tán 1.000 ml, bạn được lựa chọn 1
+                mẫu bình khuếch tán thuộc 4 thiết kế: SẮC, NÉT, DẤU hoặc ÁNH
+                NGÂN MỘC.
+              </p>
+              <small data-edit=""
+                >Mẫu bình được lựa chọn tùy theo số lượng còn lại tại thời điểm
+                đặt hàng.</small
+              >
+            </div>
+          </div>
+          <div class="edition-cta">
+            <div
+              class="edition-marquee"
+              aria-label="Limited Edition · Số lượng có hạn"
+            >
+              <div class="edition-track" aria-hidden="true">
+                <div class="edition-group">
+                  <span>LIMITED EDITION</span><span>·</span
+                  ><span>SỐ LƯỢNG CÓ HẠN</span><span>·</span>
+                </div>
+                <div class="edition-group">
+                  <span>LIMITED EDITION</span><span>·</span
+                  ><span>SỐ LƯỢNG CÓ HẠN</span><span>·</span>
+                </div>
+              </div>
+            </div>
+            <a
+              class="buy-now"
+              role="link"
+              tabindex="0"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/MiyakoHomee?locale=vi_VN"
+              >MUA NGAY ↗</a
+            >
+          </div>
+          <label class="facebook-setting editor-only"
+            >Link Facebook nhận đặt hàng<input
+              class="facebook-url"
+              type="url"
+              placeholder="https://www.facebook.com/ten-trang"
+          /></label>
+        </div>
+      </section>
+      <section id="anh" class="product reverse night">
+        <figure class="product-showcase catalog-card">
+          <div
+            class="category-gallery"
+            role="region"
+            aria-roledescription="bộ ảnh"
+            aria-label="ÁNHNGÂN MỘC"
+            tabindex="0"
+          >
+            <figure class="image-slot">
+              <div class="slot-label">
+                <span>＋</span>
+                <p>Thêm ảnh thiết kế</p>
+              </div>
+              <img
+                loading="lazy"
+                src="assets/custom-14.webp"
+                alt="Bộ sưu tập ÁNH NGÂN MỘC — Bình ánh bạc trên đế gỗ tự nhiên"
+                width="1280"
+                height="1920"
+                decoding="async"
+              /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                ×
+              </button>
+            </figure>
+            <figure class="image-slot" hidden="">
+              <img
+                src="assets/custom-15.webp"
+                alt="Chi tiết bình Ánh Ngân Mộc và tinh dầu khuếch tán 1000ml"
+                width="1144"
+                height="1375"
+                decoding="async"
+              /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                ×
+              </button>
+            </figure>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 2</span
+              ><button type="button" aria-label="Ảnh tiếp theo">›</button>
+            </div>
+          </div>
+          <button class="add-category editor-only">+ Thêm ảnh cận cảnh</button>
+        </figure>
+        <div class="product-copy">
+          <span
+            class="eyebrow"
+            style="--motion-delay: 0ms"
+            data-motion="from-left"
+            >08 / 13 · BỘ SƯU TẬP HƯƠNG VIỆT</span
+          >
+          <h2
+            class="long-title"
+            data-edit=""
+            style="--motion-delay: 85ms"
+            data-motion="soft-focus"
+          >
+            ÁNH<br />NGÂN MỘC
+          </h2>
+          <h3
+            data-edit=""
+            class=""
+            style="--motion-delay: 170ms"
+            data-motion="rise"
+          >
+            Khi sắc bạc gặp<br />hơi ấm của gỗ.
+          </h3>
+          <p
+            data-edit=""
+            class=""
+            style="--motion-delay: 255ms"
+            data-motion="rise"
+          >
+            Mang cảm hứng từ vầng trăng Việt — dịu, sâu và tĩnh lặng — Ánh Ngân
+            Mộc hòa sắc bạc cùng chất gỗ và hương thơm, tạo nên một nét Việt
+            tinh tế trong không gian đương đại.
+          </p>
+          <div
+            class="details"
+            data-edit=""
+            style="--motion-delay: 255ms"
+            data-motion="rise"
+          >
+            Ánh trăng · Sắc bạc · Chất mộc
+          </div>
+          <div class="collection-privileges">
+            <span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 0ms"
+              data-motion="from-left"
+              >DẤU ẤN DÀNH RIÊNG CHO BẠN</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Chỉn chu trong từng món quà.
+            </h3>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 170ms"
+              data-motion="rise"
+            >
+              Đi kèm hộp đựng cao cấp, mỗi bình khuếch tán đều được hỗ trợ in
+              tên theo yêu cầu — để món quà mang dấu ấn riêng của người trao và
+              người nhận.
+            </p>
+            <div class="collection-offer">
+              <span
+                class="eyebrow"
+                data-edit=""
+                style="--motion-delay: 0ms"
+                data-motion="from-left"
+                >ĐIỀU KIỆN SỞ HỮU</span
+              >
+              <p
+                data-edit=""
+                class=""
+                style="--motion-delay: 85ms"
+                data-motion="rise"
+              >
+                Khi mua 1 chai tinh dầu khuếch tán 1.000 ml, bạn được lựa chọn 1
+                mẫu bình khuếch tán thuộc 4 thiết kế: SẮC, NÉT, DẤU hoặc ÁNH
+                NGÂN MỘC.
+              </p>
+              <small data-edit=""
+                >Mẫu bình được lựa chọn tùy theo số lượng còn lại tại thời điểm
+                đặt hàng.</small
+              >
+            </div>
+          </div>
+          <div class="edition-cta">
+            <div
+              class="edition-marquee"
+              aria-label="Limited Edition · Số lượng có hạn"
+            >
+              <div class="edition-track" aria-hidden="true">
+                <div class="edition-group">
+                  <span>LIMITED EDITION</span><span>·</span
+                  ><span>SỐ LƯỢNG CÓ HẠN</span><span>·</span>
+                </div>
+                <div class="edition-group">
+                  <span>LIMITED EDITION</span><span>·</span
+                  ><span>SỐ LƯỢNG CÓ HẠN</span><span>·</span>
+                </div>
+              </div>
+            </div>
+            <a
+              class="buy-now"
+              role="link"
+              tabindex="0"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.facebook.com/MiyakoHomee?locale=vi_VN"
+              >MUA NGAY ↗</a
+            >
+          </div>
+          <label class="facebook-setting editor-only"
+            >Link Facebook nhận đặt hàng<input
+              class="facebook-url"
+              type="url"
+              placeholder="https://www.facebook.com/ten-trang"
+          /></label>
+        </div>
+      </section>
+      <section id="miyako-signature" class="signature-intro dark">
+        <div
+          class="section-top"
+          style="--motion-delay: 0ms"
+          data-motion="from-left"
+        >
+          <span>09 / 13</span><span data-edit="">THẾ GIỚI MIYAKO HOME</span>
+        </div>
+        <div class="signature-manifesto">
+          <span
+            class="eyebrow"
+            data-edit=""
+            style="--motion-delay: 0ms"
+            data-motion="from-left"
+            >HƯƠNG VIỆT LÀ MỘT LỜI MỞ ĐẦU</span
+          >
+          <h2
+            data-edit=""
+            class=""
+            style="--motion-delay: 85ms"
+            data-motion="soft-focus"
+          >
+            Dấu ấn Việt.<br /><em>Trong từng trải nghiệm.</em>
+          </h2>
+          <p
+            class="signature-statement"
+            data-edit=""
+            style="--motion-delay: 170ms"
+            data-motion="rise"
+          >
+            Phía sau bộ sưu tập là thế giới của Miyako Home — nơi những sản phẩm
+            mang dấu ấn riêng được người Việt kiến tạo, cùng những dịch vụ được
+            chăm chút cho từng không gian và nhu cầu.
+          </p>
+        </div>
+        <div class="signature-paths">
+          <article>
+            <span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 0ms"
+              data-motion="from-left"
+              >01 / CÁC SẢN PHẨM KHÁC · BÁN LẺ</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Hương thơm cho bạn.<br />Dấu ấn cho tổ ấm.
+            </h3>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 170ms"
+              data-motion="rise"
+            >
+              Khám phá các sản phẩm hương thơm và chăm sóc cá nhân của Miyako
+              Home: hóa mỹ phẩm, nước hoa, máy khuếch tán và những dòng tinh dầu
+              dành cho không gian sống.
+            </p>
+            <a
+              class="link"
+              href="#more1"
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+              >Khám phá sản phẩm <span aria-hidden="true">↗</span></a
+            >
+          </article>
+          <article>
+            <span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 0ms"
+              data-motion="from-left"
+              >02 / DỊCH VỤ ĐẶC BIỆT · B2B</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Hương thơm cho không gian.<br />Trải nghiệm cho doanh nghiệp.
+            </h3>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 170ms"
+              data-motion="rise"
+            >
+              Miyako Home cung cấp giải pháp hương thơm cho doanh nghiệp, đồng
+              hành từ khảo sát không gian, tư vấn và thử hương đến lắp đặt máy
+              khuếch tán — phù hợp với nhu cầu và trải nghiệm mà mỗi thương hiệu
+              muốn mang đến.
+            </p>
+            <a
+              class="link"
+              href="#services"
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+              >Khám phá dịch vụ <span aria-hidden="true">↗</span></a
+            >
+          </article>
+        </div>
+      </section>
+      <section id="services" class="services cream">
+        <div
+          class="section-top"
+          style="--motion-delay: 0ms"
+          data-motion="from-left"
+        >
+          <span>10 / 13</span><span data-edit="">DÀNH CHO DOANH NGHIỆP</span>
+        </div>
+        <h2
+          data-edit=""
+          class=""
+          style="--motion-delay: 85ms"
+          data-motion="soft-focus"
+        >
+          Đưa hương vào<br /><em>từng không gian.</em>
+        </h2>
+        <div class="service-grid">
+          <article>
+            <span>01</span>
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Khảo sát<br />không gian
+            </h3>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 170ms"
+              data-motion="rise"
+            >
+              Tìm hiểu không gian thực tế để tư vấn phương án bố trí máy và trải
+              nghiệm hương phù hợp.
+            </p>
+            <strong data-edit="">MIỄN PHÍ</strong>
+          </article>
+          <article>
+            <span>02</span>
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Trải nghiệm<br />hương thơm
+            </h3>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 170ms"
+              data-motion="rise"
+            >
+              Test hương tại không gian để doanh nghiệp lựa chọn mùi hương phù
+              hợp với cảm nhận mong muốn.
+            </p>
+            <strong data-edit="">MIỄN PHÍ</strong>
+          </article>
+          <article>
+            <span>03</span>
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Lắp đặt<br />máy khuếch tán
+            </h3>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 170ms"
+              data-motion="rise"
+            >
+              Hỗ trợ lắp đặt máy khuếch tán tại không gian của doanh nghiệp.
+            </p>
+            <strong data-edit="">MIỄN PHÍ</strong>
+          </article>
+        </div>
+      </section>
+      <section id="more1" class="more cream">
+        <div
+          class="section-top"
+          style="--motion-delay: 0ms"
+          data-motion="from-left"
+        >
+          <span>11 / 13</span><span data-edit="">SẢN PHẨM MIYAKO HOME</span>
+        </div>
+        <h2
+          data-edit=""
+          class=""
+          style="--motion-delay: 85ms"
+          data-motion="soft-focus"
+        >
+          Hương thơm trong<br /><em>từng nếp sống.</em>
+        </h2>
+        <p
+          class="catalog-intro"
+          data-edit=""
+          style="--motion-delay: 170ms"
+          data-motion="rise"
+        >
+          Từ những phút giây chăm sóc bản thân đến cách chăm chút không gian,
+          Miyako Home mang hương thơm vào đời sống qua những nhóm sản phẩm gần
+          gũi, để mỗi ngày đều có những trải nghiệm dành riêng cho bạn.
+        </p>
+        <div class="catalog-grid">
+          <article class="catalog-card">
+            <div
+              class="category-gallery"
+              role="region"
+              aria-roledescription="bộ ảnh"
+              aria-label="Hóa mỹ phẩm"
+              tabindex="0"
+            >
+              <figure class="image-slot">
+                <img
+                  src="assets/custom-16.webp"
+                  alt="Hóa mỹ phẩm Miyako Home — Sữa tắm và dầu gội hương tự nhiên"
+                  width="1024"
+                  height="1536"
+                  decoding="async"
+                /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+              <figure class="image-slot" hidden="">
+                <img
+                  src="assets/custom-17.webp"
+                  alt="Dầu xả và sản phẩm chăm sóc cơ thể Miyako Home"
+                  width="1024"
+                  height="1536"
+                  decoding="async"
+                /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+              <figure class="image-slot" hidden="">
+                <img
+                  src="assets/custom-18.webp"
+                  alt="Sữa rửa tay hương thảo mộc dịu nhẹ"
+                  width="1024"
+                  height="1536"
+                  decoding="async"
+                /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+            </div>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 3</span
+              ><button type="button" aria-label="Ảnh tiếp theo">›</button>
+            </div>
+            <button class="add-category editor-only">+ Thêm ảnh</button
+            ><span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="from-left"
+              >CHĂM SÓC MỖI NGÀY</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Hóa mỹ phẩm
+            </h3>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Chăm chút bản thân từ những điều thường nhật.
+            </p>
+            <div
+              class="details"
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Sữa tắm · Dầu gội · Dầu xả · Sữa rửa tay
+            </div>
+          </article>
+          <article class="catalog-card">
+            <div
+              class="category-gallery"
+              role="region"
+              aria-roledescription="bộ ảnh"
+              aria-label="Nước hoa, Body Mist &amp; Xịt vải"
+              tabindex="0"
+            >
+              <figure class="image-slot">
+                <div class="slot-label">
+                  <span>＋</span>
+                  <p>Ảnh nước hoa</p>
+                </div>
+                <img
+                  alt="Bộ sưu tập Nước hoa cá nhân Miyako Home"
+                  src="assets/custom-19.webp"
+                  width="1024"
+                  height="1536"
+                  decoding="async"
+                /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+              <figure class="image-slot" hidden="">
+                <img
+                  src="assets/custom-20.webp"
+                  alt="Body Mist lưu hương tự nhiên suốt ngày dài"
+                  width="1024"
+                  height="1536"
+                  decoding="async"
+                /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+              <figure class="image-slot" hidden="">
+                <img
+                  src="assets/custom-21.webp"
+                  alt="Xịt vải khử mùi và ướp hương sợi vải"
+                  width="1024"
+                  height="1536"
+                  decoding="async"
+                /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+            </div>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 3</span
+              ><button type="button" aria-label="Ảnh tiếp theo">›</button>
+            </div>
+            <button class="add-category editor-only">+ Thêm ảnh</button
+            ><span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="from-left"
+              >DẤU ẤN CÁ NHÂN</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Nước hoa, Body Mist &amp; Xịt vải
+            </h3>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Một hương thơm đồng điệu với cá tính, một dấu ấn riêng theo bạn
+              mỗi ngày.
+            </p>
+          </article>
+          <article class="catalog-card">
+            <div
+              class="category-gallery"
+              role="region"
+              aria-roledescription="bộ ảnh"
+              aria-label="Máy khuếch tán"
+              tabindex="0"
+            >
+              <figure class="image-slot">
+                <div class="slot-label">
+                  <span>＋</span>
+                  <p>Ảnh máy khuếch tán</p>
+                </div>
+                <img
+                  alt="Máy khuếch tán tinh dầu thông minh cho phòng khách"
+                  src="assets/custom-22.webp"
+                  width="1024"
+                  height="1536"
+                  decoding="async"
+                /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+              <figure class="image-slot" hidden="">
+                <img
+                  src="assets/custom-23.webp"
+                  alt="Máy khuếch tán tinh dầu nhỏ gọn cho phòng ngủ và bàn làm việc"
+                  width="1024"
+                  height="1536"
+                  decoding="async"
+                /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+              <figure class="image-slot" hidden="">
+                <img
+                  src="assets/custom-24.webp"
+                  alt="Giải pháp máy khuếch tán hương thơm cho không gian doanh nghiệp"
+                  width="1024"
+                  height="1536"
+                  decoding="async"
+                /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+            </div>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 3</span
+              ><button type="button" aria-label="Ảnh tiếp theo">›</button>
+            </div>
+            <button class="add-category editor-only">+ Thêm ảnh</button
+            ><span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="from-left"
+              >HƯƠNG THƠM CHO KHÔNG GIAN</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Máy khuếch tán
+            </h3>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Giải pháp lan tỏa hương thơm cho không gian sống và kinh doanh,
+              với lựa chọn phù hợp theo diện tích và nhu cầu sử dụng.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="more2" class="more scent-section">
+        <div
+          class="section-top"
+          style="--motion-delay: 0ms"
+          data-motion="from-left"
+        >
+          <span>12 / 13</span><span data-edit="">THẾ GIỚI TINH DẦU</span>
+        </div>
+        <h2
+          data-edit=""
+          class=""
+          style="--motion-delay: 85ms"
+          data-motion="soft-focus"
+        >
+          Mỗi hương thơm,<br /><em>một cách cảm nhận.</em>
+        </h2>
+        <p
+          class="catalog-intro"
+          data-edit=""
+          style="--motion-delay: 170ms"
+          data-motion="rise"
+        >
+          Có hương thơm gợi một miền ký ức, có hương thơm thể hiện cá tính
+          riêng. Khám phá các dòng tinh dầu Miyako Home để lựa chọn cách lưu
+          hương phù hợp với không gian và sở thích của bạn.
+        </p>
+        <div class="bespoke-game-banner" data-motion="rise">
+          <div class="bespoke-banner-copy">
+            <span class="eyebrow"
+              >✦ TRẢI NGHIỆM TƯƠNG TÁC · BESPOKE SCENT ✦</span
+            >
+            <h3>Vòng Tròn Hương &amp; Giải Mã Bản Ngã</h3>
+            <p>
+              Bạn thuộc về làn sương mai thanh khiết, tách trà trắng tĩnh tại
+              hay nốt trầm hương sâu lắng? Tự tay chọn 3 tầng hương yêu thích để
+              pha chế lọ hương độc bản và khám phá mùi hương nói gì về con người
+              bạn.
+            </p>
+          </div>
+          <a href="bespoke-scent.html" class="bespoke-banner-btn">
+            Bắt đầu chế tác mùi hương →
+          </a>
+        </div>
+        <div class="collection-heading">
+          <h3
+            data-edit=""
+            class=""
+            style="--motion-delay: 0ms"
+            data-motion="rise"
+          >
+            Tinh dầu khuếch tán
+          </h3>
+          <p
+            data-edit=""
+            class=""
+            style="--motion-delay: 85ms"
+            data-motion="rise"
+          >
+            Những bộ sưu tập mở ra nhiều câu chuyện và cảm hứng, để mỗi không
+            gian có một dấu ấn hương thơm riêng.
+          </p>
+        </div>
+        <div class="catalog-grid collections">
+          <article class="catalog-card has-journey-video">
+            <div
+              class="category-gallery"
+              role="region"
+              aria-roledescription="bộ ảnh"
+              aria-label="Dấu ấn"
+              tabindex="0"
+            >
+              <figure class="image-slot">
+                <img
+                  src="assets/custom-25.webp"
+                  alt="Bộ sưu tập Tinh dầu Dấu Ấn — Bản sắc riêng biệt"
+                  width="1280"
+                  height="1920"
+                  decoding="async"
+                /><span class="video-hint-badge" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="12"
+                    height="12"
+                    fill="currentColor"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  Video
+                </span>
+                <button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+            </div>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước" disabled="">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 1</span
+              ><button type="button" aria-label="Ảnh tiếp theo" disabled="">
+                ›
+              </button>
+            </div>
+            <button class="add-category editor-only">+ Thêm ảnh</button
+            ><span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="from-left"
+              >BỘ SƯU TẬP</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Dấu ấn
+            </h3>
+            <p
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            ></p>
+            <button
+              class="journey-trigger"
+              aria-expanded="false"
+              aria-controls="journey-1"
+              hidden=""
+            >
+              Khám phá câu chuyện hương ↘
+            </button>
+            <div class="scent-journey" id="journey-1" inert="">
+              <div class="journey-inner">
+                <video
+                  class="journey-video"
+                  playsinline=""
+                  muted=""
+                  controls=""
+                  preload="none"
+                  src="assets/custom-26.mp4"
+                  webkit-playsinline=""
+                  disablepictureinpicture=""
+                  disableremoteplayback=""
+                ></video
+                ><button class="journey-close" type="button">
+                  Khép lại hành trình ↑
+                </button>
+              </div>
+            </div>
+            <div class="journey-tools editor-only">
+              <label
+                >Thêm / thay video cho ảnh BST (mobile: chạm để phát · desktop:
+                rê chuột để phát · tối đa 15 giây)<input
+                  class="journey-upload"
+                  type="file"
+                  accept="video/mp4,video/webm,.mp4,.webm" /></label
+              ><button class="journey-remove" type="button">Xóa video</button>
+            </div>
+          </article>
+          <article class="catalog-card has-journey-video">
+            <div
+              class="category-gallery"
+              role="region"
+              aria-roledescription="bộ ảnh"
+              aria-label="Hồn Việt"
+              tabindex="0"
+            >
+              <figure class="image-slot">
+                <img
+                  src="assets/custom-27.webp"
+                  alt="Bộ sưu tập Tinh dầu Hồn Việt — Ký ức quê hương qua mùi hương"
+                  width="1280"
+                  height="1920"
+                  decoding="async"
+                /><span class="video-hint-badge" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="12"
+                    height="12"
+                    fill="currentColor"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  Video
+                </span>
+                <button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+            </div>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước" disabled="">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 1</span
+              ><button type="button" aria-label="Ảnh tiếp theo" disabled="">
+                ›
+              </button>
+            </div>
+            <button class="add-category editor-only">+ Thêm ảnh</button
+            ><span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="from-left"
+              >BỘ SƯU TẬP</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Hồn Việt
+            </h3>
+            <p
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            ></p>
+            <button
+              class="journey-trigger"
+              aria-expanded="false"
+              aria-controls="journey-2"
+              hidden=""
+            >
+              Khám phá câu chuyện hương ↘
+            </button>
+            <div class="scent-journey" id="journey-2" inert="">
+              <div class="journey-inner">
+                <video
+                  class="journey-video"
+                  playsinline=""
+                  muted=""
+                  controls=""
+                  preload="none"
+                  src="assets/custom-28.mp4"
+                  webkit-playsinline=""
+                  disablepictureinpicture=""
+                  disableremoteplayback=""
+                ></video
+                ><button class="journey-close" type="button">
+                  Khép lại hành trình ↑
+                </button>
+              </div>
+            </div>
+            <div class="journey-tools editor-only">
+              <label
+                >Thêm / thay video cho ảnh BST (mobile: chạm để phát · desktop:
+                rê chuột để phát · tối đa 15 giây)<input
+                  class="journey-upload"
+                  type="file"
+                  accept="video/mp4,video/webm,.mp4,.webm" /></label
+              ><button class="journey-remove" type="button">Xóa video</button>
+            </div>
+          </article>
+          <article class="catalog-card has-journey-video">
+            <div
+              class="category-gallery"
+              role="region"
+              aria-roledescription="bộ ảnh"
+              aria-label="12 cung hoàng đạo"
+              tabindex="0"
+            >
+              <figure class="image-slot">
+                <img
+                  src="assets/custom-29.webp"
+                  alt="Bộ sưu tập Tinh dầu 12 Cung Hoàng Đạo"
+                  width="1280"
+                  height="1920"
+                  decoding="async"
+                /><span class="video-hint-badge" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="12"
+                    height="12"
+                    fill="currentColor"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  Video
+                </span>
+                <button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+            </div>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước" disabled="">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 1</span
+              ><button type="button" aria-label="Ảnh tiếp theo" disabled="">
+                ›
+              </button>
+            </div>
+            <button class="add-category editor-only">+ Thêm ảnh</button
+            ><span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="from-left"
+              >BỘ SƯU TẬP</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              12 cung hoàng đạo
+            </h3>
+            <p
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            ></p>
+            <button
+              class="journey-trigger"
+              aria-expanded="false"
+              aria-controls="journey-3"
+              hidden=""
+            >
+              Khám phá câu chuyện hương ↘
+            </button>
+            <div class="scent-journey" id="journey-3" inert="">
+              <div class="journey-inner">
+                <video
+                  class="journey-video"
+                  playsinline=""
+                  muted=""
+                  controls=""
+                  preload="none"
+                  src="assets/custom-30.mp4"
+                  webkit-playsinline=""
+                  disablepictureinpicture=""
+                  disableremoteplayback=""
+                ></video
+                ><button class="journey-close" type="button">
+                  Khép lại hành trình ↑
+                </button>
+              </div>
+            </div>
+            <div class="journey-tools editor-only">
+              <label
+                >Thêm / thay video cho ảnh BST (mobile: chạm để phát · desktop:
+                rê chuột để phát · tối đa 15 giây)<input
+                  class="journey-upload"
+                  type="file"
+                  accept="video/mp4,video/webm,.mp4,.webm" /></label
+              ><button class="journey-remove" type="button">Xóa video</button>
+            </div>
+          </article>
+          <article class="catalog-card has-journey-video">
+            <div
+              class="category-gallery"
+              role="region"
+              aria-roledescription="bộ ảnh"
+              aria-label="Hương hoa cao cấp"
+              tabindex="0"
+            >
+              <figure class="image-slot">
+                <img
+                  src="assets/custom-31.webp"
+                  alt="Bộ sưu tập Tinh dầu Hương Hoa Cao Cấp"
+                  width="1280"
+                  height="1920"
+                  decoding="async"
+                /><span class="video-hint-badge" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="12"
+                    height="12"
+                    fill="currentColor"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  Video
+                </span>
+                <button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+            </div>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước" disabled="">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 1</span
+              ><button type="button" aria-label="Ảnh tiếp theo" disabled="">
+                ›
+              </button>
+            </div>
+            <button class="add-category editor-only">+ Thêm ảnh</button
+            ><span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="from-left"
+              >BỘ SƯU TẬP</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Hương hoa cao cấp
+            </h3>
+            <button
+              class="journey-trigger"
+              aria-expanded="false"
+              aria-controls="journey-4"
+              hidden=""
+            >
+              Khám phá câu chuyện hương ↘
+            </button>
+            <div class="scent-journey" id="journey-4" inert="">
+              <div class="journey-inner">
+                <video
+                  class="journey-video"
+                  playsinline=""
+                  muted=""
+                  controls=""
+                  preload="none"
+                  src="assets/custom-32.mp4"
+                  webkit-playsinline=""
+                  disablepictureinpicture=""
+                  disableremoteplayback=""
+                ></video
+                ><button class="journey-close" type="button">
+                  Khép lại hành trình ↑
+                </button>
+              </div>
+            </div>
+            <div class="journey-tools editor-only">
+              <label
+                >Thêm / thay video cho ảnh BST (mobile: chạm để phát · desktop:
+                rê chuột để phát · tối đa 15 giây)<input
+                  class="journey-upload"
+                  type="file"
+                  accept="video/mp4,video/webm,.mp4,.webm" /></label
+              ><button class="journey-remove" type="button">Xóa video</button>
+            </div>
+          </article>
+          <article class="catalog-card has-journey-video">
+            <div
+              class="category-gallery"
+              role="region"
+              aria-roledescription="bộ ảnh"
+              aria-label="Hương thiên nhiên"
+              tabindex="0"
+            >
+              <figure class="image-slot">
+                <img
+                  src="assets/custom-33.webp"
+                  alt="Bộ sưu tập Tinh dầu Hương Thiên Nhiên"
+                  width="1280"
+                  height="1920"
+                  decoding="async"
+                /><span class="video-hint-badge" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="12"
+                    height="12"
+                    fill="currentColor"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  Video
+                </span>
+                <button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+            </div>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước" disabled="">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 1</span
+              ><button type="button" aria-label="Ảnh tiếp theo" disabled="">
+                ›
+              </button>
+            </div>
+            <button class="add-category editor-only">+ Thêm ảnh</button
+            ><span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="from-left"
+              >BỘ SƯU TẬP</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Hương thiên nhiên
+            </h3>
+            <button
+              class="journey-trigger"
+              aria-expanded="false"
+              aria-controls="journey-5"
+              hidden=""
+            >
+              Khám phá câu chuyện hương ↘
+            </button>
+            <div class="scent-journey" id="journey-5" inert="">
+              <div class="journey-inner">
+                <video
+                  class="journey-video"
+                  playsinline=""
+                  muted=""
+                  controls=""
+                  preload="none"
+                  src="assets/custom-34.mp4"
+                  webkit-playsinline=""
+                  disablepictureinpicture=""
+                  disableremoteplayback=""
+                ></video
+                ><button class="journey-close" type="button">
+                  Khép lại hành trình ↑
+                </button>
+              </div>
+            </div>
+            <div class="journey-tools editor-only">
+              <label
+                >Thêm / thay video cho ảnh BST (mobile: chạm để phát · desktop:
+                rê chuột để phát · tối đa 15 giây)<input
+                  class="journey-upload"
+                  type="file"
+                  accept="video/mp4,video/webm,.mp4,.webm" /></label
+              ><button class="journey-remove" type="button">Xóa video</button>
+            </div>
+          </article>
+          <article class="catalog-card has-journey-video">
+            <div
+              class="category-gallery"
+              role="region"
+              aria-roledescription="bộ ảnh"
+              aria-label="Hương trị liệu - thư giãn"
+              tabindex="0"
+            >
+              <figure class="image-slot">
+                <img
+                  alt="Bộ sưu tập Tinh dầu Hương Trị Liệu & Thư Giãn"
+                  width="1280"
+                  height="1920"
+                  decoding="async"
+                  src="assets/custom-35.webp"
+                /><span class="video-hint-badge" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="12"
+                    height="12"
+                    fill="currentColor"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                  Video
+                </span>
+                <button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+            </div>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước" disabled="">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 1</span
+              ><button type="button" aria-label="Ảnh tiếp theo" disabled="">
+                ›
+              </button>
+            </div>
+            <button class="add-category editor-only">+ Thêm ảnh</button
+            ><span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="from-left"
+              >BỘ SƯU TẬP</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Hương trị liệu - thư giãn
+            </h3>
+            <button
+              class="journey-trigger"
+              aria-expanded="false"
+              aria-controls="journey-6"
+              hidden=""
+            >
+              Khám phá câu chuyện hương ↘
+            </button>
+            <div class="scent-journey" id="journey-6" inert="">
+              <div class="journey-inner">
+                <video
+                  class="journey-video"
+                  playsinline=""
+                  muted=""
+                  controls=""
+                  preload="none"
+                  src="assets/custom-36.mp4"
+                  webkit-playsinline=""
+                  disablepictureinpicture=""
+                  disableremoteplayback=""
+                ></video
+                ><button class="journey-close" type="button">
+                  Khép lại hành trình ↑
+                </button>
+              </div>
+            </div>
+            <div class="journey-tools editor-only">
+              <label
+                >Thêm / thay video cho ảnh BST (mobile: chạm để phát · desktop:
+                rê chuột để phát · tối đa 15 giây)<input
+                  class="journey-upload"
+                  type="file"
+                  accept="video/mp4,video/webm,.mp4,.webm" /></label
+              ><button class="journey-remove" type="button">Xóa video</button>
+            </div>
+          </article>
+        </div>
+        <div class="catalog-grid oil-companions">
+          <article class="catalog-card">
+            <div
+              class="category-gallery"
+              role="region"
+              aria-roledescription="bộ ảnh"
+              aria-label="Tinh dầu nguyên chất"
+              tabindex="0"
+            >
+              <figure class="image-slot">
+                <div class="slot-label">
+                  <span>＋</span>
+                  <p>Ảnh tinh dầu nguyên chất</p>
+                </div>
+                <img
+                  alt="Tinh dầu xông phòng nguyên chất Miyako Home"
+                  src="assets/custom-37.webp"
+                  width="1254"
+                  height="1254"
+                  decoding="async"
+                /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+            </div>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước" disabled="">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 1</span
+              ><button type="button" aria-label="Ảnh tiếp theo" disabled="">
+                ›
+              </button>
+            </div>
+            <button class="add-category editor-only">+ Thêm ảnh</button
+            ><span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="from-left"
+              >DÒNG TINH DẦU</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Tinh dầu nguyên chất
+            </h3>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Khám phá nét hương đặc trưng của từng loại tinh dầu và lựa chọn
+              theo sở thích, mục đích sử dụng.
+            </p>
+          </article>
+          <article class="catalog-card">
+            <div
+              class="category-gallery"
+              role="region"
+              aria-roledescription="bộ ảnh"
+              aria-label="Tinh dầu cắm que"
+              tabindex="0"
+            >
+              <figure class="image-slot">
+                <div class="slot-label">
+                  <span>＋</span>
+                  <p>Ảnh tinh dầu cắm que</p>
+                </div>
+                <img
+                  alt="Bộ tinh dầu cắm que khuếch tán thanh lịch"
+                  src="assets/custom-38.webp"
+                  width="1920"
+                  height="1920"
+                  decoding="async"
+                /><button class="remove-image editor-only" aria-label="Xóa ảnh">
+                  ×
+                </button>
+              </figure>
+            </div>
+            <div class="gallery-controls">
+              <button type="button" aria-label="Ảnh trước" disabled="">‹</button
+              ><span class="gallery-counter" aria-live="polite">1 / 1</span
+              ><button type="button" aria-label="Ảnh tiếp theo" disabled="">
+                ›
+              </button>
+            </div>
+            <button class="add-category editor-only">+ Thêm ảnh</button
+            ><span
+              class="eyebrow"
+              data-edit=""
+              style="--motion-delay: 255ms"
+              data-motion="from-left"
+              >DÒNG TINH DẦU</span
+            >
+            <h3
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Tinh dầu cắm que
+            </h3>
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 255ms"
+              data-motion="rise"
+            >
+              Hương thơm lan tỏa qua những que khuếch tán, hiện diện nhẹ nhàng
+              trong từng góc nhỏ của không gian.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="thanks" class="thanks dark">
+        <div class="closing-content">
+          <div class="closing-title">
+            <span
+              class="eyebrow"
+              style="--motion-delay: 0ms"
+              data-motion="from-left"
+              >13 / 13 · LỜI TRI ÂN</span
+            >
+            <p
+              class="closing-salute"
+              data-edit=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Cảm ơn bạn đã cùng cảm nhận
+            </p>
+            <h2
+              data-edit=""
+              class=""
+              style="--motion-delay: 170ms"
+              data-motion="soft-focus"
+            >
+              Hương<br /><em>Việt.</em>
+            </h2>
+          </div>
+          <div class="closing-note">
+            <p
+              data-edit=""
+              class=""
+              style="--motion-delay: 0ms"
+              data-motion="rise"
+            >
+              Mong rằng giữa những thiết kế và hương thơm ấy, bạn tìm thấy một
+              điều gần gũi với mình — để mỗi lần trở về đều có một cảm giác thân
+              quen chờ đón.
+            </p>
+            <div
+              class="closing-signature"
+              data-edit=""
+              style="--motion-delay: 85ms"
+              data-motion="rise"
+            >
+              Thân gửi từ Miyako Home
+            </div>
+            <a
+              class="link"
+              href="#home"
+              style="--motion-delay: 170ms"
+              data-motion="rise"
+              >Trở về đầu trang ↑</a
+            >
+          </div>
+        </div>
+        <footer>
+          <span class="" style="--motion-delay: 0ms" data-motion="rise"
+            >Miyako Home</span
+          ><span
+            data-edit=""
+            class=""
+            style="--motion-delay: 85ms"
+            data-motion="rise"
+            >MỘT HƠI THỞ VIỆT, MỘT DẤU ẤN RIÊNG.</span
+          >
+          <div class="footer-contact">
+            <a
+              href="https://maps.app.goo.gl/cE87GfUm2GsV1xEu5"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Địa chỉ Vietbeauties · Xem trên Google Maps ↗</a
+            ><a
+              href="https://vietbeauties.vn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Website · vietbeauties.vn ↗</a
+            >
+          </div>
+        </footer>
+      </section>
+    </main>
+    <dialog id="image-viewer" aria-label="Xem ảnh sản phẩm">
+      <button id="viewer-close" type="button" aria-label="Đóng ảnh">×</button>
+      <div class="viewer-toolbar">
+        <button
+          id="viewer-prev"
+          type="button"
+          aria-label="Ảnh trước"
+          disabled=""
+        >
+          ←</button
+        ><span id="viewer-count" aria-live="polite">1 / 1</span
+        ><button
+          id="viewer-next"
+          type="button"
+          aria-label="Ảnh tiếp theo"
+          disabled=""
+        >
+          →</button
+        ><button id="viewer-zoom" type="button" aria-pressed="false">
+          Phóng to 2×
+        </button>
+      </div>
+      <div id="viewer-stage">
+        <img id="viewer-image" alt="Chi tiết sản phẩm Miyako Home" />
+      </div>
+      <p id="viewer-caption">12 Cung Hoàng Đạo</p>
+    </dialog>
+    <div
+      id="contact-dock"
+      class="contact-dock"
+      aria-label="Liên hệ tư vấn"
+      data-phone="035 605 9224"
+      data-zalo="035 605 9224"
+      data-facebook="https://www.facebook.com/MiyakoHomee?locale=vi_VN"
+    >
+      <a
+        id="contact-call"
+        class="contact-call"
+        role="link"
+        tabindex="0"
+        aria-label="Gọi điện tư vấn"
+        data-tooltip="Gọi tư vấn"
+        href="tel:0356059224"
+        ><svg
+          class="phone-symbol"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+        >
+          <path
+            d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a15 15 0 0 1-7-7l2-2-2-5Z"
+          ></path></svg
+      ></a>
+      <a
+        id="contact-zalo"
+        class="contact-zalo"
+        role="link"
+        tabindex="0"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat Zalo tư vấn"
+        data-tooltip="Chat Zalo"
+        href="https://zalo.me/0356059224"
+        ><span class="zalo-symbol" aria-hidden="true">Zalo</span></a
+      >
+      <a
+        id="contact-facebook"
+        class="contact-facebook"
+        role="link"
+        tabindex="0"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Nhắn tin Facebook tư vấn"
+        data-tooltip="Facebook"
+        href="https://www.facebook.com/MiyakoHomee?locale=vi_VN"
+        ><svg
+          class="facebook-symbol"
+          aria-hidden="true"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+        >
+          <path
+            d="M9.25 16v-5.625h2.218l.354-2.326H9.25V6.533c0-.637.31-1.258 1.303-1.258h1.009v-1.98s-.915-.157-1.791-.157c-1.827 0-3.022 1.114-3.022 3.131V8.05H4.718v2.324h2.03V16h2.502z"
+          ></path></svg
+      ></a>
+    </div>
+    <aside
+      id="review-popup"
+      class="review-popup"
+      aria-label="Phản hồi khách hàng"
+      hidden=""
+    >
+      <button
+        id="review-close"
+        type="button"
+        aria-label="Đóng thông báo đánh giá"
+      >
+        ×
+      </button>
+      <div class="review-kicker">LỜI NHẮN TỪ KHÁCH HÀNG</div>
+      <div class="review-stars" aria-label="5 trên 5 sao">★★★★★</div>
+      <p id="review-topic">Trải nghiệm Miyako Home</p>
+      <blockquote id="review-quote">
+        Mình dùng cả máy và tinh dầu bên này thấy khá ổn. Nhân viên tư vấn mùi
+        và hỗ trợ lắp đặt rất nhiệt tình.
+      </blockquote>
+      <span class="review-signature">Miyako Home</span>
+    </aside>
+    <div id="message" role="status" style="display: none"></div>
+    <script src="script.js" defer></script>
+  </body>
+</html>

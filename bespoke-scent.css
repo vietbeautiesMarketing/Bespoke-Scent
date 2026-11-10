@@ -1,0 +1,1427 @@
+/* ==========================================================================
+   MIYAKO HOME — 3-COLUMN FIXED-VIEWPORT SCENT ALCHEMIST MINI-GAME
+   ========================================================================== */
+
+:root {
+  --bg-deep: #120d0a;
+  --bg-panel: rgba(34, 24, 19, 0.82);
+  --bg-panel-inner: rgba(20, 14, 11, 0.72);
+  --text-cream: #f7efe2;
+  --text-muted: #bfa992;
+  --text-dark: #241912;
+  --accent-wine: #76251f;
+  --accent-gold: #d4a359;
+  --accent-gold-bright: #f3c878;
+  --border-gold: rgba(212, 163, 89, 0.32);
+  --font-serif: "Noto Serif", Georgia, serif;
+  --font-sans: "Noto Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-deep);
+  color: var(--text-cream);
+  font-family: var(--font-sans);
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Fixed 1-Screen Game Viewport */
+.game-viewport {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(118, 37, 31, 0.28),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 50% 55%,
+      rgba(212, 163, 89, 0.14),
+      transparent 48%
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(77, 124, 93, 0.15),
+      transparent 42%
+    ),
+    linear-gradient(180deg, #150f0c 0%, #1c140f 55%, #120d0a 100%);
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   TOP GAME HUD BAR
+   ========================================================================== */
+.game-hud {
+  height: 62px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+  background: rgba(18, 13, 10, 0.9);
+  border-bottom: 1px solid var(--border-gold);
+  backdrop-filter: blur(12px);
+  z-index: 30;
+}
+
+.hud-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-cream);
+}
+
+.hud-brand img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+.hud-divider {
+  width: 1px;
+  height: 26px;
+  background: var(--border-gold);
+}
+
+.hud-title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.hud-badge {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--accent-gold);
+}
+
+.hud-title-wrap h1 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-cream);
+  line-height: 1.15;
+}
+
+/* Quest Progress Steps in HUD */
+.hud-quests {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quest-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: all 0.25s ease;
+}
+
+.quest-step.active {
+  background: rgba(212, 163, 89, 0.18);
+  border-color: var(--accent-gold);
+  color: var(--text-cream);
+  box-shadow: 0 0 16px rgba(212, 163, 89, 0.22);
+}
+
+.quest-step.done {
+  background: rgba(77, 124, 93, 0.24);
+  border-color: #68a37c;
+  color: #dff5e6;
+}
+
+.quest-num {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.quest-step.active .quest-num {
+  background: var(--accent-gold);
+  color: #16100c;
+}
+
+.quest-step.done .quest-num {
+  background: #5ca374;
+  color: #fff;
+}
+
+.quest-arrow {
+  color: rgba(212, 163, 89, 0.45);
+  font-size: 13px;
+}
+
+.hud-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hud-btn-gold,
+.hud-btn-ghost,
+.hud-btn-back {
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-family: var(--font-sans);
+}
+
+.hud-btn-gold {
+  background: rgba(212, 163, 89, 0.16);
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold-bright);
+}
+
+.hud-btn-gold:hover {
+  background: var(--accent-gold);
+  color: #16100c;
+}
+
+.hud-btn-ghost {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-cream);
+}
+
+.hud-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hud-btn-back {
+  background: var(--accent-wine);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.hud-btn-back:hover {
+  background: #912f27;
+}
+
+/* ==========================================================================
+   3-COLUMN GAME ARENA (NO SCROLL)
+   ========================================================================== */
+.game-arena {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1.12fr 0.95fr;
+  gap: 14px;
+  padding: 12px 18px 14px;
+  overflow: hidden;
+}
+
+.arena-col {
+  height: 100%;
+  min-height: 0;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-gold);
+  border-radius: 22px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  position: relative;
+}
+
+.col-head {
+  flex-shrink: 0;
+}
+
+.col-step-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.col-head h2 {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text-cream);
+  line-height: 1.2;
+}
+
+.col-head p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.35;
+  margin-top: 3px;
+}
+
+/* ==========================================================================
+   COLUMN 1: FRAGRANCE WHEEL & SUB-NOTES SHELF
+   ========================================================================== */
+.wheel-box {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.fragrance-wheel-svg {
+  width: 100%;
+  height: 100%;
+  max-width: 420px;
+  max-height: 420px;
+  overflow: visible;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.58));
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wheel-slice {
+  cursor: pointer;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+  transform-origin: 210px 210px;
+}
+
+.wheel-slice:hover {
+  filter: brightness(1.16);
+  transform: scale(1.025);
+}
+
+.wheel-slice.active {
+  filter: brightness(1.25) drop-shadow(0 0 14px rgba(243, 200, 120, 0.55));
+  transform: scale(1.04);
+}
+
+.wheel-label {
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  font-weight: 600;
+  fill: #fff8ee;
+  pointer-events: none;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.wheel-sublabel {
+  font-size: 13px;
+  pointer-events: none;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.wheel-center-circle {
+  fill: #1a120d;
+  stroke: var(--accent-gold);
+  stroke-width: 2;
+}
+
+.wheel-center-title {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  fill: var(--accent-gold);
+  text-anchor: middle;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  dominant-baseline: central;
+}
+
+.wheel-center-sub {
+  font-size: 10px;
+  fill: var(--text-muted);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+/* Sub-notes shelf */
+.family-shelf {
+  flex-shrink: 0;
+  background: var(--bg-panel-inner);
+  border: 1px solid rgba(212, 163, 89, 0.24);
+  border-radius: 16px;
+  padding: 10px 12px;
+}
+
+.shelf-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.shelf-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--text-cream);
+}
+
+.family-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.shelf-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.shelf-notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.note-pick-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 8px 6px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-cream);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.note-pick-btn:hover {
+  background: rgba(212, 163, 89, 0.14);
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+.note-pick-btn.picked {
+  background: rgba(212, 163, 89, 0.24);
+  border-color: var(--accent-gold-bright);
+  box-shadow: 0 0 14px rgba(212, 163, 89, 0.3);
+}
+
+.note-pick-icon {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.note-pick-name {
+  font-family: var(--font-serif);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.note-pick-tag {
+  margin-top: 4px;
+  font-size: 9.5px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(212, 163, 89, 0.2);
+  color: var(--accent-gold-bright);
+}
+
+/* ==========================================================================
+   COLUMN 2: ALCHEMY WORKBENCH (DRAG SAMPLE VIALS -> MIXING FLASK)
+   ========================================================================== */
+.vials-tray {
+  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.vial-slot-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vial-role-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-gold);
+  margin-bottom: 4px;
+}
+
+.sample-vial {
+  width: 100%;
+  padding: 8px 6px;
+  border-radius: 14px;
+  background: var(--bg-panel-inner);
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.sample-vial.ready {
+  border-style: solid;
+  border-color: var(--accent-gold);
+  background: rgba(212, 163, 89, 0.12);
+  cursor: grab;
+  animation: vial-float 2.6s ease-in-out infinite;
+}
+
+.sample-vial.ready:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(212, 163, 89, 0.28);
+}
+
+.sample-vial.ready:active {
+  cursor: grabbing;
+}
+
+.sample-vial.poured {
+  border-style: solid;
+  border-color: #5ca374;
+  background: rgba(77, 124, 93, 0.16);
+  opacity: 0.85;
+  cursor: default;
+  animation: none;
+}
+
+@keyframes vial-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Miniature Potion Vial Graphic */
+.vial-bottle-graphic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.vial-cork {
+  width: 12px;
+  height: 5px;
+  background: #b5834c;
+  border-radius: 2px 2px 0 0;
+}
+
+.vial-neck {
+  width: 16px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.vial-body {
+  width: 34px;
+  height: 42px;
+  border-radius: 6px 6px 14px 14px;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vial-liquid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0%;
+  background: var(--accent-gold);
+  transition:
+    height 0.4s ease,
+    background-color 0.3s ease;
+  opacity: 0.85;
+}
+
+.sample-vial.ready .vial-liquid {
+  height: 76%;
+}
+
+.sample-vial.poured .vial-liquid {
+  height: 12%;
+}
+
+.vial-icon {
+  position: relative;
+  z-index: 2;
+  font-size: 15px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.vial-name {
+  font-family: var(--font-serif);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-cream);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.vial-status {
+  font-size: 9.5px;
+  color: var(--accent-gold-bright);
+  margin-top: 1px;
+}
+
+.sample-vial.poured .vial-status {
+  color: #8ce0a8;
+  font-weight: 700;
+}
+
+.vial-remove-btn {
+  position: absolute;
+  top: 20px;
+  right: 5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 4;
+}
+
+.vial-remove-btn:hover {
+  background: var(--accent-wine);
+}
+
+/* Central Dropzone & Mixing Flask */
+.alchemy-dropzone {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  border-radius: 18px;
+  background: radial-gradient(
+    circle at 50% 60%,
+    rgba(212, 163, 89, 0.16) 0%,
+    rgba(20, 14, 11, 0.78) 72%
+  );
+  border: 1.5px dashed rgba(212, 163, 89, 0.38);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.alchemy-dropzone.drag-over {
+  border-style: solid;
+  border-color: var(--accent-gold-bright);
+  background: radial-gradient(
+    circle at 50% 55%,
+    rgba(243, 200, 120, 0.3) 0%,
+    rgba(20, 14, 11, 0.85) 75%
+  );
+  box-shadow: inset 0 0 30px rgba(243, 200, 120, 0.25);
+  transform: scale(1.01);
+}
+
+.dropzone-hint-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(212, 163, 89, 0.16);
+  border: 1px solid rgba(212, 163, 89, 0.35);
+  color: var(--accent-gold-bright);
+  z-index: 5;
+}
+
+.mixing-flask-svg {
+  height: 100%;
+  max-height: 195px;
+  width: auto;
+  z-index: 3;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6));
+  transition: transform 0.3s ease;
+}
+
+.mixing-flask-svg.flask-shake {
+  animation: flask-shake-anim 0.65s ease-in-out;
+}
+
+@keyframes flask-shake-anim {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  20% {
+    transform: rotate(-8deg) scale(1.05);
+  }
+  40% {
+    transform: rotate(8deg) scale(1.06);
+  }
+  60% {
+    transform: rotate(-6deg) scale(1.05);
+  }
+  80% {
+    transform: rotate(5deg) scale(1.03);
+  }
+}
+
+#flask-layer-top,
+#flask-layer-heart,
+#flask-layer-base,
+#flask-meniscus {
+  transition: all 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Pouring Vial Animation Actor */
+.pouring-actor {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(12px) rotate(-115deg);
+  z-index: 10;
+  pointer-events: none;
+  animation: tilt-pour 0.9s ease-in-out forwards;
+}
+
+@keyframes tilt-pour {
+  0% {
+    opacity: 0;
+    transform: translate(40px, -15px) rotate(-35deg);
+  }
+  25% {
+    opacity: 1;
+    transform: translate(16px, 4px) rotate(-118deg);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(16px, 4px) rotate(-122deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(36px, -10px) rotate(-45deg);
+  }
+}
+
+.pouring-vial-body {
+  width: 28px;
+  height: 44px;
+  border-radius: 6px 6px 12px 12px;
+  border: 2px solid #fff8ee;
+  background: rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+  position: relative;
+}
+
+.pouring-vial-liquid {
+  position: absolute;
+  inset: 0;
+  background: var(--accent-gold);
+}
+
+.pouring-stream {
+  position: absolute;
+  top: -4px;
+  left: 11px;
+  width: 6px;
+  height: 115px;
+  border-radius: 999px;
+  background: var(--accent-gold);
+  transform-origin: top center;
+  transform: rotate(118deg);
+  box-shadow: 0 0 12px currentColor;
+  animation: stream-flow 0.8s ease-out forwards;
+}
+
+@keyframes stream-flow {
+  0% {
+    height: 0;
+    opacity: 0.95;
+  }
+  35% {
+    height: 120px;
+    opacity: 1;
+  }
+  85% {
+    height: 120px;
+    opacity: 0.9;
+  }
+  100% {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+/* Rising Aroma Bubbles / Sparkles */
+.aroma-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.aroma-bubble {
+  position: absolute;
+  bottom: 45px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: bubble-rise 1.4s ease-out forwards;
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-130px) scale(1.35);
+    opacity: 0;
+  }
+}
+
+.pour-progress-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  z-index: 5;
+}
+
+.quick-pour-btn {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-gold);
+  background: rgba(212, 163, 89, 0.2);
+  color: var(--accent-gold-bright);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.quick-pour-btn:hover {
+  background: var(--accent-gold);
+  color: #16100c;
+}
+
+/* ==========================================================================
+   COLUMN 3: BESPOKE BOTTLE & 3 RATIOS (40-30-30, 50-40-20, 50-40-10)
+   ========================================================================== */
+.bespoke-bottle-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-panel-inner);
+  border: 1px solid rgba(212, 163, 89, 0.22);
+  border-radius: 16px;
+  padding: 10px 12px;
+  margin: 6px 0;
+}
+
+.final-bottle-svg {
+  width: 96px;
+  height: 126px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+}
+
+#final-liquid-top,
+#final-liquid-heart,
+#final-liquid-base {
+  transition: all 0.45s ease;
+}
+
+.final-label-small {
+  font-size: 6px;
+  fill: #685648;
+  text-anchor: middle;
+  letter-spacing: 0.12em;
+}
+
+.final-label-main {
+  font-family: var(--font-serif);
+  font-size: 7.5px;
+  font-weight: 700;
+  fill: #241912;
+  text-anchor: middle;
+  letter-spacing: 0.05em;
+}
+
+.final-label-ratio {
+  font-size: 5.8px;
+  font-weight: 700;
+  fill: #76251f;
+  text-anchor: middle;
+  letter-spacing: 0.08em;
+}
+
+.bespoke-ratio-bars {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.ratio-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+}
+
+.ratio-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.ratio-label {
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.ratio-label strong {
+  color: var(--accent-gold-bright);
+}
+
+.ratio-note-tag {
+  margin-left: auto;
+  font-family: var(--font-serif);
+  font-size: 11px;
+  color: var(--text-cream);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 3 Formula Cards */
+.formula-selector-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.group-title {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--accent-gold);
+}
+
+.formula-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.formula-recipe-btn {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 2px 10px;
+  padding: 8px 11px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-cream);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.formula-recipe-btn:hover {
+  background: rgba(212, 163, 89, 0.12);
+  border-color: rgba(212, 163, 89, 0.45);
+}
+
+.formula-recipe-btn.active {
+  background: linear-gradient(
+    135deg,
+    rgba(212, 163, 89, 0.22),
+    rgba(118, 37, 31, 0.32)
+  );
+  border-color: var(--accent-gold-bright);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.recipe-ratio {
+  grid-row: 1 / 3;
+  padding: 5px 8px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(212, 163, 89, 0.4);
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-gold-bright);
+  white-space: nowrap;
+}
+
+.recipe-name {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-cream);
+}
+
+.recipe-desc {
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+
+/* Footer Controls in Column 3 */
+.bespoke-footer-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.owner-input {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 163, 89, 0.35);
+  background: var(--bg-panel-inner);
+  color: var(--text-cream);
+  font-family: var(--font-serif);
+  font-size: 13px;
+  outline: none;
+}
+
+.owner-input:focus {
+  border-color: var(--accent-gold-bright);
+}
+
+.craft-submit-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--accent-gold-bright);
+  background: linear-gradient(135deg, #99322a 0%, #76251f 55%, #571915 100%);
+  color: #fff8ee;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(118, 37, 31, 0.55);
+  transition: all 0.25s ease;
+}
+
+.craft-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(212, 163, 89, 0.45);
+  background: linear-gradient(135deg, #b33b32 0%, #872b24 100%);
+}
+
+.craft-submit-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   POP-UP RESULT MODAL (NO PAGE SCROLL)
+   ========================================================================== */
+.result-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(12, 8, 6, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modal-fade-in 0.3s ease-out;
+}
+
+.result-modal-backdrop[hidden] {
+  display: none !important;
+}
+
+@keyframes modal-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.result-modal-dialog {
+  width: min(1060px, 96vw);
+  max-height: 92vh;
+  background: linear-gradient(165deg, #f8f1e5 0%, #ede0cb 100%);
+  color: var(--text-dark);
+  border-radius: 26px;
+  border: 2px solid var(--accent-gold);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.75);
+  padding: 26px 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(36, 25, 18, 0.2);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--text-dark);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: var(--accent-wine);
+  color: #fff;
+}
+
+.modal-top-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(36, 25, 18, 0.14);
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+  padding-right: 44px;
+}
+
+.modal-serial {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent-wine);
+}
+
+.modal-owner {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 13.5px;
+  color: #5c493b;
+}
+
+.modal-body-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.modal-kicker {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent-wine);
+}
+
+.modal-scent-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3vw, 34px);
+  color: var(--text-dark);
+  line-height: 1.15;
+  margin: 4px 0 6px;
+}
+
+.modal-scent-sub {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 14.5px;
+  color: #634f40;
+  margin-bottom: 14px;
+}
+
+.modal-persona-card {
+  background: rgba(118, 37, 31, 0.07);
+  border-left: 4px solid var(--accent-wine);
+  border-radius: 0 14px 14px 0;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+}
+
+.persona-badge-line span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent-wine);
+}
+
+.modal-persona-card h3 {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  color: var(--text-dark);
+  margin: 3px 0 6px;
+}
+
+.modal-persona-card p {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #36271e;
+}
+
+.modal-psych-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.modal-psych-item {
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(36, 25, 18, 0.1);
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.psych-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: var(--accent-wine);
+}
+
+.psych-note-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: rgba(212, 163, 89, 0.25);
+  color: #4f3514;
+}
+
+.modal-psych-item p {
+  font-size: 13px;
+  line-height: 1.48;
+  color: #3b2c22;
+}
+
+/* Modal Right Side */
+.modal-side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal-radar-box {
+  background: #1f1611;
+  color: var(--text-cream);
+  border-radius: 18px;
+  padding: 14px;
+  text-align: center;
+}
+
+.modal-radar-box h4 {
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  color: var(--accent-gold-bright);
+  margin-bottom: 4px;
+}
+
+.radar-svg {
+  width: 100%;
+  max-width: 230px;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.modal-aura-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.aura-tag {
+  font-size: 10.5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(212, 163, 89, 0.18);
+  border: 1px solid rgba(212, 163, 89, 0.35);
+  color: var(--text-cream);
+}
+
+.modal-product-match {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(118, 37, 31, 0.2);
+  border-radius: 16px;
+  padding: 12px 14px;
+}
+
+.match-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.match-img {
+  width: 58px;
+  height: 74px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.match-eyebrow {
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent-wine);
+  display: block;
+}
+
+.match-meta h4 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: var(--text-dark);
+  margin: 2px 0;
+}
+
+.match-meta strong {
+  font-size: 11.5px;
+  color: #5c493b;
+}
+
+.match-text {
+  font-size: 12px;
+  line-height: 1.45;
+  color: #3f3026;
+}
+
+.modal-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(36, 25, 18, 0.14);
+  flex-wrap: wrap;
+}
+
+.modal-btn-primary {
+  padding: 11px 22px;
+  border-radius: 999px;
+  background: var(--accent-wine);
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.modal-btn-primary:hover {
+  background: #571915;
+}
+
+.modal-btn-secondary {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: rgba(36, 25, 18, 0.06);
+  border: 1px solid rgba(36, 25, 18, 0.25);
+  color: var(--text-dark);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.modal-btn-secondary:hover {
+  background: rgba(36, 25, 18, 0.14);
+}
+
+/* Responsive Fallback for small tablets / mobile phones */
+@media (max-width: 1024px) {
+  html,
+  body,
+  .game-viewport {
+    height: auto;
+    overflow-y: auto;
+  }
+  .game-hud {
+    height: auto;
+    padding: 10px 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hud-quests {
+    display: none;
+  }
+  .game-arena {
+    grid-template-columns: 1fr;
+    overflow: visible;
+  }
+  .modal-body-grid {
+    grid-template-columns: 1fr;
+  }
+}
