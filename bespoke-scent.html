@@ -8,10 +8,7 @@
       name="description"
       content="Mini game pha chế mùi hương Miyako Home: Chọn nốt hương từ Vòng Tròn Hương, kéo thả lọ hương mẫu vào bình pha chế theo công thức và giải mã tính cách của bạn."
     />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%237a201d'/%3E%3Ctext x='7' y='29' font-size='28' fill='%23f5ead6' font-family='serif'%3EM%3C/text%3E%3C/svg%3E"
-    />
+    <link rel="icon" type="image/png" href="assets/logo-miyako.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -63,6 +60,34 @@
 
         <div class="hud-actions">
           <button
+            id="sound-toggle-btn"
+            class="hud-btn-ghost hud-btn-icon"
+            type="button"
+            aria-pressed="true"
+            aria-label="Bật / Tắt hiệu ứng âm thanh"
+            title="Bật / Tắt hiệu ứng âm thanh"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"
+              />
+            </svg>
+          </button>
+          <button
+            id="music-toggle-btn"
+            class="hud-btn-ghost hud-btn-icon"
+            type="button"
+            aria-pressed="true"
+            aria-label="Bật / Tắt nhạc nền"
+            title="Bật / Tắt nhạc nền"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"
+              />
+            </svg>
+          </button>
+          <button
             id="random-spin-btn"
             class="hud-btn-gold"
             type="button"
@@ -101,7 +126,15 @@
           </div>
 
           <!-- Interactive SVG Fragrance Wheel -->
-          <div class="wheel-box">
+          <div class="wheel-box" id="wheel-box">
+            <div
+              id="wheel-hover-card"
+              class="wheel-hover-card"
+              aria-hidden="true"
+            >
+              <div id="wheel-hover-title" class="wheel-hover-title"></div>
+              <div id="wheel-hover-desc" class="wheel-hover-desc"></div>
+            </div>
             <svg
               id="fragrance-wheel-svg"
               class="fragrance-wheel-svg"
@@ -259,6 +292,14 @@
             class="alchemy-dropzone"
             aria-label="Vùng thả lọ hương mẫu để pha chế"
           >
+            <!-- Watermark Miyako Logo in Background -->
+            <div class="dropzone-bg-watermark" aria-hidden="true">
+              <img
+                src="assets/logo-miyako.png"
+                alt=""
+                class="dropzone-watermark-img"
+              />
+            </div>
             <div class="dropzone-ring" aria-hidden="true"></div>
             <div class="dropzone-hint-pill" id="dropzone-hint">
               ⬇ Kéo thả lọ hương mẫu vào đây để rót
@@ -283,6 +324,98 @@
               class="aroma-particles"
               aria-hidden="true"
             ></div>
+
+            <!-- Magic Alchemy Circle & Shockwave Aura (Active during shaking) -->
+            <div class="alchemy-magic-stage" aria-hidden="true">
+              <svg
+                class="magic-rune-ring"
+                viewBox="0 0 240 240"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="120"
+                  cy="120"
+                  r="108"
+                  stroke="rgba(243, 200, 120, 0.55)"
+                  stroke-width="1.2"
+                  stroke-dasharray="6 4"
+                />
+                <circle
+                  cx="120"
+                  cy="120"
+                  r="92"
+                  stroke="rgba(212, 163, 89, 0.45)"
+                  stroke-width="1"
+                />
+                <polygon
+                  points="120,24 203,168 37,168"
+                  stroke="rgba(243, 200, 120, 0.4)"
+                  stroke-width="1"
+                  fill="none"
+                />
+                <polygon
+                  points="120,216 203,72 37,72"
+                  stroke="rgba(243, 200, 120, 0.4)"
+                  stroke-width="1"
+                  fill="none"
+                />
+                <circle cx="120" cy="24" r="4" fill="#f3c878" />
+                <circle cx="203" cy="168" r="4" fill="#f3c878" />
+                <circle cx="37" cy="168" r="4" fill="#f3c878" />
+                <circle cx="120" cy="216" r="4" fill="#f3c878" />
+                <circle cx="203" cy="72" r="4" fill="#f3c878" />
+                <circle cx="37" cy="72" r="4" fill="#f3c878" />
+              </svg>
+              <div class="magic-shockwave"></div>
+              <div class="magic-core-glow"></div>
+            </div>
+
+            <!-- Magic Alchemy Circle & Shockwave Aura (Active during shaking) -->
+            <div class="alchemy-magic-stage" aria-hidden="true">
+              <svg
+                class="magic-rune-ring"
+                viewBox="0 0 240 240"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="120"
+                  cy="120"
+                  r="108"
+                  stroke="rgba(243, 200, 120, 0.55)"
+                  stroke-width="1.2"
+                  stroke-dasharray="6 4"
+                />
+                <circle
+                  cx="120"
+                  cy="120"
+                  r="92"
+                  stroke="rgba(212, 163, 89, 0.45)"
+                  stroke-width="1"
+                />
+                <polygon
+                  points="120,24 203,168 37,168"
+                  stroke="rgba(243, 200, 120, 0.4)"
+                  stroke-width="1"
+                  fill="none"
+                />
+                <polygon
+                  points="120,216 203,72 37,72"
+                  stroke="rgba(243, 200, 120, 0.4)"
+                  stroke-width="1"
+                  fill="none"
+                />
+                <circle cx="120" cy="24" r="4" fill="#f3c878" />
+                <circle cx="203" cy="168" r="4" fill="#f3c878" />
+                <circle cx="37" cy="168" r="4" fill="#f3c878" />
+                <circle cx="120" cy="216" r="4" fill="#f3c878" />
+                <circle cx="203" cy="72" r="4" fill="#f3c878" />
+                <circle cx="37" cy="72" r="4" fill="#f3c878" />
+              </svg>
+              <div class="magic-shockwave"></div>
+              <div class="magic-core-glow"></div>
+            </div>
 
             <!-- Central Mixing Flask SVG -->
             <svg
@@ -454,140 +587,296 @@
               <svg
                 id="final-bottle-svg"
                 class="final-bottle-svg"
-                viewBox="0 0 160 210"
+                viewBox="20 4 140 212"
                 aria-label="Bình thành phẩm Miyako Home"
               >
-                <!-- Diffuser Reeds -->
-                <line
-                  x1="70"
-                  y1="54"
-                  x2="48"
-                  y2="6"
-                  stroke="#d4a359"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-                <line
-                  x1="80"
-                  y1="54"
-                  x2="80"
-                  y2="2"
-                  stroke="#e5c17c"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-                <line
-                  x1="90"
-                  y1="54"
-                  x2="112"
-                  y2="8"
-                  stroke="#d4a359"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-
-                <!-- Gold Collar -->
-                <rect
-                  x="62"
-                  y="44"
-                  width="36"
-                  height="16"
-                  rx="3"
-                  fill="#c9934b"
-                  stroke="#fff8ee"
-                  stroke-width="1"
-                />
-
                 <defs>
+                  <!-- Square sloped-shoulder bottle clip path -->
                   <clipPath id="final-bottle-clip">
-                    <rect x="28" y="64" width="104" height="132" rx="18" />
+                    <path
+                      d="M 69 114 L 40 119 Q 34 120 34 126 L 34 205 Q 34 212 41 212 L 139 212 Q 146 212 146 205 L 146 126 Q 146 120 140 119 L 111 114 Z"
+                    />
                   </clipPath>
+
+                  <!-- Metallic Gold Collar Gradient -->
+                  <linearGradient
+                    id="collar-gold-grad"
+                    x1="0"
+                    y1="0"
+                    x2="1"
+                    y2="0"
+                  >
+                    <stop offset="0%" stop-color="#8c5e20" />
+                    <stop offset="22%" stop-color="#e5bc6f" />
+                    <stop offset="45%" stop-color="#fff4ce" />
+                    <stop offset="68%" stop-color="#c9934b" />
+                    <stop offset="85%" stop-color="#7a4e18" />
+                    <stop offset="100%" stop-color="#d8ab5e" />
+                  </linearGradient>
+
+                  <!-- Bottle 3D Glass Highlight Gradient -->
+                  <linearGradient
+                    id="bottle-glass-sheen"
+                    x1="0"
+                    y1="0"
+                    x2="1"
+                    y2="0"
+                  >
+                    <stop offset="0%" stop-color="rgba(255,255,255,0.22)" />
+                    <stop offset="12%" stop-color="rgba(255,255,255,0.03)" />
+                    <stop offset="88%" stop-color="rgba(0,0,0,0.22)" />
+                    <stop offset="100%" stop-color="rgba(255,255,255,0.16)" />
+                  </linearGradient>
+
+                  <!-- Bottom Readability Vignette for Silkscreen Text -->
+                  <linearGradient
+                    id="bottle-text-scrim"
+                    x1="0"
+                    y1="0"
+                    x2="0"
+                    y2="1"
+                  >
+                    <stop offset="0%" stop-color="rgba(16,11,8,0)" />
+                    <stop offset="45%" stop-color="rgba(16,11,8,0.48)" />
+                    <stop offset="100%" stop-color="rgba(12,8,6,0.78)" />
+                  </linearGradient>
                 </defs>
 
-                <!-- Dynamic Ratio Liquid Layers -->
-                <g clip-path="url(#final-bottle-clip)">
-                  <rect
-                    x="28"
-                    y="64"
-                    width="104"
-                    height="132"
-                    fill="rgba(255,248,238,0.06)"
+                <!-- 6 Fanning Diffuser Reed Sticks (Matching Reference Photo) -->
+                <g class="diffuser-reeds" stroke-linecap="butt">
+                  <line
+                    x1="82"
+                    y1="92"
+                    x2="25"
+                    y2="16"
+                    stroke="#3a2c24"
+                    stroke-width="4"
                   />
-                  <rect
-                    id="final-liquid-top"
-                    x="28"
-                    y="76"
-                    width="104"
-                    height="48"
-                    fill="#3a2b22"
-                    fill-opacity="0.2"
+                  <line
+                    x1="82"
+                    y1="92"
+                    x2="25"
+                    y2="16"
+                    stroke="rgba(235, 200, 140, 0.48)"
+                    stroke-width="1.3"
                   />
-                  <rect
-                    id="final-liquid-heart"
-                    x="28"
-                    y="124"
-                    width="104"
-                    height="36"
-                    fill="#3a2b22"
-                    fill-opacity="0.25"
+
+                  <line
+                    x1="85"
+                    y1="92"
+                    x2="45"
+                    y2="13"
+                    stroke="#2e221b"
+                    stroke-width="4"
                   />
-                  <rect
-                    id="final-liquid-base"
-                    x="28"
-                    y="160"
-                    width="104"
-                    height="36"
-                    fill="#3a2b22"
-                    fill-opacity="0.3"
+                  <line
+                    x1="85"
+                    y1="92"
+                    x2="45"
+                    y2="13"
+                    stroke="rgba(235, 200, 140, 0.42)"
+                    stroke-width="1.2"
+                  />
+
+                  <line
+                    x1="88"
+                    y1="92"
+                    x2="61"
+                    y2="10"
+                    stroke="#382920"
+                    stroke-width="4"
+                  />
+                  <line
+                    x1="88"
+                    y1="92"
+                    x2="61"
+                    y2="10"
+                    stroke="rgba(235, 200, 140, 0.5)"
+                    stroke-width="1.3"
+                  />
+
+                  <line
+                    x1="91"
+                    y1="92"
+                    x2="95"
+                    y2="12"
+                    stroke="#2c2019"
+                    stroke-width="4"
+                  />
+                  <line
+                    x1="91"
+                    y1="92"
+                    x2="95"
+                    y2="12"
+                    stroke="rgba(235, 200, 140, 0.45)"
+                    stroke-width="1.2"
+                  />
+
+                  <line
+                    x1="94"
+                    y1="92"
+                    x2="128"
+                    y2="8"
+                    stroke="#382920"
+                    stroke-width="4"
+                  />
+                  <line
+                    x1="94"
+                    y1="92"
+                    x2="128"
+                    y2="8"
+                    stroke="rgba(235, 200, 140, 0.5)"
+                    stroke-width="1.3"
+                  />
+
+                  <line
+                    x1="97"
+                    y1="92"
+                    x2="152"
+                    y2="16"
+                    stroke="#32251d"
+                    stroke-width="4"
+                  />
+                  <line
+                    x1="97"
+                    y1="92"
+                    x2="152"
+                    y2="16"
+                    stroke="rgba(235, 200, 140, 0.45)"
+                    stroke-width="1.2"
                   />
                 </g>
 
-                <!-- Bottle Glass Contour -->
+                <!-- Tall Cylindrical Metallic Gold Collar -->
                 <rect
-                  x="28"
-                  y="64"
-                  width="104"
-                  height="132"
-                  rx="18"
-                  fill="none"
-                  stroke="rgba(255,248,238,0.6)"
-                  stroke-width="2"
+                  x="69"
+                  y="90"
+                  width="42"
+                  height="24"
+                  rx="2"
+                  fill="url(#collar-gold-grad)"
+                  stroke="#f7dfa0"
+                  stroke-width="0.9"
+                />
+                <!-- Vertical Specular Reflection on Gold Collar -->
+                <rect
+                  x="85"
+                  y="91"
+                  width="5"
+                  height="22"
+                  fill="rgba(255,255,255,0.45)"
+                />
+                <line
+                  x1="69"
+                  y1="114"
+                  x2="111"
+                  y2="114"
+                  stroke="#5e3b10"
+                  stroke-width="1.2"
                 />
 
-                <!-- Luxury Engraved Label -->
-                <rect
-                  x="40"
-                  y="98"
-                  width="80"
-                  height="62"
-                  rx="5"
-                  fill="#f7efe2"
-                  stroke="#c9934b"
-                  stroke-width="1.3"
+                <!-- Dynamic Ratio Liquid Layers Inside Square Bottle -->
+                <g clip-path="url(#final-bottle-clip)">
+                  <!-- Matte Dark Glass Base Fill -->
+                  <rect x="34" y="114" width="112" height="98" fill="#1a1412" />
+                  <!-- Top Note Layer -->
+                  <rect
+                    id="final-liquid-top"
+                    x="34"
+                    y="120"
+                    width="112"
+                    height="35"
+                    fill="#3a2b22"
+                    fill-opacity="0.25"
+                  />
+                  <!-- Heart Note Layer -->
+                  <rect
+                    id="final-liquid-heart"
+                    x="34"
+                    y="155"
+                    width="112"
+                    height="26"
+                    fill="#3a2b22"
+                    fill-opacity="0.3"
+                  />
+                  <!-- Base Note Layer -->
+                  <rect
+                    id="final-liquid-base"
+                    x="34"
+                    y="181"
+                    width="112"
+                    height="27"
+                    fill="#3a2b22"
+                    fill-opacity="0.35"
+                  />
+
+                  <!-- 3D Glass Edge Shading & Scrim for Printed Text -->
+                  <rect
+                    x="34"
+                    y="114"
+                    width="112"
+                    height="98"
+                    fill="url(#bottle-glass-sheen)"
+                  />
+                  <rect
+                    x="34"
+                    y="152"
+                    width="112"
+                    height="60"
+                    fill="url(#bottle-text-scrim)"
+                  />
+                  <!-- Heavy Glass Bottom Base Highlight -->
+                  <line
+                    x1="36"
+                    y1="208"
+                    x2="144"
+                    y2="208"
+                    stroke="rgba(255,248,238,0.28)"
+                    stroke-width="1.5"
+                  />
+                </g>
+
+                <!-- Square Sloped-Shoulder Bottle Outer Glass Contour -->
+                <path
+                  d="M 69 114 L 40 119 Q 34 120 34 126 L 34 205 Q 34 212 41 212 L 139 212 Q 146 212 146 205 L 146 126 Q 146 120 140 119 L 111 114 Z"
+                  fill="none"
+                  stroke="rgba(255,248,238,0.68)"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
                 />
-                <text x="80" y="113" class="final-label-small">
-                  MIYAKO HOME
-                </text>
+                <!-- Subtle Shoulder Rim Highlight -->
+                <path
+                  d="M 39 121 L 141 121"
+                  stroke="rgba(255,248,238,0.22)"
+                  stroke-width="1"
+                />
+                <!-- Left Vertical Specular Highlight -->
+                <line
+                  x1="40"
+                  y1="127"
+                  x2="40"
+                  y2="201"
+                  stroke="rgba(255,255,255,0.26)"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+
+                <!-- Direct Silk-Screen Typography on Lower Bottle Face -->
                 <text
                   id="final-bottle-owner"
-                  x="80"
-                  y="129"
+                  x="136"
+                  y="175"
                   class="final-label-main"
                 >
-                  BESPOKE SCENT
+                  MIYAKO HOME
                 </text>
-                <line
-                  x1="52"
-                  y1="136"
-                  x2="108"
-                  y2="136"
-                  stroke="#c9934b"
-                  stroke-width="0.8"
-                />
+                <text x="136" y="185" class="final-label-small">
+                  Luxury Perfume for home
+                </text>
                 <text
                   id="final-bottle-ratio"
-                  x="80"
-                  y="149"
+                  x="136"
+                  y="196"
                   class="final-label-ratio"
                 >
                   CÔNG THỨC 40 · 30 · 30

@@ -70,6 +70,63 @@
             mystery: 80,
           },
         },
+        {
+          id: "ylang-ylang",
+          name: "Dạ Lan Tây",
+          icon: "🌸",
+          prefix: "Dạ Lan",
+          suffix: "Gió Đêm Phố Cổ",
+          outer:
+            "Bạn cuốn hút bởi sự trang nhã, ngọt ngào và ánh mắt đong đầy cảm xúc.",
+          inner:
+            "Tâm hồn bạn tha thiết, trân trọng những khoảnh khắc lãng mạn và sự gắn kết chân thành.",
+          core: "Nữ tính, đằm thắm nhưng đầy nội lực, bạn luôn biết cách sưởi ấm những người mình yêu thương.",
+          scores: {
+            elegance: 94,
+            depth: 84,
+            warmth: 91,
+            freedom: 72,
+            mystery: 85,
+          },
+        },
+        {
+          id: "sapa-rose",
+          name: "Hồng Sa Pa",
+          icon: "🌹",
+          prefix: "Sương Hồng",
+          suffix: "Thung Lũng Mây Ngàn",
+          outer:
+            "Bạn mang vẻ đẹp thanh lịch, kiêu kỳ tự nhiên nhưng không hề xa cách.",
+          inner:
+            "Bạn trân trọng sự thủy chung, tinh tế và luôn dành trọn tâm huyết cho những gì mình tin tưởng.",
+          core: "Vẻ đẹp thuần khiết và kiên cường như đóa hồng nở giữa mây ngàn Sa Pa.",
+          scores: {
+            elegance: 96,
+            depth: 86,
+            warmth: 86,
+            freedom: 74,
+            mystery: 82,
+          },
+        },
+        {
+          id: "wild-orchid",
+          name: "Phong Lan Rừng",
+          icon: "🪻",
+          prefix: "U Lan",
+          suffix: "Vách Đá Rừng Sâu",
+          outer:
+            "Bạn thanh tú, khác biệt và toát lên khí chất tự tại, không vướng bận trần tục.",
+          inner:
+            "Bạn trân trọng không gian riêng, yêu thích sự tĩnh lặng và chiều sâu tư tưởng.",
+          core: "Kiêu hãnh và bí ẩn như đóa phong lan giấu mình trên vách đá ngút ngàn.",
+          scores: {
+            elegance: 93,
+            depth: 91,
+            warmth: 74,
+            freedom: 88,
+            mystery: 93,
+          },
+        },
       ],
     },
     {
@@ -136,6 +193,63 @@
             mystery: 82,
           },
         },
+        {
+          id: "calocedrus",
+          name: "Bách Xanh",
+          icon: "🪵",
+          prefix: "Bách Xanh",
+          suffix: "Đá Núi Ngàn Năm",
+          outer:
+            "Bạn toát lên sự rắn rỏi, mực thước và luôn là chỗ dựa vững chãi.",
+          inner:
+            "Bạn sống thực tế, trượng nghĩa và coi trọng lời hứa hơn mọi điều khác.",
+          core: "Trầm mặc, kiên định vượt qua mọi thử thách như cây bách trên đỉnh núi đá.",
+          scores: {
+            elegance: 88,
+            depth: 95,
+            warmth: 86,
+            freedom: 76,
+            mystery: 90,
+          },
+        },
+        {
+          id: "cupressus",
+          name: "Hoàng Đàn",
+          icon: "🪵",
+          prefix: "Hoàng Mộc",
+          suffix: "Kỳ Duyên Cố Đô",
+          outer:
+            "Bạn sở hữu thần thái sang trọng, quý phái và uy quyền một cách tự nhiên.",
+          inner:
+            "Bạn có cái nhìn sâu sắc, tinh tế về con người và cuộc đời, không dễ bị lay động.",
+          core: "Vương giả, thanh cao và lưu giữ giá trị trường tồn qua thời gian.",
+          scores: {
+            elegance: 95,
+            depth: 96,
+            warmth: 82,
+            freedom: 75,
+            mystery: 94,
+          },
+        },
+        {
+          id: "red-pine",
+          name: "Thông Đỏ",
+          icon: "🌲",
+          prefix: "Thanh Tùng",
+          suffix: "Đỉnh Núi Sương Mù",
+          outer:
+            "Bạn phóng khoáng, dứt khoát và mang hơi thở tự nhiên trong lành.",
+          inner:
+            "Bạn khao khát chinh phục những chân trời mới và sống trọn vẹn từng khoảnh khắc.",
+          core: "Nội lực bền bỉ, luôn vươn mình đón ánh ban mai rực rỡ.",
+          scores: {
+            elegance: 87,
+            depth: 90,
+            warmth: 79,
+            freedom: 95,
+            mystery: 84,
+          },
+        },
       ],
     },
     {
@@ -199,6 +313,63 @@
             warmth: 90,
             freedom: 82,
             mystery: 76,
+          },
+        },
+        {
+          id: "lemongrass",
+          name: "Sả Chanh",
+          icon: "🌿",
+          prefix: "Thảo Hương",
+          suffix: "Thung Lũng Nắng Mai",
+          outer:
+            "Bạn sảng khoái, tràn đầy năng lượng tích cực và luôn mang lại sự tươi vui.",
+          inner:
+            "Bạn yêu sự trong sáng, ghét sự giả tạo và luôn sống thật với cảm xúc của mình.",
+          core: "Như cơn gió sớm thanh lọc không gian, bạn đem lại sinh khí tươi mới ở bất cứ nơi đâu.",
+          scores: {
+            elegance: 86,
+            depth: 76,
+            warmth: 82,
+            freedom: 96,
+            mystery: 68,
+          },
+        },
+        {
+          id: "holy-basil",
+          name: "Hương Nhu",
+          icon: "🌿",
+          prefix: "Tử Nhu",
+          suffix: "Khu Vườn An Yên",
+          outer:
+            "Bạn gần gũi, ấm cúng và mang nét duyên mộc mạc làm người khác thấy an lòng.",
+          inner:
+            "Bạn có trực giác nhạy bén, sâu sắc và luôn biết cách chăm sóc cảm xúc cho bạn bè.",
+          core: "Hiền hòa, chữa lành và tràn ngập lòng trắc ẩn.",
+          scores: {
+            elegance: 89,
+            depth: 85,
+            warmth: 93,
+            freedom: 80,
+            mystery: 78,
+          },
+        },
+        {
+          id: "mountain-mint",
+          name: "Bạc Hà Núi",
+          icon: "🌱",
+          prefix: "Băng Bạc",
+          suffix: "Gió Lạnh Đầu Non",
+          outer:
+            "Bạn sắc bén, nhanh nhạy, hiện đại và luôn có những góc nhìn đột phá.",
+          inner:
+            "Bạn yêu tự do tuyệt đối, thích trải nghiệm những điều mới lạ và không sợ thử thách.",
+          core: "Tỉnh táo, độc lập và luôn giữ cái đầu lạnh trước mọi biến động.",
+          scores: {
+            elegance: 88,
+            depth: 80,
+            warmth: 68,
+            freedom: 98,
+            mystery: 75,
           },
         },
       ],
@@ -267,6 +438,62 @@
             mystery: 78,
           },
         },
+        {
+          id: "mandarin",
+          name: "Quýt Hồng",
+          icon: "🍊",
+          prefix: "Kim Quýt",
+          suffix: "Mùa Màng Rực Rỡ",
+          outer:
+            "Bạn tươi vui, ngọt ngào và luôn tạo không khí ấm cúng, phấn khởi.",
+          inner:
+            "Bạn biết trân trọng những niềm vui bình dị mỗi ngày và luôn giữ sự hồn nhiên.",
+          core: "Rạng rỡ như ánh nắng vàng, mang lại niềm vui thuần khiết cho cuộc sống.",
+          scores: {
+            elegance: 85,
+            depth: 74,
+            warmth: 94,
+            freedom: 92,
+            mystery: 64,
+          },
+        },
+        {
+          id: "wild-lime",
+          name: "Chanh Rừng",
+          icon: "🍋",
+          prefix: "Băng Chanh",
+          suffix: "Thác Nước Trong Veo",
+          outer: "Bạn bộc trực, cá tính mạnh mẽ và vô cùng cuốn hút.",
+          inner:
+            "Bạn yêu ghét rõ ràng, không bao giờ vòng vo và luôn theo đuổi sự chân thật.",
+          core: "Năng động, sảng khoái và luôn tiến về phía trước.",
+          scores: {
+            elegance: 83,
+            depth: 75,
+            warmth: 72,
+            freedom: 97,
+            mystery: 70,
+          },
+        },
+        {
+          id: "grapefruit-peel",
+          name: "Vỏ Bưởi",
+          icon: "🍊",
+          prefix: "Thanh Bưởi",
+          suffix: "Miệt Vườn Nắng Ấm",
+          outer:
+            "Bạn thanh nhã, duyên dáng và có nụ cười ấm áp khiến người ta xao xuyến.",
+          inner:
+            "Bạn chu đáo, tinh tế và luôn để ý đến cảm nhận của những người xung quanh.",
+          core: "Dịu dàng, thơm thảo và đong đầy tình cảm yêu thương.",
+          scores: {
+            elegance: 92,
+            depth: 82,
+            warmth: 91,
+            freedom: 84,
+            mystery: 74,
+          },
+        },
       ],
     },
     {
@@ -333,6 +560,60 @@
             mystery: 75,
           },
         },
+        {
+          id: "star-anise",
+          name: "Đại Hồi",
+          icon: "⭐",
+          prefix: "Đại Hồi",
+          suffix: "Hương Đất Trời Tây Bắc",
+          outer: "Bạn độc đáo, lôi cuốn và toát lên khí chất bí ẩn khó đoán.",
+          inner:
+            "Bạn có tư duy triết học sâu sắc, thích khám phá những khía cạnh ẩn giấu của cuộc sống.",
+          core: "Nồng nàn, sâu lắng và mang phong vị nghệ thuật đặc sắc.",
+          scores: {
+            elegance: 91,
+            depth: 93,
+            warmth: 90,
+            freedom: 82,
+            mystery: 95,
+          },
+        },
+        {
+          id: "cardamom",
+          name: "Thảo Quả",
+          icon: "🌰",
+          prefix: "Thảo Quả",
+          suffix: "Ngọn Lửa Rừng Khuya",
+          outer: "Bạn phóng khoáng, dũng cảm và có nét phong trần lãng tử.",
+          inner:
+            "Bạn khao khát tự do và không ngại dấn thân vào những hành trình mạo hiểm.",
+          core: "Ấm nồng, mạnh mẽ và dám sống trọn vẹn cho đam mê.",
+          scores: {
+            elegance: 86,
+            depth: 92,
+            warmth: 94,
+            freedom: 91,
+            mystery: 89,
+          },
+        },
+        {
+          id: "clove",
+          name: "Đinh Hương",
+          icon: "🌿",
+          prefix: "Đinh Hương",
+          suffix: "Lâu Đài Cổ Kính",
+          outer: "Bạn đĩnh đạc, bí ẩn và có sức hút mê hoặc đầy quyến rũ.",
+          inner:
+            "Bạn sống giàu cảm xúc nhưng rất kín đáo, chỉ mở lòng với người thật sự hiểu mình.",
+          core: "Sâu sắc, nồng nàn và để lại dấu ấn khó phai.",
+          scores: {
+            elegance: 93,
+            depth: 95,
+            warmth: 89,
+            freedom: 78,
+            mystery: 96,
+          },
+        },
       ],
     },
     {
@@ -397,6 +678,61 @@
             warmth: 97,
             freedom: 79,
             mystery: 83,
+          },
+        },
+        {
+          id: "benzoin",
+          name: "Nhựa Bồ Đề",
+          icon: "🪵",
+          prefix: "An Tức",
+          suffix: "Khói Thơm Trầm Mặc",
+          outer:
+            "Bạn thanh tịnh, nho nhã và mang lại cảm giác bình an lạ thường.",
+          inner:
+            "Bạn yêu chiều sâu tâm linh, thích những gì mộc mạc nhưng ẩn chứa tinh hoa.",
+          core: "Dịu ngọt như sáp ong, mang đến sự an ủi và chữa lành vô điều kiện.",
+          scores: {
+            elegance: 95,
+            depth: 94,
+            warmth: 96,
+            freedom: 75,
+            mystery: 92,
+          },
+        },
+        {
+          id: "frankincense",
+          name: "Nhũ Hương",
+          icon: "✨",
+          prefix: "Thiên Hương",
+          suffix: "Điện Thờ Tôn Quý",
+          outer: "Bạn cao quý, điềm đạm và có tầm nhìn xa trông rộng.",
+          inner:
+            "Bạn sống có lý tưởng cao đẹp, luôn hướng về chân - thiện - mỹ.",
+          core: "Trang nghiêm, thuần khiết và lưu giữ sự tôn quý vĩnh cửu.",
+          scores: {
+            elegance: 98,
+            depth: 97,
+            warmth: 85,
+            freedom: 79,
+            mystery: 96,
+          },
+        },
+        {
+          id: "patchouli",
+          name: "Hoắc Hương",
+          icon: "🌿",
+          prefix: "Hoắc Hương",
+          suffix: "Hương Đất Mẹ Sâu Xa",
+          outer: "Bạn mộc mạc, bí ẩn và có nét phong trần rất riêng biệt.",
+          inner:
+            "Bạn kiên cường, thấu hiểu quy luật tự nhiên và không thích những điều giả tạo.",
+          core: "Bám rễ sâu vào lòng đất mẹ, vững chãi và để lại dư âm quyến rũ.",
+          scores: {
+            elegance: 89,
+            depth: 96,
+            warmth: 88,
+            freedom: 82,
+            mystery: 95,
           },
         },
       ],
@@ -493,6 +829,10 @@
   let draggedLayer = null;
 
   // DOM Elements
+  const wheelBox = document.getElementById("wheel-box");
+  const wheelHoverCard = document.getElementById("wheel-hover-card");
+  const wheelHoverTitle = document.getElementById("wheel-hover-title");
+  const wheelHoverDesc = document.getElementById("wheel-hover-desc");
   const wheelSvg = document.getElementById("fragrance-wheel-svg");
   const familyDot = document.getElementById("family-dot");
   const familyNameEl = document.getElementById("family-name");
@@ -509,6 +849,401 @@
   const craftBtn = document.getElementById("craft-btn");
   const finalBottleRatio = document.getElementById("final-bottle-ratio");
   const resultModal = document.getElementById("result-modal");
+  const soundToggleBtn = document.getElementById("sound-toggle-btn");
+  const musicToggleBtn = document.getElementById("music-toggle-btn");
+
+  // =========================================================================
+  // BACKGROUND MUSIC ENGINE (assets/audios/music-back.MP3)
+  // Low volume (~0.16) to ensure SoundFX remains crisp and clear
+  // =========================================================================
+  const BackgroundMusic = (() => {
+    let audio = null;
+    let isPlaying = false;
+    let initialized = false;
+
+    function init() {
+      if (initialized) return;
+      initialized = true;
+      audio = new Audio("assets/audios/music-back.MP3");
+      audio.loop = true;
+      audio.volume = 0.35; // Âm lượng nhạc nền lớn hơn gấp đôi
+    }
+
+    function play() {
+      init();
+      if (!audio) return;
+      const promise = audio.play();
+      if (promise !== undefined) {
+        promise
+          .then(() => {
+            isPlaying = true;
+            updateBtn();
+          })
+          .catch(() => {
+            // Trình duyệt chặn autoplay khi chưa có tương tác từ người dùng
+            isPlaying = false;
+            updateBtn();
+          });
+      }
+    }
+
+    function pause() {
+      if (!audio) return;
+      audio.pause();
+      isPlaying = false;
+      updateBtn();
+    }
+
+    function toggle() {
+      init();
+      if (isPlaying) {
+        pause();
+      } else {
+        play();
+      }
+      return isPlaying;
+    }
+
+    const svgSoundOn =
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+    const svgSoundOff =
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>';
+    const svgMusicOn =
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>';
+    const svgMusicOff =
+      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.27 3L3 4.27l9 9v.28c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4v-1.73l4.27 4.27L19.73 21 21 19.73 4.27 3zM14 7h4V3h-6v5.18l2 2V7z"/></svg>';
+
+    function updateBtn() {
+      if (!musicToggleBtn) return;
+      musicToggleBtn.setAttribute("aria-pressed", String(isPlaying));
+      musicToggleBtn.innerHTML = isPlaying ? svgMusicOn : svgMusicOff;
+      musicToggleBtn.title = isPlaying ? "Tắt nhạc nền" : "Bật nhạc nền";
+      musicToggleBtn.classList.toggle("active", isPlaying);
+    }
+
+    // Tự động phát nhạc ngay khi nạp trang (và dự phòng khi người dùng di chuột/tương tác nếu trình duyệt cần kích hoạt)
+    function autoStartMusic() {
+      // 1. Thử gọi play() ngay lập tức khi mở trang
+      play();
+
+      // 2. Dự phòng: các trình duyệt hiện đại (Chrome, Edge, Safari) có Autoplay Policy chặn âm thanh
+      // trước cử chỉ đầu tiên. Do đó lắng nghe bất kỳ thao tác nào (mousemove, scroll, click, keydown, touch)
+      // để lập tức bật nhạc lên nếu trước đó bị chặn.
+      function ensurePlayingOnAnyAction() {
+        if (!isPlaying) {
+          play();
+        }
+        if (isPlaying) {
+          [
+            "pointerdown",
+            "mousedown",
+            "mousemove",
+            "click",
+            "keydown",
+            "touchstart",
+            "scroll",
+            "wheel",
+          ].forEach((ev) =>
+            window.removeEventListener(ev, ensurePlayingOnAnyAction),
+          );
+        }
+      }
+
+      [
+        "pointerdown",
+        "mousedown",
+        "mousemove",
+        "click",
+        "keydown",
+        "touchstart",
+        "scroll",
+        "wheel",
+      ].forEach((ev) =>
+        window.addEventListener(ev, ensurePlayingOnAnyAction, {
+          passive: true,
+        }),
+      );
+    }
+
+    autoStartMusic();
+
+    return {
+      play,
+      pause,
+      toggle,
+      get isPlaying() {
+        return isPlaying;
+      },
+    };
+  })();
+
+  if (musicToggleBtn) {
+    musicToggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      BackgroundMusic.toggle();
+    });
+  }
+
+  // =========================================================================
+  // WEB AUDIO API ALCHEMY SOUND FX ENGINE (NO EXTERNAL AUDIO FILES REQUIRED)
+  // =========================================================================
+  const SoundFX = (() => {
+    let ctx = null;
+    let enabled = true;
+
+    function getCtx() {
+      if (!enabled) return null;
+      if (!ctx) {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return null;
+        ctx = new AudioCtx();
+      }
+      if (ctx.state === "suspended") {
+        ctx.resume().catch(() => {});
+      }
+      return ctx;
+    }
+
+    function playTone({
+      freq = 440,
+      endFreq = null,
+      type = "sine",
+      gain = 0.08,
+      attack = 0.008,
+      duration = 0.18,
+      delay = 0,
+    }) {
+      const c = getCtx();
+      if (!c) return;
+      const now = c.currentTime + delay;
+      const osc = c.createOscillator();
+      const g = c.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, now);
+      if (endFreq) {
+        osc.frequency.exponentialRampToValueAtTime(endFreq, now + duration);
+      }
+      g.gain.setValueAtTime(0.0001, now);
+      g.gain.linearRampToValueAtTime(gain, now + attack);
+      g.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+      osc.connect(g);
+      g.connect(c.destination);
+      osc.start(now);
+      osc.stop(now + duration + 0.02);
+    }
+
+    function playNoiseBurst({
+      duration = 0.25,
+      filterFreq = 800,
+      endFilterFreq = null,
+      q = 3,
+      gain = 0.05,
+      delay = 0,
+    }) {
+      const c = getCtx();
+      if (!c) return;
+      const now = c.currentTime + delay;
+      const bufferSize = Math.max(1, Math.floor(c.sampleRate * duration));
+      const buffer = c.createBuffer(1, bufferSize, c.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = Math.random() * 2 - 1;
+      }
+      const noise = c.createBufferSource();
+      noise.buffer = buffer;
+
+      const filter = c.createBiquadFilter();
+      filter.type = "bandpass";
+      filter.Q.setValueAtTime(q, now);
+      filter.frequency.setValueAtTime(filterFreq, now);
+      if (endFilterFreq) {
+        filter.frequency.exponentialRampToValueAtTime(
+          endFilterFreq,
+          now + duration,
+        );
+      }
+
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, now);
+      g.gain.linearRampToValueAtTime(gain, now + duration * 0.2);
+      g.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+      noise.connect(filter);
+      filter.connect(g);
+      g.connect(c.destination);
+      noise.start(now);
+      noise.stop(now + duration + 0.02);
+    }
+
+    return {
+      toggle() {
+        enabled = !enabled;
+        if (enabled) {
+          playTone({ freq: 660, endFreq: 880, gain: 0.24, duration: 0.16 });
+        }
+        return enabled;
+      },
+      playHoverTick() {
+        playTone({
+          freq: 920,
+          endFreq: 1180,
+          type: "sine",
+          gain: 0.09,
+          attack: 0.003,
+          duration: 0.045,
+        });
+      },
+      playWheelSelect() {
+        playTone({ freq: 528, type: "sine", gain: 0.26, duration: 0.28 });
+        playTone({
+          freq: 792,
+          type: "triangle",
+          gain: 0.16,
+          duration: 0.34,
+          delay: 0.035,
+        });
+      },
+      playVialPick(isPick = true) {
+        if (isPick) {
+          // Crisp glass vial clink + harmonic sparkle
+          playTone({
+            freq: 1320,
+            endFreq: 1680,
+            type: "sine",
+            gain: 0.28,
+            attack: 0.004,
+            duration: 0.14,
+          });
+          playTone({
+            freq: 2640,
+            type: "sine",
+            gain: 0.13,
+            attack: 0.003,
+            duration: 0.22,
+            delay: 0.02,
+          });
+        } else {
+          playTone({
+            freq: 580,
+            endFreq: 390,
+            type: "sine",
+            gain: 0.2,
+            duration: 0.14,
+          });
+        }
+      },
+      playLiquidPour() {
+        // Pouring liquid stream + rising bubble pops
+        playNoiseBurst({
+          duration: 0.78,
+          filterFreq: 420,
+          endFilterFreq: 1150,
+          q: 4.5,
+          gain: 0.2,
+        });
+        const bubbleFreqs = [340, 440, 520, 640, 780];
+        bubbleFreqs.forEach((f, idx) => {
+          playTone({
+            freq: f,
+            endFreq: f * 1.65,
+            type: "sine",
+            gain: 0.18,
+            attack: 0.005,
+            duration: 0.075,
+            delay: 0.08 + idx * 0.13,
+          });
+        });
+      },
+      playFormulaSwitch() {
+        playTone({
+          freq: 640,
+          endFreq: 960,
+          type: "triangle",
+          gain: 0.22,
+          attack: 0.004,
+          duration: 0.15,
+        });
+      },
+      playRandomSpin() {
+        const notes = [
+          440, 493.88, 587.33, 659.25, 783.99, 880, 1046.5, 1174.66,
+        ];
+        notes.forEach((f, i) => {
+          playTone({
+            freq: f,
+            type: "sine",
+            gain: 0.16,
+            attack: 0.004,
+            duration: 0.09,
+            delay: i * 0.075,
+          });
+        });
+      },
+      playMagicAlchemyRitual() {
+        // 1. Rhythmic potion shaking sloshes & glass clinks (0.0s -> 2.0s)
+        for (let i = 0; i < 8; i++) {
+          const delay = 0.12 + i * 0.23;
+          playNoiseBurst({
+            duration: 0.16,
+            filterFreq: 520 + (i % 2) * 260,
+            endFilterFreq: 980,
+            q: 3.5,
+            gain: 0.18,
+            delay,
+          });
+          playTone({
+            freq: 1450 + (i % 3) * 220,
+            type: "sine",
+            gain: 0.1,
+            attack: 0.003,
+            duration: 0.06,
+            delay: delay + 0.03,
+          });
+        }
+
+        // 2. Rising mystical celesta arpeggio during swirling (0.3s -> 2.05s)
+        const arp = [
+          523.25, 659.25, 783.99, 987.77, 1046.5, 1318.5, 1567.98, 1975.53,
+        ];
+        arp.forEach((f, idx) => {
+          playTone({
+            freq: f,
+            type: "sine",
+            gain: 0.15,
+            attack: 0.008,
+            duration: 0.32,
+            delay: 0.35 + idx * 0.21,
+          });
+        });
+
+        // 3. Climactic golden transmutation shockwave chord at 2.1s
+        const chord = [261.63, 523.25, 659.25, 783.99, 1046.5, 1318.5, 1567.98];
+        chord.forEach((f, idx) => {
+          playTone({
+            freq: f,
+            type: idx < 2 ? "triangle" : "sine",
+            gain: idx === 0 ? 0.3 : 0.19,
+            attack: 0.015,
+            duration: 0.95,
+            delay: 2.08 + idx * 0.02,
+          });
+        });
+      },
+    };
+  })();
+
+  if (soundToggleBtn) {
+    soundToggleBtn.addEventListener("click", () => {
+      const isOn = SoundFX.toggle();
+      soundToggleBtn.setAttribute("aria-pressed", String(isOn));
+      soundToggleBtn.innerHTML = isOn
+        ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>'
+        : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>';
+      soundToggleBtn.title = isOn
+        ? "Tắt hiệu ứng âm thanh"
+        : "Bật hiệu ứng âm thanh";
+    });
+  }
 
   // SVG Math Helpers
   function polarToCartesian(cx, cy, r, angleInDegrees) {
@@ -569,6 +1304,11 @@
     const sliceAngle = 360 / FRAGRANCE_FAMILIES.length;
 
     let svgContent = `
+      <defs>
+        <clipPath id="wheel-center-clip">
+          <circle cx="${cx}" cy="${cy}" r="${rInner - 5}" />
+        </clipPath>
+      </defs>
       <circle cx="${cx}" cy="${cy}" r="202" fill="none" stroke="rgba(212,163,89,0.28)" stroke-width="1" stroke-dasharray="3 5" />
     `;
 
@@ -588,35 +1328,96 @@
       // Calculate center of the sector ring
       const rCenter = (rInner + rOuter) / 2; // 131
       const centerPos = polarToCartesian(cx, cy, rCenter, midAngle);
-
-      // Always offset label above and emoji icons below relative to screen Y
-      const labelPos = { x: centerPos.x, y: centerPos.y - 12.5 };
-      const subPos = { x: centerPos.x, y: centerPos.y + 11.5 };
       const isActive = fam.id === activeFamilyId;
+
+      // Split name into 2 lines if it contains '&' or is long to avoid text collision
+      let labelSvg = "";
+      if (fam.name.includes("&")) {
+        const parts = fam.name.split("&").map((s) => s.trim());
+        labelSvg = `
+          <text x="${centerPos.x}" y="${centerPos.y - 8}" class="wheel-label">${parts[0]}</text>
+          <text x="${centerPos.x}" y="${centerPos.y + 9}" class="wheel-label">&amp; ${parts[1]}</text>
+        `;
+      } else {
+        labelSvg = `<text x="${centerPos.x}" y="${centerPos.y}" class="wheel-label">${fam.name}</text>`;
+      }
 
       svgContent += `
         <g class="wheel-slice ${isActive ? "active" : ""}" data-family="${fam.id}" role="button" tabindex="0" aria-label="Nhóm ${fam.name}">
+          <title>${fam.name} (${fam.sub}): ${fam.desc}</title>
           <path d="${pathData}" fill="${fam.color}" fill-opacity="${isActive ? "0.95" : "0.7"}" stroke="rgba(255,248,238,0.35)" stroke-width="${isActive ? "2" : "1"}" />
-          <text x="${labelPos.x}" y="${labelPos.y}" class="wheel-label">${fam.name}</text>
-          <text x="${subPos.x}" y="${subPos.y}" class="wheel-sublabel">${fam.notes.map((n) => n.icon).join(" ")}</text>
+          ${labelSvg}
         </g>
       `;
     });
 
+    // Center circle with logo-miyako.png
     svgContent += `
       <circle cx="${cx}" cy="${cy}" r="${rInner - 4}" class="wheel-center-circle" />
-      <text x="${cx}" y="${cy - 7}" class="wheel-center-title">VÒNG TRÒN</text>
-      <text x="${cx}" y="${cy + 10}" class="wheel-center-sub">HƯƠNG VIỆT</text>
+      <image
+        href="assets/logo-miyako.png"
+        x="${cx - 48}"
+        y="${cy - 48}"
+        width="96"
+        height="96"
+        clip-path="url(#wheel-center-clip)"
+        preserveAspectRatio="xMidYMid meet"
+        class="wheel-center-logo"
+      />
     `;
 
     wheelSvg.innerHTML = svgContent;
 
+    function updateHoverCardPos(e) {
+      if (!wheelBox || !wheelHoverCard) return;
+      const rect = wheelBox.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const tipW = wheelHoverCard.offsetWidth || 180;
+      const tipH = wheelHoverCard.offsetHeight || 44;
+
+      let left = x - tipW / 2;
+      let top = y - tipH - 12;
+
+      // Keep within bounds of wheel-box
+      if (left < 8) left = 8;
+      if (left + tipW > rect.width - 8) left = rect.width - tipW - 8;
+      if (top < 8) top = y + 16;
+
+      wheelHoverCard.style.left = `${left}px`;
+      wheelHoverCard.style.top = `${top}px`;
+    }
+
     wheelSvg.querySelectorAll(".wheel-slice").forEach((el) => {
       el.addEventListener("click", () => {
+        SoundFX.playWheelSelect();
         activeFamilyId = el.dataset.family;
         renderWheel();
         renderShelfNotes();
       });
+
+      el.addEventListener("mouseenter", (e) => {
+        SoundFX.playHoverTick();
+        const fam = FRAGRANCE_FAMILIES.find((f) => f.id === el.dataset.family);
+        if (!fam || !wheelHoverCard) return;
+        if (wheelHoverTitle) wheelHoverTitle.textContent = fam.name;
+        if (wheelHoverDesc) wheelHoverDesc.textContent = fam.desc;
+        wheelHoverCard.classList.add("visible");
+        updateHoverCardPos(e);
+      });
+
+      el.addEventListener("mousemove", (e) => {
+        updateHoverCardPos(e);
+      });
+
+      el.addEventListener("mouseleave", () => {
+        if (wheelHoverCard) wheelHoverCard.classList.remove("visible");
+      });
+    });
+
+    wheelSvg.addEventListener("mouseleave", () => {
+      if (wheelHoverCard) wheelHoverCard.classList.remove("visible");
     });
   }
 
@@ -639,8 +1440,7 @@
           : "+ Chọn lọ mẫu";
 
         return `
-          <button type="button" class="note-pick-btn ${assignedEntry ? "picked" : ""}" data-note-id="${note.id}">
-            <span class="note-pick-icon">${note.icon}</span>
+          <button type="button" class="note-pick-btn ${assignedEntry ? "picked" : ""}" data-note-id="${note.id}" title="${note.name}">
             <span class="note-pick-name">${note.name}</span>
             <span class="note-pick-tag">${tagLabel}</span>
           </button>
@@ -677,6 +1477,7 @@
       (k) => slots[k].note && slots[k].note.id === noteId,
     );
     if (existingLayer) {
+      SoundFX.playVialPick(false);
       slots[existingLayer] = { note: null, poured: false };
       updateAllColumns();
       return;
@@ -684,6 +1485,8 @@
 
     const noteObj = findNoteById(noteId);
     if (!noteObj) return;
+
+    SoundFX.playVialPick(true);
 
     // Find first empty slot; if all 3 have notes, pick first unpoured slot, else replace top
     let targetLayer = ["top", "heart", "base"].find((k) => !slots[k].note);
@@ -707,6 +1510,7 @@
 
     isPouringAnim = true;
     const color = slot.note.color;
+    SoundFX.playLiquidPour();
 
     // Trigger Pouring Actor Animation
     pouringLiquid.style.backgroundColor = color;
@@ -887,8 +1691,8 @@
   }
 
   function updateFinalBottlePreview() {
-    // Final bottle interior goes from y=72 to y=196 (total height = 124px)
-    const totalHeight = 120;
+    // Square bottle interior goes from y=120 to y=208 (total height = 88px)
+    const totalHeight = 88;
     const sum =
       selectedFormula.top + selectedFormula.heart + selectedFormula.base;
 
@@ -900,14 +1704,14 @@
     const rectHeart = document.getElementById("final-liquid-heart");
     const rectBase = document.getElementById("final-liquid-base");
 
-    const startY = 74;
+    const startY = 120;
     rectTop.setAttribute("y", startY);
     rectTop.setAttribute("height", hTop);
     rectTop.setAttribute(
       "fill",
       slots.top.note ? slots.top.note.color : "#3a2b22",
     );
-    rectTop.setAttribute("fill-opacity", slots.top.note ? "0.82" : "0.2");
+    rectTop.setAttribute("fill-opacity", slots.top.note ? "0.84" : "0.25");
 
     rectHeart.setAttribute("y", startY + hTop);
     rectHeart.setAttribute("height", hHeart);
@@ -915,7 +1719,7 @@
       "fill",
       slots.heart.note ? slots.heart.note.color : "#3a2b22",
     );
-    rectHeart.setAttribute("fill-opacity", slots.heart.note ? "0.86" : "0.25");
+    rectHeart.setAttribute("fill-opacity", slots.heart.note ? "0.88" : "0.3");
 
     rectBase.setAttribute("y", startY + hTop + hHeart);
     rectBase.setAttribute("height", hBase);
@@ -923,7 +1727,7 @@
       "fill",
       slots.base.note ? slots.base.note.color : "#3a2b22",
     );
-    rectBase.setAttribute("fill-opacity", slots.base.note ? "0.92" : "0.3");
+    rectBase.setAttribute("fill-opacity", slots.base.note ? "0.92" : "0.35");
 
     // Update Ratio Legend in Column 3
     document.getElementById("ratio-val-top").textContent =
@@ -990,6 +1794,7 @@
   document.querySelectorAll(".vial-remove-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
+      SoundFX.playVialPick(false);
       const layer = btn.dataset.remove;
       slots[layer] = { note: null, poured: false };
       updateAllColumns();
@@ -1021,6 +1826,9 @@
     const unpoured = ["top", "heart", "base"].filter(
       (k) => slots[k].note && !slots[k].poured,
     );
+    if (unpoured.length > 0) {
+      SoundFX.playLiquidPour();
+    }
     unpoured.forEach((layer, idx) => {
       setTimeout(() => {
         slots[layer].poured = true;
@@ -1033,6 +1841,7 @@
   // 3 Formula Recipe Selector (40-30-30, 50-40-20, 50-40-10)
   document.querySelectorAll(".formula-recipe-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
+      SoundFX.playFormulaSwitch();
       document
         .querySelectorAll(".formula-recipe-btn")
         .forEach((b) => b.classList.toggle("active", b === btn));
@@ -1051,6 +1860,7 @@
 
   // Random Pick Button in HUD
   document.getElementById("random-spin-btn").addEventListener("click", () => {
+    SoundFX.playRandomSpin();
     const allNotes = [];
     FRAGRANCE_FAMILIES.forEach((fam) => {
       fam.notes.forEach((n) => {
@@ -1146,9 +1956,43 @@
     svg.innerHTML = html;
   }
 
+  // Spawn Magic Alchemy Sparkles during Flask Shake
+  function spawnMagicSparkles(colors, count = 16) {
+    const glyphs = ["✦", "✧", "⋆", "✵", "✺"];
+    for (let i = 0; i < count; i++) {
+      const sp = document.createElement("span");
+      sp.className = "magic-sparkle";
+      sp.textContent = glyphs[i % glyphs.length];
+      const angle = Math.random() * Math.PI * 2;
+      const dist = 48 + Math.random() * 88;
+      const tx = Math.round(Math.cos(angle) * dist);
+      const ty = Math.round(Math.sin(angle) * dist - 14);
+      const color = colors[i % colors.length] || "#f3c878";
+      sp.style.setProperty("--tx", `${tx}px`);
+      sp.style.setProperty("--ty", `${ty}px`);
+      sp.style.setProperty("--dur", `${0.85 + Math.random() * 0.55}s`);
+      sp.style.setProperty("--sparkle-color", color);
+      sp.style.fontSize = `${11 + Math.round(Math.random() * 9)}px`;
+      sp.style.animationDelay = `${Math.round(Math.random() * 180)}ms`;
+      particlesBox.appendChild(sp);
+      setTimeout(() => sp.remove(), 1600);
+    }
+  }
+
+  let isBrewingMagic = false;
+
   // Final Craft & Open Pop-up Modal
   craftBtn.addEventListener("click", () => {
-    if (!slots.top.note || !slots.heart.note || !slots.base.note) return;
+    if (
+      isBrewingMagic ||
+      !slots.top.note ||
+      !slots.heart.note ||
+      !slots.base.note
+    ) {
+      return;
+    }
+
+    isBrewingMagic = true;
 
     // Auto-pour any unpoured vials first
     ["top", "heart", "base"].forEach((k) => {
@@ -1159,14 +2003,69 @@
     });
     updateAllColumns();
 
-    // Shake flask animation before opening popup
+    const noteColors = [
+      slots.top.note.color,
+      slots.heart.note.color,
+      slots.base.note.color,
+      "#f3c878",
+    ];
+
     const flaskSvg = document.getElementById("mixing-flask-svg");
+    const finalBottleSvg = document.getElementById("final-bottle-svg");
+
+    // Lock button & start multi-stage magic alchemy sequence (2.75s)
+    SoundFX.playMagicAlchemyRitual();
+    craftBtn.disabled = true;
+    craftBtn.textContent = "✨ Đang lắc bình & hòa quyện phép thuật...";
+    dropzoneHint.textContent =
+      "✨ Đang kích hoạt vòng tròn giả kim & lắc đều 3 tầng hương...";
+
+    dropzone.classList.add("brewing-magic");
+    flaskSvg.classList.remove("flask-shake");
+    void flaskSvg.offsetWidth;
     flaskSvg.classList.add("flask-shake");
 
+    // Wave 1: Initial levitation & rune activation
+    spawnMagicSparkles(noteColors, 14);
+    spawnAromaBubbles(slots.top.note.color);
+
+    // Wave 2: Vigorous rhythmic shaking
+    setTimeout(() => {
+      dropzoneHint.textContent =
+        "🌟 Đang hòa quyện tinh hoa theo công thức tỷ lệ...";
+      spawnMagicSparkles(noteColors, 18);
+      spawnAromaBubbles(slots.heart.note.color);
+    }, 750);
+
+    // Wave 3: Peak alchemical swirling
+    setTimeout(() => {
+      spawnMagicSparkles(noteColors, 20);
+      spawnAromaBubbles(slots.base.note.color);
+    }, 1450);
+
+    // Wave 4: Climactic golden transmutation & shockwave burst
+    setTimeout(() => {
+      dropzoneHint.textContent = "✦ Kết tinh mùi hương độc bản hoàn tất! ✦";
+      craftBtn.textContent = "✦ Đã giải mã bản ngã! ✦";
+      spawnMagicSparkles(["#fff8ee", "#f3c878", ...noteColors], 26);
+      if (finalBottleSvg) {
+        finalBottleSvg.classList.remove("bottle-enchanted");
+        void finalBottleSvg.offsetWidth;
+        finalBottleSvg.classList.add("bottle-enchanted");
+      }
+    }, 2100);
+
+    // Complete ritual & open Result Modal
     setTimeout(() => {
       flaskSvg.classList.remove("flask-shake");
+      dropzone.classList.remove("brewing-magic");
+      if (finalBottleSvg) {
+        finalBottleSvg.classList.remove("bottle-enchanted");
+      }
+      isBrewingMagic = false;
+      updateAllColumns();
       openResultModal();
-    }, 550);
+    }, 2750);
   });
 
   function openResultModal() {
