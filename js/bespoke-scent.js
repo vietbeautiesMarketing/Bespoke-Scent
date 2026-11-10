@@ -407,37 +407,37 @@
     floral: {
       vessel: "Thiết kế SẮC — Ngọc Sương Mai",
       collection: "BST Tinh Dầu Hương Hoa Cao Cấp & Hồn Việt",
-      image: "assets/custom-06.webp",
+      image: "assets/images/custom-06.webp",
       desc: "Bình khuếch tán thủy tinh vân kim cương đón sáng kết hợp cùng nốt hương hoa thanh khiết, tôn lên vẻ đẹp tinh tế cho phòng khách và phòng ngủ.",
     },
     woody: {
       vessel: "Thiết kế ÁNH NGÂN MỘC — Đế Gỗ Tự Nhiên",
       collection: "BST Tinh Dầu Dấu Ấn & Hồn Việt",
-      image: "assets/custom-14.webp",
+      image: "assets/images/custom-14.webp",
       desc: "Sự kết hợp giữa sắc bạc đương đại và đế gỗ mộc mạc, hoàn hảo để lan tỏa tầng hương gỗ trầm ấm và bản lĩnh.",
     },
     herbal: {
       vessel: "Thiết kế DẤU — Lục Sắc Sơn Hà",
       collection: "BST Tinh Dầu Hương Trị Liệu - Thư Giãn",
-      image: "assets/custom-11.webp",
+      image: "assets/images/custom-11.webp",
       desc: "Sắc xanh sơn hà phóng khoáng đồng điệu cùng hương trà và thảo mộc, mang lại không gian tĩnh tại, cân bằng tâm trí.",
     },
     citrus: {
       vessel: "Thiết kế NÉT — Nắng Trên Hiên",
       collection: "BST Tinh Dầu Hương Thiên Nhiên",
-      image: "assets/custom-09.webp",
+      image: "assets/images/custom-09.webp",
       desc: "Thủy tinh trong trẻo ôm lấy sắc cam ấm áp như vệt nắng sớm, đánh thức nguồn năng lượng tươi mới mỗi ngày.",
     },
     spicy: {
       vessel: "Thiết kế SẮC — Đêm Huyền Sắc",
       collection: "BST Tinh Dầu Dấu Ấn & 12 Cung Hoàng Đạo",
-      image: "assets/custom-05.webp",
+      image: "assets/images/custom-05.webp",
       desc: "Sắc đêm trầm mặc đầy chiều sâu, tôn vinh những tầng hương gia vị ấm nồng và cá tính độc bản của gia chủ.",
     },
     amber: {
       vessel: "Thiết kế NÉT — Sắc Lam Trời",
       collection: "BST Tinh Dầu Dấu Ấn Cao Cấp",
-      image: "assets/custom-08.webp",
+      image: "assets/images/custom-08.webp",
       desc: "Vẻ đẹp giao thoa giữa truyền thống và hiện đại, giữ trọn dư âm hổ phách và xạ hương sang trọng trong không gian.",
     },
   };
@@ -586,8 +586,14 @@
         startAngle + 1.2,
         endAngle - 1.2,
       );
-      const labelPos = polarToCartesian(cx, cy, 142, midAngle);
-      const subPos = polarToCartesian(cx, cy, 106, midAngle);
+
+      // Calculate center of the sector ring
+      const rCenter = (rInner + rOuter) / 2; // 131
+      const centerPos = polarToCartesian(cx, cy, rCenter, midAngle);
+
+      // Always offset label above and emoji icons below relative to screen Y
+      const labelPos = { x: centerPos.x, y: centerPos.y - 12.5 };
+      const subPos = { x: centerPos.x, y: centerPos.y + 11.5 };
       const isActive = fam.id === activeFamilyId;
 
       svgContent += `
