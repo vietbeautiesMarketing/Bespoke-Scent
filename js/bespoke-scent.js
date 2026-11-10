@@ -1351,19 +1351,21 @@
       `;
     });
 
-    // Center circle with logo-miyako.png
+    // Center circle with logo-miyako.png (links to https://vietbeauties.vn/)
     svgContent += `
-      <circle cx="${cx}" cy="${cy}" r="${rInner - 4}" class="wheel-center-circle" />
-      <image
-        href="assets/logo-miyako.png"
-        x="${cx - 48}"
-        y="${cy - 48}"
-        width="96"
-        height="96"
-        clip-path="url(#wheel-center-clip)"
-        preserveAspectRatio="xMidYMid meet"
-        class="wheel-center-logo"
-      />
+      <a href="https://vietbeauties.vn/" target="_blank" rel="noopener noreferrer" class="wheel-center-link" aria-label="Miyako Home - Vietbeauties">
+        <circle cx="${cx}" cy="${cy}" r="${rInner - 4}" class="wheel-center-circle" />
+        <image
+          href="assets/logo-miyako.png"
+          x="${cx - 48}"
+          y="${cy - 48}"
+          width="96"
+          height="96"
+          clip-path="url(#wheel-center-clip)"
+          preserveAspectRatio="xMidYMid meet"
+          class="wheel-center-logo"
+        />
+      </a>
     `;
 
     wheelSvg.innerHTML = svgContent;

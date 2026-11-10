@@ -242,7 +242,9 @@ body {
   display: block;
   fill: currentColor;
   stroke: currentColor;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .hud-btn-icon:hover {
@@ -446,11 +448,31 @@ body {
   letter-spacing: 0.02em;
 }
 
+.wheel-center-link {
+  cursor: pointer;
+  outline: none;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+  transform-origin: 210px 210px;
+}
+
+.wheel-center-link:hover .wheel-center-circle {
+  filter: drop-shadow(0 0 16px rgba(243, 200, 120, 0.75));
+  stroke: var(--accent-gold-bright);
+  stroke-width: 3.5;
+}
+
+.wheel-center-link:hover {
+  transform: scale(1.05);
+}
+
 .wheel-center-circle {
   fill: #f7efe2;
   stroke: var(--accent-gold);
   stroke-width: 2.5;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.45));
+  transition: all 0.25s ease;
 }
 
 .wheel-center-logo {
