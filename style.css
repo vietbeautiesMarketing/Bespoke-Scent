@@ -1533,11 +1533,6 @@ header > #edit {
     min-height: 64px !important;
     max-height: 64px !important;
     padding: 0 16px !important;
-    background: rgba(247, 239, 226, 0.96) !important;
-    backdrop-filter: blur(14px) !important;
-    -webkit-backdrop-filter: blur(14px) !important;
-    box-shadow: 0 1px 12px rgba(54, 34, 25, 0.08) !important;
-    border-bottom: 1px solid rgba(118, 37, 31, 0.12) !important;
     position: sticky !important;
     top: 0 !important;
     z-index: 100 !important;
@@ -1580,6 +1575,7 @@ header > #edit {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+    gap: 7px !important;
     padding: 7px 14px !important;
     border-radius: 999px !important;
     background: linear-gradient(135deg, #76251f 0%, #521915 100%) !important;
@@ -3551,12 +3547,13 @@ header > #edit {
 /* -------------------------------------------------- */
 /* 5. HERO VIEWPORT FIX */
 /* -------------------------------------------------- */
-/* Hero viewport fix: keep the opening background video fully clipped to the visible first screen. */
+/* Hero viewport fix: extend hero video behind transparent header to top of screen */
 #home.hero {
   display: block;
   width: 100%;
   max-width: 100%;
-  min-height: calc(100svh - var(--header-height));
+  min-height: 100svh;
+  margin-top: calc(-1 * var(--header-height, 64px));
   padding: 0;
   overflow: hidden;
 }
@@ -3565,7 +3562,8 @@ header > #edit {
   position: relative;
   width: 100%;
   max-width: 100%;
-  min-height: calc(100svh - var(--header-height));
+  min-height: 100svh;
+  padding-top: calc(var(--header-height, 64px) + 24px);
   overflow: hidden;
   margin: 0;
 }
@@ -3583,19 +3581,19 @@ header > #edit {
   #home.hero,
   #home .hero-copy,
   #home .hero-copy.has-video {
-    min-height: calc(100dvh - var(--header-height));
+    min-height: 100dvh;
   }
 }
 @media (max-width: 760px) {
   #home.hero {
     padding: 0 !important;
-    margin: 0;
-    min-height: calc(100svh - var(--header-height));
+    margin-top: -64px !important;
+    min-height: 100svh;
   }
   #home .hero-copy,
   #home .hero-copy.has-video {
-    min-height: calc(100svh - var(--header-height));
-    padding: clamp(30px, 7vh, 56px) 5%;
+    min-height: 100svh;
+    padding: calc(64px + 18px) 5% 36px !important;
   }
   #hero-video {
     width: 100%;
@@ -3701,39 +3699,126 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Frosted glass luxury header */
+/* Transparent-to-Frosted Header on Scroll */
 header {
-  background: rgba(244, 237, 223, 0.92) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 1px 18px rgba(56, 40, 32, 0.05);
+  background: linear-gradient(
+    180deg,
+    rgba(20, 12, 9, 0.52) 0%,
+    rgba(20, 12, 9, 0.16) 65%,
+    transparent 100%
+  ) !important;
+  background-image: linear-gradient(
+    180deg,
+    rgba(20, 12, 9, 0.52) 0%,
+    rgba(20, 12, 9, 0.16) 65%,
+    transparent 100%
+  ) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
   transition:
-    background 0.3s ease,
-    box-shadow 0.3s ease;
+    background 0.35s ease,
+    background-color 0.35s ease,
+    backdrop-filter 0.35s ease,
+    -webkit-backdrop-filter 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
-header .brand img {
-  filter: contrast(1.05);
-}
-
-header nav a {
+header nav.desktop-nav a {
+  color: #fff8ee !important;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
   position: relative;
-  transition: color 0.3s ease;
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
-header nav a::after {
+header nav.desktop-nav a:hover,
+header nav.desktop-nav a:focus-visible {
+  color: #d4a359 !important;
+}
+
+header nav.desktop-nav a::after {
   content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
   width: 0;
   height: 1.5px;
-  background: var(--wine);
+  background: #d4a359;
   transition: width 0.3s ease;
 }
 
-header nav a:hover::after {
+header nav.desktop-nav a:hover::after {
   width: 100%;
+}
+
+header #brand-logo {
+  filter: brightness(1.15) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+  transition: filter 0.35s ease;
+}
+
+header .menu-toggle-btn {
+  color: #fff8ee !important;
+  transition:
+    opacity 0.2s ease,
+    color 0.3s ease !important;
+}
+
+header .menu-toggle-btn .hamburger-bar {
+  background-color: #fff8ee !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  transition:
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.2s ease,
+    background-color 0.35s ease,
+    box-shadow 0.35s ease !important;
+}
+
+/* Scrolled state: frosted luxury cream background */
+header.header-scrolled {
+  background: rgba(247, 239, 226, 0.96) !important;
+  background-image: none !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid rgba(118, 37, 31, 0.12) !important;
+  box-shadow: 0 1px 14px rgba(54, 34, 25, 0.08) !important;
+}
+
+header.header-scrolled nav.desktop-nav a {
+  color: #38271e !important;
+  text-shadow: none !important;
+}
+
+header.header-scrolled nav.desktop-nav a:hover,
+header.header-scrolled nav.desktop-nav a:focus-visible {
+  color: #7a201d !important;
+}
+
+header.header-scrolled nav.desktop-nav a::after {
+  background: var(--wine, #76251f);
+}
+
+header.header-scrolled #brand-logo {
+  filter: none !important;
+}
+
+header.header-scrolled .menu-toggle-btn {
+  color: #38271e !important;
+}
+
+header.header-scrolled .menu-toggle-btn .hamburger-bar {
+  background-color: #38271e !important;
+  box-shadow: none !important;
+}
+
+/* Editing mode: always solid */
+body.editing header {
+  background: #f5f1e8 !important;
+  backdrop-filter: none !important;
 }
 
 /* Image Slot & Product Presentation Upgrades */
@@ -3897,11 +3982,21 @@ header nav a:hover::after {
 }
 
 /* Bespoke Scent Mini-Game CTA & Banner */
+.cta-sparkle {
+  display: inline-block;
+  margin-right: 7px;
+  color: #d4a359;
+  font-size: 14px;
+  line-height: 1;
+}
+
 @media (min-width: 921px) {
-  header nav a.nav-bespoke-cta {
+  header nav a.nav-bespoke-cta,
+  header nav.desktop-nav a.nav-bespoke-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 7px;
     padding: 8px 18px;
     border-radius: 999px;
     background: var(--wine, #76251f);
@@ -3916,7 +4011,8 @@ header nav a:hover::after {
     line-height: 1;
   }
 
-  header nav a.nav-bespoke-cta:hover {
+  header nav a.nav-bespoke-cta:hover,
+  header nav.desktop-nav a.nav-bespoke-cta:hover {
     background: #5a1b16;
     border-color: #5a1b16;
     color: #ffffff !important;

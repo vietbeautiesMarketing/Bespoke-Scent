@@ -1492,3 +1492,23 @@
     { passive: true },
   );
 })();
+
+// Header transparency on scroll (transparent over hero, frosted cream when scrolled)
+(() => {
+  "use strict";
+  const header = document.querySelector("header");
+  if (!header) return;
+
+  function updateHeaderTransparency() {
+    const isScrolled = window.scrollY > 30;
+    header.classList.toggle("header-scrolled", isScrolled);
+  }
+
+  window.addEventListener("scroll", updateHeaderTransparency, {
+    passive: true,
+  });
+  window.addEventListener("resize", updateHeaderTransparency, {
+    passive: true,
+  });
+  updateHeaderTransparency();
+})();
