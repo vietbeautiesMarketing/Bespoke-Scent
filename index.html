@@ -34,15 +34,62 @@
           >Miyako Home<small>HƯƠNG VIỆT</small></span
         ></a
       >
-      <nav>
-        <a href="#story">Câu chuyện</a><a href="#sac">Bộ sưu tập</a
-        ><a href="#services">Dịch vụ</a><a href="#more1">Sản phẩm</a
-        ><a href="bespoke-scent.html" class="nav-bespoke-cta"
-          >✦ Chế tác hương</a
-        >
+
+      <nav class="desktop-nav" aria-label="Menu chính">
+        <a href="#story">Câu chuyện</a>
+        <a href="#sac">Bộ sưu tập</a>
+        <a href="#services">Dịch vụ</a>
+        <a href="#more1">Sản phẩm</a>
+        <a href="bespoke-scent.html" class="nav-bespoke-cta">
+          <span class="cta-sparkle">✦</span>
+          <span>Chế tác hương</span>
+        </a>
       </nav>
+
+      <div class="header-mobile-actions">
+        <a
+          href="bespoke-scent.html"
+          class="mobile-bespoke-pill"
+          aria-label="Chế tác hương độc bản"
+        >
+          <span>✦ Chế tác</span>
+        </a>
+        <button
+          id="menu-toggle"
+          class="menu-toggle-btn"
+          type="button"
+          aria-label="Mở thực đơn điều hướng"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+
       <button id="edit" hidden="">Chỉnh sửa</button>
     </header>
+
+    <!-- Mobile Drawer & Backdrop (Direct children of body for perfect viewport anchoring anywhere on page) -->
+    <div id="nav-backdrop" class="nav-backdrop" aria-hidden="true"></div>
+
+    <aside
+      id="mobile-nav"
+      class="mobile-nav-drawer"
+      aria-label="Thực đơn di động"
+    >
+      <div class="mobile-nav-links">
+        <a href="#story" class="mobile-nav-link">Câu chuyện</a>
+        <a href="#sac" class="mobile-nav-link">Bộ sưu tập</a>
+        <a href="#services" class="mobile-nav-link">Dịch vụ</a>
+        <a href="#more1" class="mobile-nav-link">Sản phẩm</a>
+        <a href="bespoke-scent.html" class="mobile-nav-cta">
+          <span class="cta-sparkle">✦</span>
+          <span>Chế tác hương</span>
+        </a>
+      </div>
+    </aside>
     <div id="editor" hidden="">
       <span
         >Bấm chữ để sửa; bấm ảnh hoặc khung trống để thêm ảnh. “Tải bản đã chỉnh
