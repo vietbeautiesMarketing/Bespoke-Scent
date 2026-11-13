@@ -1013,16 +1013,50 @@
         <div class="modal-body-grid">
           <!-- Left: Scent Identity & Personality Analysis -->
           <div class="modal-main-col">
-            <span class="modal-kicker"
+            <span id="modal-kicker" class="modal-kicker"
               >✦ THÀNH PHẨM GIẢ KIM &amp; CHÂN DUNG BẢN NGÃ ✦</span
             >
             <h2 id="result-scent-name" class="modal-scent-title">
               Sương Liên &amp; Giữa Đêm Sâu
             </h2>
             <p id="result-poetic-sub" class="modal-scent-sub">
-              Hợp hương theo tỷ lệ 40 - 30 - 30: Trà Trắng Tuyết Sơn, Bạch Liên
-              Hoa &amp; Trầm Hương Kỳ Nam.
+              Hợp hương theo tỷ lệ 40 - 30 - 30: Trà Trắng, Hoa Sen Trắng &amp;
+              Trầm Hương.
             </p>
+
+            <!-- Custom Scent Naming Box (Shown when scent is not in Miyako catalog, or when user clicks rename) -->
+            <div id="bespoke-naming-box" class="bespoke-naming-box" hidden>
+              <div class="naming-box-header">
+                <span class="naming-badge"
+                  >✨ MÙI HƯƠNG ĐỘC BẢN CHƯA CÓ TRONG DANH MỤC MIYAKO HOME</span
+                >
+                <p class="naming-hint">
+                  Sự kết hợp 3 tầng hương này là sáng tạo mới của riêng bạn! Hãy
+                  đặt tên cho mùi hương độc bản này:
+                </p>
+              </div>
+              <div class="naming-input-row">
+                <input
+                  id="custom-scent-name-input"
+                  type="text"
+                  class="naming-input"
+                  maxlength="42"
+                  placeholder="Nhập tên mùi hương của bạn (VD: Nguyệt Trà Đêm Thu)..."
+                  aria-label="Đặt tên cho mùi hương độc bản"
+                />
+                <button
+                  id="save-custom-name-btn"
+                  type="button"
+                  class="naming-save-btn"
+                >
+                  ✦ Đặt Tên
+                </button>
+              </div>
+              <div class="naming-suggestions">
+                <span class="suggest-label">Gợi ý nhanh:</span>
+                <div id="naming-suggest-chips" class="suggest-chips"></div>
+              </div>
+            </div>
 
             <!-- Personality Archetype Box -->
             <div class="modal-persona-card">
@@ -1072,6 +1106,58 @@
 
           <!-- Right: Radar Chart & Matching Real Miyako Product -->
           <div class="modal-side-col">
+            <div class="modal-product-match" id="modal-product-card">
+              <div class="match-status-bar">
+                <span id="match-eyebrow" class="match-eyebrow"
+                  >SẢN PHẨM TƯƠNG ĐỒNG TẠI MIYAKO HOME</span
+                >
+                <span id="match-score-badge" class="match-score-badge"
+                  >Trùng khớp 92%</span
+                >
+              </div>
+              <div class="match-row">
+                <img
+                  id="match-thumb"
+                  class="match-img"
+                  src="assets/images/custom-06.webp"
+                  alt="Sản phẩm Miyako Home đồng điệu"
+                />
+                <div class="match-meta">
+                  <h4 id="match-vessel">
+                    Tinh Dầu Khuếch Tán Miyako Home – Amber Nuit
+                  </h4>
+                  <strong id="match-collection"
+                    >BST Tinh Dầu Hương Nước Hoa</strong
+                  >
+                  <div id="match-price-range" class="match-price-range">
+                    789.000 ₫ – 2.180.000 ₫
+                  </div>
+                </div>
+              </div>
+              <div id="match-pyramid" class="match-pyramid"></div>
+              <div id="match-volumes" class="match-volumes"></div>
+              <p id="match-desc" class="match-text"></p>
+              <div class="match-cta-wrap">
+                <a
+                  id="match-product-link"
+                  class="match-product-btn"
+                  href="https://vietbeauties.vn/danh-muc/tinh-dau/tinh-dau-khuech-tan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  🛒 Xem &amp; Mua Sản Phẩm Này Trên Vietbeauties.vn ↗
+                </a>
+                <button
+                  id="toggle-rename-btn"
+                  type="button"
+                  class="match-rename-toggle-btn"
+                  hidden
+                >
+                  ✏️ Tự đặt tên riêng cho công thức của bạn
+                </button>
+              </div>
+            </div>
+
             <div class="modal-radar-box">
               <h4>Biểu Đồ 5 Chiều Khí Chất</h4>
               <svg
@@ -1082,31 +1168,13 @@
               ></svg>
               <div id="aura-tags" class="modal-aura-tags"></div>
             </div>
-
-            <div class="modal-product-match">
-              <div class="match-row">
-                <img
-                  id="match-thumb"
-                  class="match-img"
-                  src="assets/images/custom-06.webp"
-                  alt="Sản phẩm Miyako Home đồng điệu"
-                />
-                <div class="match-meta">
-                  <span class="match-eyebrow">GỢI Ý TỪ MIYAKO HOME</span>
-                  <h4 id="match-vessel">Thiết kế SẮC — Ngọc Sương Mai</h4>
-                  <strong id="match-collection"
-                    >BST Tinh Dầu Hương Hoa &amp; Hồn Việt</strong
-                  >
-                </div>
-              </div>
-              <p id="match-desc" class="match-text"></p>
-            </div>
           </div>
         </div>
 
         <!-- Modal Footer Actions -->
         <div class="modal-footer-actions">
           <a
+            id="modal-primary-action-link"
             class="modal-btn-primary"
             href="https://zalo.me/0356059224"
             target="_blank"

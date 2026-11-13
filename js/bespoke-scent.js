@@ -11,13 +11,13 @@
       name: "Hương Hoa",
       sub: "Floral · Thanh Tao",
       color: "#c96a7b",
-      desc: "Mềm mại, lãng mạn & giàu rung cảm nghệ thuật",
+      desc: "Hoa Sen, Hoa Nhài, Hồng Damask, Lan Freesia, Hoa Cam & Mẫu Đơn",
       notes: [
         {
           id: "white-lotus",
-          name: "Bạch Liên Hoa",
+          name: "Hoa Sen Trắng",
           icon: "🪷",
-          prefix: "Sương Liên",
+          prefix: "Thanh Liên",
           suffix: "Bên Hồ Tĩnh Lặng",
           outer:
             "Bạn mang lại cảm giác trong trẻo, điềm tĩnh và thanh lịch. Người đối diện dễ cảm thấy bình yên ngay từ khoảnh khắc đầu tiên trò chuyện cùng bạn.",
@@ -34,7 +34,7 @@
         },
         {
           id: "night-jasmine",
-          name: "Nhài Đêm",
+          name: "Hoa Nhài",
           icon: "🌼",
           prefix: "Nguyệt Nhài",
           suffix: "Dưới Hiên Trăng",
@@ -52,54 +52,16 @@
           },
         },
         {
-          id: "osmanthus",
-          name: "Mộc Hương Cổ",
-          icon: "✨",
-          prefix: "Mộc Quế",
-          suffix: "Mùa Thu Cố Đô",
-          outer:
-            "Bạn toát lên vẻ nho nhã, ấm áp và đáng tin cậy như một người bạn tri kỷ lâu năm.",
-          inner:
-            "Bạn là người hoài niệm, trân quý những kỷ niệm đẹp và những giá trị bền vững theo năm tháng. Một bức thư tay hay một giai điệu cũ đều làm bạn rung động.",
-          core: "Sự tử tế và sâu sắc của bạn giống như hương mộc hương: càng ở gần lâu, người ta càng nhận ra giá trị quý giá khó tìm.",
-          scores: {
-            elegance: 90,
-            depth: 88,
-            warmth: 92,
-            freedom: 65,
-            mystery: 80,
-          },
-        },
-        {
-          id: "ylang-ylang",
-          name: "Dạ Lan Tây",
-          icon: "🌸",
-          prefix: "Dạ Lan",
-          suffix: "Gió Đêm Phố Cổ",
-          outer:
-            "Bạn cuốn hút bởi sự trang nhã, ngọt ngào và ánh mắt đong đầy cảm xúc.",
-          inner:
-            "Tâm hồn bạn tha thiết, trân trọng những khoảnh khắc lãng mạn và sự gắn kết chân thành.",
-          core: "Nữ tính, đằm thắm nhưng đầy nội lực, bạn luôn biết cách sưởi ấm những người mình yêu thương.",
-          scores: {
-            elegance: 94,
-            depth: 84,
-            warmth: 91,
-            freedom: 72,
-            mystery: 85,
-          },
-        },
-        {
-          id: "sapa-rose",
-          name: "Hồng Sa Pa",
+          id: "damask-rose",
+          name: "Hoa Hồng Damask",
           icon: "🌹",
-          prefix: "Sương Hồng",
-          suffix: "Thung Lũng Mây Ngàn",
+          prefix: "Hồng Nhung",
+          suffix: "Vườn Sương Sớm",
           outer:
-            "Bạn mang vẻ đẹp thanh lịch, kiêu kỳ tự nhiên nhưng không hề xa cách.",
+            "Bạn mang vẻ đẹp thanh lịch, kiêu kỳ tự nhiên nhưng ấm áp và gần gũi.",
           inner:
             "Bạn trân trọng sự thủy chung, tinh tế và luôn dành trọn tâm huyết cho những gì mình tin tưởng.",
-          core: "Vẻ đẹp thuần khiết và kiên cường như đóa hồng nở giữa mây ngàn Sa Pa.",
+          core: "Vẻ đẹp thuần khiết, lãng mạn và kiên cường như đóa hồng Damask bung nở trong sương mai.",
           scores: {
             elegance: 96,
             depth: 86,
@@ -109,22 +71,60 @@
           },
         },
         {
-          id: "wild-orchid",
-          name: "Phong Lan Rừng",
+          id: "freesia-orchid",
+          name: "Hoa Lan Freesia",
           icon: "🪻",
           prefix: "U Lan",
-          suffix: "Vách Đá Rừng Sâu",
+          suffix: "Gió Biển Chiều",
           outer:
-            "Bạn thanh tú, khác biệt và toát lên khí chất tự tại, không vướng bận trần tục.",
+            "Bạn thanh tú, khác biệt và toát lên khí chất tự tại, phóng khoáng.",
           inner:
             "Bạn trân trọng không gian riêng, yêu thích sự tĩnh lặng và chiều sâu tư tưởng.",
-          core: "Kiêu hãnh và bí ẩn như đóa phong lan giấu mình trên vách đá ngút ngàn.",
+          core: "Kiêu hãnh, thanh thoát và đầy cuốn hút như đóa lan Nam Phi giữa làn gió mát.",
           scores: {
             elegance: 93,
-            depth: 91,
-            warmth: 74,
+            depth: 89,
+            warmth: 76,
             freedom: 88,
-            mystery: 93,
+            mystery: 91,
+          },
+        },
+        {
+          id: "orange-blossom",
+          name: "Hoa Cam Neroli",
+          icon: "🌸",
+          prefix: "Hoa Cam",
+          suffix: "Nắng Sớm Địa Trung Hải",
+          outer:
+            "Bạn cuốn hút bởi sự trang nhã, tươi sáng và nụ cười đong đầy cảm xúc.",
+          inner:
+            "Tâm hồn bạn tha thiết, trân trọng những khoảnh khắc lãng mạn và sự gắn kết chân thành.",
+          core: "Đằm thắm, rạng rỡ nhưng đầy nội lực, bạn luôn biết cách sưởi ấm những người mình yêu thương.",
+          scores: {
+            elegance: 94,
+            depth: 84,
+            warmth: 91,
+            freedom: 78,
+            mystery: 83,
+          },
+        },
+        {
+          id: "peony-lily",
+          name: "Mẫu Đơn & Linh Lan",
+          icon: "🌺",
+          prefix: "Mẫu Đơn",
+          suffix: "Thung Lũng Hoa",
+          outer:
+            "Bạn toát lên vẻ nho nhã, sang trọng và đáng tin cậy như một người tri kỷ.",
+          inner:
+            "Bạn trân quý những kỷ niệm đẹp và những giá trị bền vững theo năm tháng.",
+          core: "Sự tử tế và tinh khôi của bạn giống như đóa linh lan và mẫu đơn mùa xuân.",
+          scores: {
+            elegance: 95,
+            depth: 85,
+            warmth: 88,
+            freedom: 75,
+            mystery: 80,
           },
         },
       ],
@@ -134,11 +134,11 @@
       name: "Gỗ & Trầm",
       sub: "Woody · Sâu Lắng",
       color: "#8c583a",
-      desc: "Trầm ổn, bản lĩnh & mang chiều sâu ký ức",
+      desc: "Trầm Hương, Đàn Hương, Tuyết Tùng, Gỗ Thông, Gỗ Guaiac & Rêu Sồi",
       notes: [
         {
           id: "agarwood",
-          name: "Trầm Kỳ Nam",
+          name: "Gỗ Trầm & Khói Trầm",
           icon: "🪵",
           prefix: "Trầm Mặc",
           suffix: "Giữa Đêm Sâu",
@@ -157,7 +157,7 @@
         },
         {
           id: "sandalwood",
-          name: "Đàn Hương",
+          name: "Gỗ Đàn Hương",
           icon: "🎋",
           prefix: "Đàn Mộc",
           suffix: "Khúc Thiền Định",
@@ -176,7 +176,7 @@
         },
         {
           id: "cedarwood",
-          name: "Tuyết Tùng",
+          name: "Gỗ Tuyết Tùng",
           icon: "🌲",
           prefix: "Tuyết Tùng",
           suffix: "Rừng Sương Cao Nguyên",
@@ -194,51 +194,13 @@
           },
         },
         {
-          id: "calocedrus",
-          name: "Bách Xanh",
-          icon: "🪵",
-          prefix: "Bách Xanh",
-          suffix: "Đá Núi Ngàn Năm",
-          outer:
-            "Bạn toát lên sự rắn rỏi, mực thước và luôn là chỗ dựa vững chãi.",
-          inner:
-            "Bạn sống thực tế, trượng nghĩa và coi trọng lời hứa hơn mọi điều khác.",
-          core: "Trầm mặc, kiên định vượt qua mọi thử thách như cây bách trên đỉnh núi đá.",
-          scores: {
-            elegance: 88,
-            depth: 95,
-            warmth: 86,
-            freedom: 76,
-            mystery: 90,
-          },
-        },
-        {
-          id: "cupressus",
-          name: "Hoàng Đàn",
-          icon: "🪵",
-          prefix: "Hoàng Mộc",
-          suffix: "Kỳ Duyên Cố Đô",
-          outer:
-            "Bạn sở hữu thần thái sang trọng, quý phái và uy quyền một cách tự nhiên.",
-          inner:
-            "Bạn có cái nhìn sâu sắc, tinh tế về con người và cuộc đời, không dễ bị lay động.",
-          core: "Vương giả, thanh cao và lưu giữ giá trị trường tồn qua thời gian.",
-          scores: {
-            elegance: 95,
-            depth: 96,
-            warmth: 82,
-            freedom: 75,
-            mystery: 94,
-          },
-        },
-        {
-          id: "red-pine",
-          name: "Thông Đỏ",
+          id: "pine-wood",
+          name: "Gỗ Thông & Linh Sam",
           icon: "🌲",
           prefix: "Thanh Tùng",
           suffix: "Đỉnh Núi Sương Mù",
           outer:
-            "Bạn phóng khoáng, dứt khoát và mang hơi thở tự nhiên trong lành.",
+            "Bạn phóng khoáng, dứt khoát và mang hơi thở tự nhiên trong lành của rừng thông.",
           inner:
             "Bạn khao khát chinh phục những chân trời mới và sống trọn vẹn từng khoảnh khắc.",
           core: "Nội lực bền bỉ, luôn vươn mình đón ánh ban mai rực rỡ.",
@@ -250,6 +212,44 @@
             mystery: 84,
           },
         },
+        {
+          id: "guaiac-teak",
+          name: "Gỗ Guaiac & Teak",
+          icon: "🪵",
+          prefix: "Mộc Quý",
+          suffix: "Hảiình Viễn Dương",
+          outer:
+            "Bạn sở hữu thần thái sang trọng, lịch lãm và uy quyền một cách tự nhiên.",
+          inner:
+            "Bạn có cái nhìn sâu sắc, tinh tế về con người và cuộc đời, không dễ bị lay động.",
+          core: "Vương giả, ấm áp và lưu giữ giá trị trường tồn qua thời gian.",
+          scores: {
+            elegance: 94,
+            depth: 95,
+            warmth: 86,
+            freedom: 78,
+            mystery: 92,
+          },
+        },
+        {
+          id: "vetiver-oakmoss",
+          name: "Cỏ Hương Bài & Rêu Sồi",
+          icon: "🌿",
+          prefix: "Rêu Xanh",
+          suffix: "Cổ Thụ Ngàn Năm",
+          outer:
+            "Bạn toát lên sự rắn rỏi, mực thước và luôn là chỗ dựa vững chãi.",
+          inner:
+            "Bạn sống thực tế, sâu sắc và coi trọng chữ tín hơn mọi điều khác.",
+          core: "Trầm mặc, thanh lịch và gắn kết sâu sắc với thiên nhiên nguyên bản.",
+          scores: {
+            elegance: 89,
+            depth: 95,
+            warmth: 83,
+            freedom: 82,
+            mystery: 90,
+          },
+        },
       ],
     },
     {
@@ -257,7 +257,7 @@
       name: "Trà & Thảo Mộc",
       sub: "Tea · Tĩnh Tại",
       color: "#4d7c5d",
-      desc: "Thanh khiết, trí tuệ & năng lượng chữa lành",
+      desc: "Trà Trắng, Trà Xanh, Oải Hương, Sả Chanh, Hương Thảo & Bạc Hà",
       notes: [
         {
           id: "white-tea",
@@ -279,8 +279,8 @@
           },
         },
         {
-          id: "bamboo-leaf",
-          name: "Lá Tre Xanh",
+          id: "green-tea-bamboo",
+          name: "Trà Xanh & Trúc Xanh",
           icon: "🌿",
           prefix: "Trúc Thanh",
           suffix: "Sau Cơn Mưa Hạ",
@@ -290,16 +290,16 @@
             "Bạn có khả năng phục hồi cảm xúc rất tốt. Sau những thử thách, bạn luôn biết cách làm mới mình như mầm cây sau mưa.",
           core: "Ngay thẳng, tự nhiên nhưng mềm dẻo — bạn biết linh hoạt trước hoàn cảnh mà không đánh mất chất riêng.",
           scores: {
-            elegance: 84,
-            depth: 78,
+            elegance: 86,
+            depth: 80,
             warmth: 76,
             freedom: 95,
-            mystery: 68,
+            mystery: 70,
           },
         },
         {
           id: "lavender",
-          name: "Oải Hương",
+          name: "Hoa Oải Hương",
           icon: "💜",
           prefix: "Oải Hương",
           suffix: "Chiều Tím Bình Yên",
@@ -318,7 +318,7 @@
         {
           id: "lemongrass",
           name: "Sả Chanh",
-          icon: "🌿",
+          icon: "🌾",
           prefix: "Thảo Hương",
           suffix: "Thung Lũng Nắng Mai",
           outer:
@@ -335,27 +335,27 @@
           },
         },
         {
-          id: "holy-basil",
-          name: "Hương Nhu",
+          id: "rosemary-tea-tree",
+          name: "Hương Thảo & Tràm Trà",
           icon: "🌿",
-          prefix: "Tử Nhu",
-          suffix: "Khu Vườn An Yên",
+          prefix: "Mộc Thảo",
+          suffix: "Khu Vườn Trị Liệu",
           outer:
-            "Bạn gần gũi, ấm cúng và mang nét duyên mộc mạc làm người khác thấy an lòng.",
+            "Bạn gần gũi, minh mẫn và mang nét duyên điềm tĩnh làm người khác thấy an lòng.",
           inner:
-            "Bạn có trực giác nhạy bén, sâu sắc và luôn biết cách chăm sóc cảm xúc cho bạn bè.",
-          core: "Hiền hòa, chữa lành và tràn ngập lòng trắc ẩn.",
+            "Bạn có khả năng tập trung cao, trực giác nhạy bén và luôn biết cách chăm sóc sức khỏe tinh thần.",
+          core: "Hiền hòa, chữa lành và tràn ngập năng lượng thanh lọc tự nhiên.",
           scores: {
             elegance: 89,
             depth: 85,
-            warmth: 93,
-            freedom: 80,
+            warmth: 88,
+            freedom: 86,
             mystery: 78,
           },
         },
         {
-          id: "mountain-mint",
-          name: "Bạc Hà Núi",
+          id: "peppermint",
+          name: "Bạc Hà & Khuynh Diệp",
           icon: "🌱",
           prefix: "Băng Bạc",
           suffix: "Gió Lạnh Đầu Non",
@@ -376,10 +376,10 @@
     },
     {
       id: "citrus",
-      name: "Cam Chanh & Sương",
+      name: "Cam Chanh & Biển",
       sub: "Citrus · Rạng Rỡ",
       color: "#d49b38",
-      desc: "Tươi sáng, phóng khoáng & tràn đầy cảm hứng",
+      desc: "Cam Bergamot, Bưởi Hồng, Muối Biển, Cam Ngọt, Chanh Vàng & Trái Cây",
       notes: [
         {
           id: "bergamot",
@@ -401,10 +401,10 @@
           },
         },
         {
-          id: "pomelo",
-          name: "Hoa Bưởi Xưa",
-          icon: "🌸",
-          prefix: "Thanh Trà",
+          id: "grapefruit",
+          name: "Bưởi Hồng",
+          icon: "🍊",
+          prefix: "Thanh Bưởi",
           suffix: "Vườn Xưa Tháng Ba",
           outer:
             "Bạn gần gũi, duyên dáng và mang một nét đẹp truyền thống pha lẫn hiện đại rất riêng.",
@@ -415,32 +415,32 @@
             elegance: 91,
             depth: 84,
             warmth: 95,
-            freedom: 78,
+            freedom: 82,
             mystery: 72,
           },
         },
         {
-          id: "morning-dew",
-          name: "Sương Đà Lạt",
-          icon: "💧",
-          prefix: "Ngọc Sương",
-          suffix: "Bình Minh Phố Núi",
+          id: "sea-salt-ozone",
+          name: "Muối Biển & Ozone",
+          icon: "🌊",
+          prefix: "Hải Sương",
+          suffix: "Sóng Biển Bình Minh",
           outer:
-            "Bạn thanh thoát, tự do và có chút gì đó lãng đãng như sương sớm khiến người khác muốn khám phá.",
+            "Bạn thanh thoát, tự do và phóng khoáng như làn gió đại dương buổi sớm.",
           inner:
             "Bạn ghét sự gò bó. Tâm hồn bạn thuộc về những chân trời mở, những chuyến đi ngẫu hứng và những ý tưởng khác biệt.",
-          core: "Sự minh bạch và thẳng thắn là kim chỉ nam của bạn — trong veo như giọt sương mai.",
+          core: "Sự minh bạch và tự do là kim chỉ nam của bạn — trong trẻo như hơi thở của biển khơi.",
           scores: {
-            elegance: 87,
-            depth: 80,
-            warmth: 70,
+            elegance: 88,
+            depth: 82,
+            warmth: 72,
             freedom: 98,
             mystery: 78,
           },
         },
         {
-          id: "mandarin",
-          name: "Quýt Hồng",
+          id: "sweet-orange",
+          name: "Cam Ngọt & Quýt",
           icon: "🍊",
           prefix: "Kim Quýt",
           suffix: "Mùa Màng Rực Rỡ",
@@ -458,39 +458,39 @@
           },
         },
         {
-          id: "wild-lime",
-          name: "Chanh Rừng",
+          id: "amalfi-lemon",
+          name: "Chanh Vàng Amalfi",
           icon: "🍋",
-          prefix: "Băng Chanh",
-          suffix: "Thác Nước Trong Veo",
-          outer: "Bạn bộc trực, cá tính mạnh mẽ và vô cùng cuốn hút.",
+          prefix: "Nắng Chanh",
+          suffix: "Bờ Biển Nắng Ấm",
+          outer: "Bạn bộc trực, cá tính năng động và vô cùng cuốn hút.",
           inner:
             "Bạn yêu ghét rõ ràng, không bao giờ vòng vo và luôn theo đuổi sự chân thật.",
-          core: "Năng động, sảng khoái và luôn tiến về phía trước.",
+          core: "Tươi mới, sảng khoái và luôn tiến về phía trước.",
           scores: {
-            elegance: 83,
-            depth: 75,
-            warmth: 72,
+            elegance: 85,
+            depth: 76,
+            warmth: 75,
             freedom: 97,
             mystery: 70,
           },
         },
         {
-          id: "grapefruit-peel",
-          name: "Vỏ Bưởi",
-          icon: "🍊",
-          prefix: "Thanh Bưởi",
-          suffix: "Miệt Vườn Nắng Ấm",
+          id: "pear-berry-melon",
+          name: "Lê, Cherry & Dưa Lưới",
+          icon: "🍐",
+          prefix: "Mật Quả",
+          suffix: "Khu Vườn Mùa Hạ",
           outer:
-            "Bạn thanh nhã, duyên dáng và có nụ cười ấm áp khiến người ta xao xuyến.",
+            "Bạn thanh nhã, ngọt ngào và có nụ cười ấm áp khiến người ta xao xuyến.",
           inner:
             "Bạn chu đáo, tinh tế và luôn để ý đến cảm nhận của những người xung quanh.",
-          core: "Dịu dàng, thơm thảo và đong đầy tình cảm yêu thương.",
+          core: "Trẻ trung, thơm thảo và đong đầy nguồn năng lượng yêu thương.",
           scores: {
             elegance: 92,
-            depth: 82,
+            depth: 80,
             warmth: 91,
-            freedom: 84,
+            freedom: 86,
             mystery: 74,
           },
         },
@@ -501,30 +501,30 @@
       name: "Gia Vị Ấm",
       sub: "Spicy · Quyến Rũ",
       color: "#a8422b",
-      desc: "Bí ẩn, nồng nàn & cá tính nghệ thuật độc bản",
+      desc: "Nghệ Tây, Tiêu Hồng, Cà Phê, Thuốc Lá, Bạch Đậu Khấu & Đinh Hương",
       notes: [
         {
-          id: "cinnamon",
-          name: "Quế Chi Rừng",
-          icon: "🍂",
-          prefix: "Hỏa Quế",
-          suffix: "Đêm Đông Ấm Áp",
+          id: "saffron-almond",
+          name: "Nghệ Tây & Hạnh Nhân",
+          icon: "✨",
+          prefix: "Nhụy Đỏ",
+          suffix: "Hoàng Cung Rực Rỡ",
           outer:
-            "Bạn ấm áp, nhiệt thành và có cá tính rõ nét. Bạn không bao giờ hòa lẫn vào đám đông.",
+            "Bạn sang trọng, nhiệt thành và có cá tính rõ nét. Bạn không bao giờ hòa lẫn vào đám đông.",
           inner:
-            "Trái tim bạn luôn rực lửa đam mê. Khi đã theo đuổi điều gì hay yêu thương ai, bạn luôn hết mình và quyết liệt.",
-          core: "Bạn là người truyền lửa — sự hiện diện của bạn xua tan sự lạnh lẽo và mang lại sinh khí ấm cúng cho mọi không gian.",
+            "Trái tim bạn luôn rực lửa đam mê. Khi đã theo đuổi điều gì hay yêu thương ai, bạn luôn hết mình và sâu sắc.",
+          core: "Quý phái và độc bản như sợi nghệ tây vàng đỏ quý giá.",
           scores: {
-            elegance: 82,
-            depth: 88,
-            warmth: 98,
+            elegance: 94,
+            depth: 92,
+            warmth: 94,
             freedom: 80,
-            mystery: 89,
+            mystery: 95,
           },
         },
         {
           id: "pink-pepper",
-          name: "Hồng Tiêu",
+          name: "Tiêu Hồng (Pink Pepper)",
           icon: "🌶️",
           prefix: "Hồng Tiêu",
           suffix: "Khúc Giao Hưởng Đương Đại",
@@ -542,51 +542,51 @@
           },
         },
         {
-          id: "warm-ginger",
-          name: "Gừng Ấm",
-          icon: "🫚",
-          prefix: "Khương Ấm",
-          suffix: "Lửa Nhỏ Bên Hiên",
+          id: "coffee-cacao",
+          name: "Cà Phê & Cacao",
+          icon: "☕",
+          prefix: "Hương Cà Phê",
+          suffix: "Đêm Phố Thị",
           outer:
-            "Bạn chân thành, thực tế và mang lại cảm giác an tâm tuyệt đối cho những người xung quanh.",
+            "Bạn sâu sắc, cuốn hút và mang lại cảm giác ấm áp, tỉnh thức cho những người xung quanh.",
           inner:
-            "Bạn coi trọng hành động hơn lời nói hoa mỹ. Sự quan tâm của bạn thể hiện qua những cử chỉ chăm sóc tinh tế đời thường.",
-          core: "Bền bỉ và kiên định, bạn là người giữ nhịp ấm áp cho cả tập thể và gia đình.",
+            "Bạn yêu những khoảng lặng suy tư và những cuộc trò chuyện có chiều sâu.",
+          core: "Đậm đà, quyến rũ và lưu lại hậu vị khó quên.",
           scores: {
-            elegance: 80,
-            depth: 86,
-            warmth: 96,
-            freedom: 77,
-            mystery: 75,
+            elegance: 88,
+            depth: 93,
+            warmth: 95,
+            freedom: 82,
+            mystery: 92,
           },
         },
         {
-          id: "star-anise",
-          name: "Đại Hồi",
-          icon: "⭐",
-          prefix: "Đại Hồi",
-          suffix: "Hương Đất Trời Tây Bắc",
-          outer: "Bạn độc đáo, lôi cuốn và toát lên khí chất bí ẩn khó đoán.",
+          id: "tobacco-leather",
+          name: "Thuốc Lá & Da Thuộc",
+          icon: "🍂",
+          prefix: "Phong Trần",
+          suffix: "Phòng Đọc Sách Cổ",
+          outer: "Bạn độc đáo, lịch lãm và toát lên khí chất bí ẩn khó đoán.",
           inner:
             "Bạn có tư duy triết học sâu sắc, thích khám phá những khía cạnh ẩn giấu của cuộc sống.",
-          core: "Nồng nàn, sâu lắng và mang phong vị nghệ thuật đặc sắc.",
+          core: "Nồng nàn, từng trải và mang phong vị nghệ thuật cổ điển.",
           scores: {
             elegance: 91,
-            depth: 93,
+            depth: 96,
             warmth: 90,
-            freedom: 82,
-            mystery: 95,
+            freedom: 84,
+            mystery: 96,
           },
         },
         {
-          id: "cardamom",
-          name: "Thảo Quả",
+          id: "cardamom-cumin",
+          name: "Bạch Đậu Khấu & Thì Là",
           icon: "🌰",
-          prefix: "Thảo Quả",
+          prefix: "Đậu Khấu",
           suffix: "Ngọn Lửa Rừng Khuya",
           outer: "Bạn phóng khoáng, dũng cảm và có nét phong trần lãng tử.",
           inner:
-            "Bạn khao khát tự do và không ngại dấn thân vào những hành trình mạo hiểm.",
+            "Bạn khao khát tự do và không ngại dấn thân vào những hành trình mới.",
           core: "Ấm nồng, mạnh mẽ và dám sống trọn vẹn cho đam mê.",
           scores: {
             elegance: 86,
@@ -597,21 +597,21 @@
           },
         },
         {
-          id: "clove",
-          name: "Đinh Hương",
+          id: "clove-cinnamon",
+          name: "Đinh Hương & Quế",
           icon: "🌿",
           prefix: "Đinh Hương",
-          suffix: "Lâu Đài Cổ Kính",
-          outer: "Bạn đĩnh đạc, bí ẩn và có sức hút mê hoặc đầy quyến rũ.",
+          suffix: "Đêm Đông Ấm Áp",
+          outer: "Bạn đĩnh đạc, ấm áp và có sức hút mê hoặc đầy quyến rũ.",
           inner:
             "Bạn sống giàu cảm xúc nhưng rất kín đáo, chỉ mở lòng với người thật sự hiểu mình.",
           core: "Sâu sắc, nồng nàn và để lại dấu ấn khó phai.",
           scores: {
-            elegance: 93,
+            elegance: 90,
             depth: 95,
-            warmth: 89,
+            warmth: 97,
             freedom: 78,
-            mystery: 96,
+            mystery: 94,
           },
         },
       ],
@@ -621,11 +621,11 @@
       name: "Hổ Phách & Xạ",
       sub: "Amber · Gợi Cảm",
       color: "#9b6b43",
-      desc: "Sang trọng, mượt như lụa & lưu giữ dư âm",
+      desc: "Hổ Phách, Xạ Hương, Đậu Tonka, Vanilla, Gỗ Cashmere & Hoắc Hương",
       notes: [
         {
           id: "golden-amber",
-          name: "Hổ Phách Vàng",
+          name: "Hổ Phách & Long Diên Hương",
           icon: "🍯",
           prefix: "Hổ Phách",
           suffix: "Ánh Vàng Hoàng Hôn",
@@ -644,7 +644,7 @@
         },
         {
           id: "white-musk",
-          name: "Xạ Hương Lụa",
+          name: "Xạ Hương Trắng",
           icon: "🕊️",
           prefix: "Lụa Xạ",
           suffix: "Hơi Thở Thầm Thì",
@@ -663,7 +663,7 @@
         },
         {
           id: "vanilla-tonka",
-          name: "Đậu Tonka",
+          name: "Đậu Tonka & Vanilla",
           icon: "🤎",
           prefix: "Mật Tonka",
           suffix: "Khúc Ru Đêm Dịu",
@@ -673,57 +673,57 @@
             "Bạn biết tận hưởng niềm vui từ những điều giản dị: mùi bánh nướng, ánh đèn vàng ấm và tiếng nhạc du dương.",
           core: "Tâm hồn bạn giàu lòng trắc ẩn và sự lạc quan ấm áp.",
           scores: {
-            elegance: 86,
-            depth: 82,
+            elegance: 88,
+            depth: 84,
             warmth: 97,
             freedom: 79,
             mystery: 83,
           },
         },
         {
-          id: "benzoin",
-          name: "Nhựa Bồ Đề",
-          icon: "🪵",
-          prefix: "An Tức",
-          suffix: "Khói Thơm Trầm Mặc",
+          id: "cashmere-wood",
+          name: "Gỗ Cashmere (Cashmeran)",
+          icon: "🧣",
+          prefix: "Nhung Cashmere",
+          suffix: "Chiều Thu Êm Ái",
           outer:
-            "Bạn thanh tịnh, nho nhã và mang lại cảm giác bình an lạ thường.",
+            "Bạn thanh lịch, nho nhã và mang lại cảm giác êm dịu như tấm lụa cashmere.",
           inner:
-            "Bạn yêu chiều sâu tâm linh, thích những gì mộc mạc nhưng ẩn chứa tinh hoa.",
-          core: "Dịu ngọt như sáp ong, mang đến sự an ủi và chữa lành vô điều kiện.",
+            "Bạn yêu sự tinh tế, sang trọng thầm lặng và không gian sống ấm cúng.",
+          core: "Mượt mà, sâu lắng và ôm ấp tâm hồn bằng sự dịu dàng.",
           scores: {
             elegance: 95,
-            depth: 94,
-            warmth: 96,
-            freedom: 75,
-            mystery: 92,
+            depth: 91,
+            warmth: 94,
+            freedom: 76,
+            mystery: 89,
           },
         },
         {
-          id: "frankincense",
-          name: "Nhũ Hương",
+          id: "frankincense-labdanum",
+          name: "Nhũ Hương & Nhựa Thơm",
           icon: "✨",
           prefix: "Thiên Hương",
           suffix: "Điện Thờ Tôn Quý",
           outer: "Bạn cao quý, điềm đạm và có tầm nhìn xa trông rộng.",
           inner:
-            "Bạn sống có lý tưởng cao đẹp, luôn hướng về chân - thiện - mỹ.",
-          core: "Trang nghiêm, thuần khiết và lưu giữ sự tôn quý vĩnh cửu.",
+            "Bạn sống có lý tưởng cao đẹp, luôn hướng về sự cân bằng và tĩnh tại.",
+          core: "Trang nghiêm, thuần khiết và lưu giữ sự tôn quý bền lâu.",
           scores: {
-            elegance: 98,
-            depth: 97,
-            warmth: 85,
-            freedom: 79,
+            elegance: 97,
+            depth: 96,
+            warmth: 88,
+            freedom: 78,
             mystery: 96,
           },
         },
         {
           id: "patchouli",
-          name: "Hoắc Hương",
+          name: "Hoắc Hương (Patchouli)",
           icon: "🌿",
           prefix: "Hoắc Hương",
           suffix: "Hương Đất Mẹ Sâu Xa",
-          outer: "Bạn mộc mạc, bí ẩn và có nét phong trần rất riêng biệt.",
+          outer: "Bạn mộc mạc, bí ẩn và có nét cuốn hút rất riêng biệt.",
           inner:
             "Bạn kiên cường, thấu hiểu quy luật tự nhiên và không thích những điều giả tạo.",
           core: "Bám rễ sâu vào lòng đất mẹ, vững chãi và để lại dư âm quyến rũ.",
@@ -739,44 +739,2116 @@
     },
   ];
 
-  const MIYAKO_MATCHES = {
-    floral: {
-      vessel: "Thiết kế SẮC — Ngọc Sương Mai",
-      collection: "BST Tinh Dầu Hương Hoa Cao Cấp & Hồn Việt",
-      image: "assets/images/custom-06.webp",
-      desc: "Bình khuếch tán thủy tinh vân kim cương đón sáng kết hợp cùng nốt hương hoa thanh khiết, tôn lên vẻ đẹp tinh tế cho phòng khách và phòng ngủ.",
+  const MIYAKO_PRODUCTS = [
+    {
+      title:
+        "Tinh Dầu Khuếch Tán Giảm Stress MIYAKO HOME – Năng Lượng: Hổ Phách",
+      shortName: "Năng Lượng: Hổ Phách",
+      collection: "BST Tinh Dầu Giảm Stress – Trị Liệu",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-giam-stress-miyako-home-nang-luong-ho-phach/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-800x800.jpg",
+      priceRange: "589.000 ₫ – 1.520.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "589.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "859.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.520.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Hương hoa, Hương trái cây",
+        heart: "Hương gỗ, Thảo mộc",
+        base: "Hương gỗ, Hương nhựa, Vani",
+      },
+      topIds: ["peony-lily", "pear-berry-melon"],
+      heartIds: ["guaiac-teak", "rosemary-tea-tree"],
+      baseIds: ["guaiac-teak", "vanilla-tonka", "frankincense-labdanum"],
+      allNoteIds: [
+        "peony-lily",
+        "pear-berry-melon",
+        "guaiac-teak",
+        "rosemary-tea-tree",
+        "vanilla-tonka",
+        "frankincense-labdanum",
+        "golden-amber",
+      ],
+      desc: "Tinh dầu trị liệu Hổ Phách sở hữu hương thơm ngọt ấm, trầm lắng và đầy lôi cuốn – được ví như một dòng năng lượng âm ỉ chảy trong cơ thể, vừa xoa dịu tâm trí, vừa đánh thức nguồn sinh lực từ bên trong. Đây là liệu phá...",
     },
-    woody: {
-      vessel: "Thiết kế ÁNH NGÂN MỘC — Đế Gỗ Tự Nhiên",
-      collection: "BST Tinh Dầu Dấu Ấn & Hồn Việt",
-      image: "assets/images/custom-14.webp",
-      desc: "Sự kết hợp giữa sắc bạc đương đại và đế gỗ mộc mạc, hoàn hảo để lan tỏa tầng hương gỗ trầm ấm và bản lĩnh.",
+    {
+      title: "Tinh Dầu Khuếch Tán Giảm Stress MIYAKO HOME – Cảm Hứng: Gỗ Thông",
+      shortName: "Cảm Hứng: Gỗ Thông",
+      collection: "BST Tinh Dầu Giảm Stress – Trị Liệu",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-giam-stress-miyako-home-cam-hung-go-thong/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "589.000 ₫ – 1.520.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "589.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "859.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.520.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Lá thông",
+        heart: "Hương gỗ, Hương nhựa, Thảo mộc",
+        base: "Hương gỗ, Hương nhựa",
+      },
+      topIds: ["pine-wood"],
+      heartIds: ["guaiac-teak", "rosemary-tea-tree", "frankincense-labdanum"],
+      baseIds: ["guaiac-teak", "frankincense-labdanum"],
+      allNoteIds: [
+        "pine-wood",
+        "guaiac-teak",
+        "rosemary-tea-tree",
+        "frankincense-labdanum",
+      ],
+      desc: "Chiết xuất từ lá và quả của cây thông,  tinh dầu trị liệu Gỗ Thông   mang hương thơm mộc mạc, tươi mát – đặc trưng của núi rừng. Với đặc tính kháng khuẩn và kháng viêm tự nhiên, tinh dầu thông hỗ trợ làm sạch không kh...",
     },
-    herbal: {
-      vessel: "Thiết kế DẤU — Lục Sắc Sơn Hà",
-      collection: "BST Tinh Dầu Hương Trị Liệu - Thư Giãn",
-      image: "assets/images/custom-11.webp",
-      desc: "Sắc xanh sơn hà phóng khoáng đồng điệu cùng hương trà và thảo mộc, mang lại không gian tĩnh tại, cân bằng tâm trí.",
+    {
+      title:
+        "Tinh Dầu Khuếch Tán Giảm Stress MIYAKO HOME – Giấc Ngủ: Bưởi & Bạc Hà",
+      shortName: "Giấc Ngủ: Bưởi & Bạc Hà",
+      collection: "BST Tinh Dầu Giảm Stress – Trị Liệu",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-giam-stress-miyako-home-giac-ngu-buoi-bac-ha/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "589.000 ₫ – 1.520.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "589.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "859.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.520.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Sự tươi mát, chua chua và thanh khiết, gợi nhớ đến những quả bưởi chín mộng",
+        heart:
+          "Bạc hà sẽ bổ sung cho hương bưởi bằng một lớp hương menthol lạnh lẽo, làm tăng thêm cảm giác tươi mát",
+        base: "Thảo mộc của bạc hà cảm giác dễ chịu và thư giãn",
+      },
+      topIds: ["grapefruit"],
+      heartIds: ["peppermint", "grapefruit"],
+      baseIds: ["rosemary-tea-tree", "peppermint"],
+      allNoteIds: ["grapefruit", "peppermint", "rosemary-tea-tree"],
+      desc: "Sự kết hợp hài hòa giữa tinh dầu Bưởi và Bạc Hà tạo nên một liệu pháp hương thơm lý tưởng, hỗ trợ cải thiện chất lượng giấc ngủ một cách tự nhiên và an toàn. Hương bưởi tươi mát giúp giải tỏa căng thẳng và làm dịu cảm...",
     },
-    citrus: {
-      vessel: "Thiết kế NÉT — Nắng Trên Hiên",
+    {
+      title: "Tinh Dầu Khuếch Tán Giảm Stress MIYAKO HOME – Phục Hồi: Thảo Mộc",
+      shortName: "Phục Hồi: Thảo Mộc",
+      collection: "BST Tinh Dầu Giảm Stress – Trị Liệu",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-miyako-giam-stress-phuc-hoi/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "589.000 ₫ – 1.520.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "589.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "859.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.520.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Chanh, Bưởi",
+        heart: "Hoa Nhài, Hoa Cam",
+        base: "Gỗ đàn hương, Hương nhựa, Hương đất",
+      },
+      topIds: ["grapefruit", "amalfi-lemon"],
+      heartIds: ["night-jasmine", "orange-blossom"],
+      baseIds: ["sandalwood", "frankincense-labdanum"],
+      allNoteIds: [
+        "grapefruit",
+        "amalfi-lemon",
+        "night-jasmine",
+        "orange-blossom",
+        "sandalwood",
+        "frankincense-labdanum",
+        "rosemary-tea-tree",
+      ],
+      desc: "Chiết xuất từ những loại thảo mộc bản địa của rừng nhiệt đới, Phục Hồi là liệu pháp hương thơm lý tưởng giúp đánh thức sức sống tiềm ẩn trong bạn. Mùi hương mộc mạc, thanh mát nhưng sâu lắng này có khả năng xua tan cả...",
+    },
+    {
+      title:
+        "Tinh Dầu Khuếch Tán Giảm Stress MIYAKO HOME – Tập Trung: Hương Thảo",
+      shortName: "Tập Trung: Hương Thảo",
+      collection: "BST Tinh Dầu Giảm Stress – Trị Liệu",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-giam-stress-miyako-home-tap-trung-huong-thao/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "589.000 ₫ – 1.520.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "589.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "859.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.520.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Chanh",
+        heart: "Hương thảo, Thảo mộc",
+        base: "Hương gỗ, Hương nhựa",
+      },
+      topIds: ["amalfi-lemon"],
+      heartIds: ["rosemary-tea-tree"],
+      baseIds: ["guaiac-teak", "frankincense-labdanum"],
+      allNoteIds: [
+        "amalfi-lemon",
+        "rosemary-tea-tree",
+        "guaiac-teak",
+        "frankincense-labdanum",
+      ],
+      desc: "Với hương thơm thanh mát, sắc sảo từ tinh dầu hương thảo kết hợp cùng cam chanh nhẹ nhàng, Tập Trung là “liều kích thích tự nhiên” giúp tăng cường sự tập trung, cải thiện trí nhớ và thúc đẩy tuần hoàn máu não. Đây là ...",
+    },
+    {
+      title:
+        "Tinh Dầu Khuếch Tán Giảm Stress MIYAKO HOME – Thanh Tịnh: Hoa Sen",
+      shortName: "Thanh Tịnh: Hoa Sen",
+      collection: "BST Tinh Dầu Giảm Stress – Trị Liệu",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-giam-stress-thanh-tinh/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "589.000 ₫ – 1.520.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "589.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "859.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.520.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Sương mai, Lá sen non",
+        heart: "Hoa sen trắng thuần khiết",
+        base: "Trà trắng, Xạ hương lụa",
+      },
+      topIds: ["white-lotus"],
+      heartIds: ["white-lotus"],
+      baseIds: ["white-tea", "white-musk"],
+      allNoteIds: ["white-lotus", "white-tea", "white-musk"],
+      desc: "Tinh dầu trị liệu Sen Trắng  nhẹ nhàng như một lời thì thầm từ chính trái tim – dịu dàng, thuần khiết và sâu sắc. Hương thơm này giúp điều hòa nhịp thở, làm dịu dòng suy nghĩ và đưa tâm trí trở về trạng thái tĩnh lặng...",
+    },
+    {
+      title:
+        "Tinh Dầu Khuếch Tán Giảm Stress MIYAKO HOME – Thư Giãn: Hoa Lan & Muối Biển",
+      shortName: "Thư Giãn: Hoa Lan & Muối Biển",
+      collection: "BST Tinh Dầu Giảm Stress – Trị Liệu",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-giam-stress-miyako-home-thu-gian-hoa-lan-muoi-bien/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "789.000 ₫ – 2.180.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "789.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.210.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.180.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Ozone",
+        heart: "Muối Biển, Hoa Fresia, Lá xanh",
+        base: "Hạt tonka, Xạ hương nhẹ, Hổ phách",
+      },
+      topIds: ["sea-salt-ozone"],
+      heartIds: ["green-tea-bamboo", "sea-salt-ozone"],
+      baseIds: ["golden-amber", "white-musk", "vanilla-tonka"],
+      allNoteIds: [
+        "sea-salt-ozone",
+        "green-tea-bamboo",
+        "golden-amber",
+        "white-musk",
+        "vanilla-tonka",
+        "freesia-orchid",
+      ],
+      desc: "Tinh dầu trị liệu từ Muối Biển & Hoa Lan  giúp giảm căng thẳng, cải thiện tâm trạng và đưa bạn trở về với trạng thái thư thái nguyên bản. Đây là lựa chọn lý tưởng sau một ngày dài, hoặc mỗi khi bạn cần không gian để t...",
+    },
+    {
+      title:
+        "Tinh Dầu Khuếch Tán Giảm Stress MIYAKO HOME – Yên Bình: Vườn Hồng",
+      shortName: "Yên Bình: Vườn Hồng",
+      collection: "BST Tinh Dầu Giảm Stress – Trị Liệu",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-giam-stress-miyako-home-yen-binh-vuon-hong/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "589.000 ₫ – 1.520.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "589.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "859.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.520.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Lá non, Trái cây",
+        heart: "Hoa hồng",
+        base: "Hương gỗ, Hương nhựa",
+      },
+      topIds: ["green-tea-bamboo", "pear-berry-melon"],
+      heartIds: ["damask-rose"],
+      baseIds: ["guaiac-teak", "frankincense-labdanum"],
+      allNoteIds: [
+        "green-tea-bamboo",
+        "pear-berry-melon",
+        "damask-rose",
+        "guaiac-teak",
+        "frankincense-labdanum",
+      ],
+      desc: "Tựa như bước chân chạm khẽ vào khu vườn hoa hồng trắng giữa buổi sớm trong lành, hương thơm từ “Vườn Hồng” mang lại cảm giác thư giãn, tinh khôi và đầy mê hoặc. Không quá ngọt, không quá nồng, mùi hương dịu dàng kết h...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Giảm Stress MIYAKO HOME – Yêu: Gỗ Tuyết Tùng",
+      shortName: "Yêu: Gỗ Tuyết Tùng",
+      collection: "BST Tinh Dầu Giảm Stress – Trị Liệu",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-giam-stress-miyako-home-yeu-go-tuyet-tung/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "589.000 ₫ – 1.520.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "589.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "859.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.520.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Thảo mộc thanh mát",
+        heart: "Gỗ tuyết tùng",
+        base: "Hương nhựa thơm",
+      },
+      topIds: ["rosemary-tea-tree"],
+      heartIds: ["cedarwood"],
+      baseIds: ["frankincense-labdanum"],
+      allNoteIds: ["rosemary-tea-tree", "cedarwood", "frankincense-labdanum"],
+      desc: "Tinh dầu trị liệu Gỗ Tuyết Tùng  mang trong mình sự vững chãi, trầm lắng – như một vòng tay dịu dàng ôm trọn những cảm xúc tổn thương. Hương thơm ấm áp, mộc mạc nhưng đầy chiều sâu này có khả năng xoa dịu tâm trí, làm...",
+    },
+    {
+      title:
+        "Tinh Dầu Khuếch Tán Giảm Stress MIYAKO HOME –Kết Nối: Gỗ CARIBBEAN",
+      shortName: "Kết Nối: Gỗ CARIBBEAN",
+      collection: "BST Tinh Dầu Giảm Stress – Trị Liệu",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-giam-stress-miyako-home-ket-noi-go-caribbean/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "589.000 ₫ – 2.180.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "589.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.210.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.180.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Da thuộc, Hạt tiêu",
+        heart: "Gỗ teak, Lá thuốc lá, Đinh hương",
+        base: "Gỗ đàn hương, Hạt tiêu, Hổ phách",
+      },
+      topIds: ["pink-pepper", "tobacco-leather"],
+      heartIds: ["guaiac-teak", "tobacco-leather", "clove-cinnamon"],
+      baseIds: ["sandalwood", "pink-pepper", "golden-amber"],
+      allNoteIds: [
+        "pink-pepper",
+        "tobacco-leather",
+        "guaiac-teak",
+        "clove-cinnamon",
+        "sandalwood",
+        "golden-amber",
+      ],
+      desc: "Mang sắc thái mạnh mẽ và đầy chiều sâu, Gỗ Caribbean là sự hòa quyện tinh tế của các nốt hương trầm ấm và cay nồng – từ tiêu đen, lá thuốc lá, gỗ đàn hương cho đến patchouli và hổ phách. Đây không chỉ là một mùi hương...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Acqua di Gioia",
+      shortName: "Acqua di Gioia",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-giola-hermes/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "649.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "250ml",
+          price: "649.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Chanh vàng Amalfi, Bạc hà",
+        heart: "Hoa nhài, Hồng tiêu, Hoa mẫu đơn",
+        base: "Gỗ tuyết tùng, Đường nâu",
+      },
+      topIds: ["peppermint", "amalfi-lemon"],
+      heartIds: ["night-jasmine", "peony-lily", "pink-pepper"],
+      baseIds: ["cedarwood", "vanilla-tonka"],
+      allNoteIds: [
+        "peppermint",
+        "amalfi-lemon",
+        "night-jasmine",
+        "peony-lily",
+        "pink-pepper",
+        "cedarwood",
+        "vanilla-tonka",
+      ],
+      desc: "Tinh dầu Acqua di Gioia là bản hoà ca giữa thiên nhiên tươi mới và cảm xúc an yên – mang đến cho bạn trải nghiệm như đang tận hưởng kỳ nghỉ tại một bãi biển xanh ngắt ở miền Nam nước Ý. Đây là mùi hương gợi cảm giác t...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Amber Nuit",
+      shortName: "Amber Nuit",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-amber-nuit/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "789.000 ₫ – 2.180.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "789.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.210.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.180.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Cam Bergamot",
+        heart: "Hoa hồng Damask, Tiêu hồng",
+        base: "Đá hổ phách, Gỗ Guaiac, Tuyết tùng, Hoắc hương.",
+      },
+      topIds: ["bergamot"],
+      heartIds: ["damask-rose", "pink-pepper"],
+      baseIds: ["cedarwood", "guaiac-teak", "golden-amber", "patchouli"],
+      allNoteIds: [
+        "bergamot",
+        "damask-rose",
+        "pink-pepper",
+        "cedarwood",
+        "guaiac-teak",
+        "golden-amber",
+        "patchouli",
+      ],
+      desc: "Tinh Dầu Ambre Nuit là bản hoà âm đầy mê hoặc giữa sự dữ dội và dịu dàng – nơi vẻ đẹp mềm mại của hoa hồng Thổ Nhĩ Kỳ chạm vào nét hoang dã, sâu lắng của hổ phách phương Đông. Như một phiên bản thơm của Người đẹp và Q...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Armani Sisi",
+      shortName: "Armani Sisi",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-sisi/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "789.000 ₫ – 2.180.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "789.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.210.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.180.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Lá cây lý chua đen",
+        heart: "Hoa hồng, lan Nam Phi",
+        base: "Vanilla, hoắc hương, ambroxan, hương gỗ",
+      },
+      topIds: ["pear-berry-melon"],
+      heartIds: ["damask-rose", "freesia-orchid"],
+      baseIds: ["guaiac-teak", "golden-amber", "vanilla-tonka", "patchouli"],
+      allNoteIds: [
+        "pear-berry-melon",
+        "damask-rose",
+        "freesia-orchid",
+        "guaiac-teak",
+        "golden-amber",
+        "vanilla-tonka",
+        "patchouli",
+      ],
+      desc: "Tinh Dầu Khuếch Tán Armani Sisi là mùi hương dành riêng cho những người phụ nữ hiện đại – tự do, bản lĩnh và luôn biết mình muốn gì. Không cần quá phô trương, Sisi vẫn thu hút một cách tự nhiên nhờ vào sự kết hợp hoàn...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Baccarat",
+      shortName: "Baccarat",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-baccarat-rouge/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "890.000 ₫ – 2.580.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "890.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.350.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.580.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Hạnh nhân đắng, Nghệ tây",
+        heart: "Hoa nhài Ai Cập, Gỗ tuyết tùng",
+        base: "Xạ hương, Hương gỗ, Long diên hương",
+      },
+      topIds: ["saffron-almond"],
+      heartIds: ["night-jasmine", "cedarwood"],
+      baseIds: ["guaiac-teak", "golden-amber", "white-musk"],
+      allNoteIds: [
+        "saffron-almond",
+        "night-jasmine",
+        "cedarwood",
+        "guaiac-teak",
+        "golden-amber",
+        "white-musk",
+      ],
+      desc: "Tinh Dầu Khuếch Tán Baccarat là mùi hương tinh tế và đầy lôi cuốn, mang lại cảm giác sang trọng và mạnh mẽ nhưng cũng đầy quyến rũ. Sự kết hợp hoàn hảo của những nốt hương độc đáo mang lại cảm giác mạnh mẽ nhưng vẫn g...",
+    },
+    {
+      title: "Tinh dầu Khuếch Tán Miyako Home – Bạch Dương",
+      shortName: "Bạch Dương",
+      collection: "BST Tinh Dầu 12 Cung Hoàng Đạo",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-aries/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/01/bia-tinh-dau-khuech-tan-web-800x800.jpg",
+      priceRange: "310.000 ₫ – 2.180.000 ₫",
+      volumes: [
+        {
+          capacity: "20ml",
+          price: "310.000 ₫",
+        },
+        {
+          capacity: "50ml",
+          price: "310.000 ₫",
+        },
+        {
+          capacity: "100ml",
+          price: "440.000 ₫",
+        },
+        {
+          capacity: "200ml",
+          price: "680.000 ₫",
+        },
+        {
+          capacity: "300ml",
+          price: "710.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.210.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.180.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Cam Bergamot, quýt hồng, rượu rum, mật ong",
+        heart: "Hoa nhài, hoa hồng, hoa phong lan",
+        base: "Gỗ đàn hương, Vanilla",
+      },
+      topIds: ["bergamot", "sweet-orange"],
+      heartIds: ["night-jasmine", "damask-rose"],
+      baseIds: ["sandalwood", "vanilla-tonka"],
+      allNoteIds: [
+        "bergamot",
+        "sweet-orange",
+        "night-jasmine",
+        "damask-rose",
+        "sandalwood",
+        "vanilla-tonka",
+      ],
+      desc: "Bạn là Bạch Dương – người tiên phong không ngừng tiến bước, mang trong mình nguồn năng lượng rực rỡ và tinh thần bất khuất. Luôn khát khao thử thách, bạn sống trọn vẹn với đam mê và sẵn sàng bứt phá mọi giới hạn. Với ...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Bảo Bình",
+      shortName: "Bảo Bình",
+      collection: "BST Tinh Dầu 12 Cung Hoàng Đạo",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-aquarius/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/01/bia-tinh-dau-khuech-tan-web-800x800.jpg",
+      priceRange: "310.000 ₫ – 2.180.000 ₫",
+      volumes: [
+        {
+          capacity: "20ml",
+          price: "310.000 ₫",
+        },
+        {
+          capacity: "50ml",
+          price: "310.000 ₫",
+        },
+        {
+          capacity: "100ml",
+          price: "440.000 ₫",
+        },
+        {
+          capacity: "200ml",
+          price: "680.000 ₫",
+        },
+        {
+          capacity: "300ml",
+          price: "710.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.210.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.180.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Muối, Hương Ozonic, Hương Nước, Sim và Cam Bergamot.",
+        heart: "Hương Biển, Muối, Hoa Ngọc Lan Tây và Hoa Cam",
+        base: "Long diên hương, Tảo, Xạ hương trắng, Rêu sồi và Hoắc hương",
+      },
+      topIds: ["bergamot", "sea-salt-ozone"],
+      heartIds: ["orange-blossom", "sea-salt-ozone"],
+      baseIds: ["vetiver-oakmoss", "golden-amber", "white-musk", "patchouli"],
+      allNoteIds: [
+        "bergamot",
+        "sea-salt-ozone",
+        "orange-blossom",
+        "vetiver-oakmoss",
+        "golden-amber",
+        "white-musk",
+        "patchouli",
+      ],
+      desc: "Bạn là một Bảo Bình – người luôn đi trước thời đại, yêu thích sự mới mẻ và chẳng ngại phá bỏ những khuôn khổ cũ. Với tư duy độc lập, tính cách giàu sáng tạo và cái nhìn khác biệt, bạn chính là nguồn cảm hứng cho những...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Black Poppy",
+      shortName: "Black Poppy",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-black-poppy/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "789.000 ₫ – 2.180.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "789.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.210.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.180.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Hồng tiêu, Hoa cam, Quả lê",
+        heart: "Cà phê, Hoa nhài, Hạnh nhân đắng, Cam thảo",
+        base: "Vanilla, Hoắc hương, Gỗ tuyết tùng, Gỗ Cashmere",
+      },
+      topIds: ["orange-blossom", "pear-berry-melon", "pink-pepper"],
+      heartIds: ["night-jasmine", "saffron-almond", "coffee-cacao"],
+      baseIds: ["cedarwood", "vanilla-tonka", "cashmere-wood", "patchouli"],
+      allNoteIds: [
+        "orange-blossom",
+        "pear-berry-melon",
+        "pink-pepper",
+        "night-jasmine",
+        "saffron-almond",
+        "coffee-cacao",
+        "cedarwood",
+        "vanilla-tonka",
+        "cashmere-wood",
+        "patchouli",
+      ],
+      desc: "Tinh Dầu Khuếch Tán Black Poppy mang trong mình tinh thần “rock chic” – đại diện cho những cô gái hiện đại, mạnh mẽ và không ngại khác biệt. Với sự kết hợp táo bạo giữa những nốt hương ngọt ngào, nồng nàn và sắc sảo. ...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Blue Bell",
+      shortName: "Blue Bell",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-blue-bell/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "729.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Trà xanh",
+        heart: "Quả việt quất, hoa huệ thung lũng, hoa nhài",
+        base: "Xạ hương, hổ phách trắng",
+      },
+      topIds: ["green-tea-bamboo"],
+      heartIds: ["night-jasmine", "peony-lily", "pear-berry-melon"],
+      baseIds: ["golden-amber", "white-musk"],
+      allNoteIds: [
+        "green-tea-bamboo",
+        "night-jasmine",
+        "peony-lily",
+        "pear-berry-melon",
+        "golden-amber",
+        "white-musk",
+      ],
+      desc: "Tinh Dầu Khuếch Tán Blue Bell mang đến một không gian thư giãn và dễ chịu, nơi mọi giác quan được vỗ về. Cảm giác an yên như buổi sáng trong vườn, ngọt ngào mà không hề nồng gắt, như một cái ôm nhẹ nhàng cuối ngày.",
+    },
+    {
+      title: "Tinh dầu Khuếch Tán Miyako Home – Bọ Cạp",
+      shortName: "Bọ Cạp",
+      collection: "BST Tinh Dầu 12 Cung Hoàng Đạo",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-scorpius/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/01/bia-tinh-dau-khuech-tan-web-800x800.jpg",
+      priceRange: "310.000 ₫ – 2.180.000 ₫",
+      volumes: [
+        {
+          capacity: "20ml",
+          price: "310.000 ₫",
+        },
+        {
+          capacity: "50ml",
+          price: "310.000 ₫",
+        },
+        {
+          capacity: "100ml",
+          price: "440.000 ₫",
+        },
+        {
+          capacity: "200ml",
+          price: "680.000 ₫",
+        },
+        {
+          capacity: "300ml",
+          price: "789.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.210.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.180.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Cam néroli, hoa cam, quýt mandarine – khởi đầu đầy tươi mới nhưng không kém phần cuốn hút.",
+        heart:
+          "Hoa dành dành, hoa lan, hoa nhài – tầng hương hoa sang trọng, quyến rũ và nữ tính.",
+        base: "Gỗ đàn hương, vani, xạ hương",
+      },
+      topIds: ["orange-blossom", "sweet-orange"],
+      heartIds: ["night-jasmine", "freesia-orchid", "peony-lily"],
+      baseIds: ["sandalwood", "white-musk", "vanilla-tonka"],
+      allNoteIds: [
+        "orange-blossom",
+        "sweet-orange",
+        "night-jasmine",
+        "freesia-orchid",
+        "peony-lily",
+        "sandalwood",
+        "white-musk",
+        "vanilla-tonka",
+      ],
+      desc: "Bạn là một Bọ Cạp – đầy mê hoặc, mạnh mẽ và mang trong mình sức hút không thể lý giải. Ẩn sau vẻ ngoài điềm tĩnh là một tâm hồn đầy cảm xúc, mãnh liệt và trung thành tuyệt đối với những điều mình tin tưởng. Bạn không ...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Bvlgari Aqva",
+      shortName: "Bvlgari Aqva",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-bvlgari-aqva/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "729.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Cam Mandarin, Quả cam và Tinh dầu lá chanh",
+        heart: "Rong biển, Hoa oải hương và Hoa bông vải",
+        base: "Gỗ tuyết tùng Virginia, Hương gỗ, Cây hoắc hương, Cây xô thơm và Hổ phách",
+      },
+      topIds: ["sweet-orange", "amalfi-lemon"],
+      heartIds: ["peony-lily", "lavender", "sea-salt-ozone"],
+      baseIds: [
+        "cedarwood",
+        "guaiac-teak",
+        "rosemary-tea-tree",
+        "golden-amber",
+        "patchouli",
+      ],
+      allNoteIds: [
+        "sweet-orange",
+        "amalfi-lemon",
+        "peony-lily",
+        "lavender",
+        "sea-salt-ozone",
+        "cedarwood",
+        "guaiac-teak",
+        "rosemary-tea-tree",
+        "golden-amber",
+        "patchouli",
+      ],
+      desc: "Lấy cảm hứng từ đại dương, Tinh Dầu Khuếch Tán Bvlgari Aqva mang đến cảm giác sảng khoái, tươi mới như làn gió biển đầu hè. Mùi hương mở ra sự tự do, mạnh mẽ và đầy năng lượng – như chính người đàn ông hiện đại: yêu t...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Choloé Love Story",
+      shortName: "Chloé Love Story",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-love-story/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "890.000 ₫ – 2.580.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "890.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.350.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.580.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Hoa cam Neroli, Quả lê, Cam Bergamot, Bưởi, Chanh vàng",
+        heart: "Hoa cam, Hoa nhài, Hoa hồng, Đào, Lý chua đen",
+        base: "Xạ hương, Gỗ tuyết tùng, Gỗ Cashmere, Hoắc hương",
+      },
+      topIds: [
+        "orange-blossom",
+        "bergamot",
+        "grapefruit",
+        "amalfi-lemon",
+        "pear-berry-melon",
+      ],
+      heartIds: [
+        "night-jasmine",
+        "damask-rose",
+        "orange-blossom",
+        "pear-berry-melon",
+      ],
+      baseIds: ["cedarwood", "white-musk", "cashmere-wood", "patchouli"],
+      allNoteIds: [
+        "orange-blossom",
+        "bergamot",
+        "grapefruit",
+        "amalfi-lemon",
+        "pear-berry-melon",
+        "night-jasmine",
+        "damask-rose",
+        "cedarwood",
+        "white-musk",
+        "cashmere-wood",
+        "patchouli",
+      ],
+      desc: "Tinh Dầu Khuếch Tán Chloé Love Story là tinh dầu dành cho những tâm hồn nhẹ nhàng, bay bổng và yêu sự lãng mạn. Mang tinh thần của một chuyện tình dưới ánh đèn Paris, Love Story gợi nhớ đến những khoảnh khắc ngọt ngào...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Cool Water",
+      shortName: "Cool Water",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-cool-water-hermes/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-2-800x800.jpg",
+      priceRange: "299.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "100ml",
+          price: "299.000 ₫",
+        },
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Hoa sen, Oải hương",
+        heart: "Rêu, Phong lữ, Gỗ đàn hương",
+        base: "Xạ hương, Gỗ tuyết tùng, Long diên hương, Bạch đàn khấu",
+      },
+      topIds: ["white-lotus", "lavender"],
+      heartIds: ["peony-lily", "sandalwood"],
+      baseIds: ["cedarwood", "golden-amber", "white-musk"],
+      allNoteIds: [
+        "white-lotus",
+        "lavender",
+        "peony-lily",
+        "sandalwood",
+        "cedarwood",
+        "golden-amber",
+        "white-musk",
+      ],
+      desc: "Tinh Dầu Khuếch Tán Cool Water là tinh dầu lý tưởng cho những ngày hè nắng nóng – mát lạnh như làn nước đầu mùa, trong trẻo và dịu nhẹ như làn gió biển thổi qua tâm hồn. Mùi hương này mang lại cảm giác thư giãn, dễ ch...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Cự Giải",
+      shortName: "Cự Giải",
+      collection: "BST Tinh Dầu 12 Cung Hoàng Đạo",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-cu-giai/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-300ml-800x800.jpg",
+      priceRange: "310.000 ₫ – 2.180.000 ₫",
+      volumes: [
+        {
+          capacity: "20ml",
+          price: "310.000 ₫",
+        },
+        {
+          capacity: "50ml",
+          price: "310.000 ₫",
+        },
+        {
+          capacity: "100ml",
+          price: "440.000 ₫",
+        },
+        {
+          capacity: "200ml",
+          price: "680.000 ₫",
+        },
+        {
+          capacity: "300ml",
+          price: "789.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.210.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.180.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Cam Bergamot, Chanh",
+        heart: "Quả hồi, Hoa Olive, Gỗ Cualiac",
+        base: "Đậu Tonka",
+      },
+      topIds: ["bergamot", "amalfi-lemon"],
+      heartIds: [],
+      baseIds: ["vanilla-tonka"],
+      allNoteIds: ["bergamot", "amalfi-lemon", "vanilla-tonka"],
+      desc: "Tinh Dầu Khuếch Tán Cự Giải , Bạn là người thuộc cung Cự Giải, nhạy cảm và tràn đầy tình cảm, luôn yêu thương gia đình và những người xung quanh.",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Homme A La Rose",
+      shortName: "Homme A La Rose",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-homme-a-la-rose/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-300ml-800x800.jpg",
+      priceRange: "789.000 ₫ – 2.180.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "789.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.210.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.180.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Hồng tiêu, Quả bưởi",
+        heart: "Hoa hồng tháng Năm, Hoa hồng Damask",
+        base: "Gỗ hổ phách, Labdanum Tây Ban Nha, Cây xô thơm",
+      },
+      topIds: ["grapefruit", "pink-pepper"],
+      heartIds: ["damask-rose"],
+      baseIds: ["rosemary-tea-tree", "golden-amber", "frankincense-labdanum"],
+      allNoteIds: [
+        "grapefruit",
+        "pink-pepper",
+        "damask-rose",
+        "rosemary-tea-tree",
+        "golden-amber",
+        "frankincense-labdanum",
+      ],
+      desc: "Tinh Dầu Khuếch Tán Homme A La Rose là tinh dầu mang đến một định nghĩa mới cho mùi hương nam tính – tinh tế, khác biệt và đầy bản lĩnh. Không quá ồn ào, không cần phải gồng mình mạnh mẽ, chỉ với hoa hồng và một chút ...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Kim Ngưu",
+      shortName: "Kim Ngưu",
+      collection: "BST Tinh Dầu 12 Cung Hoàng Đạo",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-kim-nguu/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "280.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "50ml",
+          price: "280.000 ₫",
+        },
+        {
+          capacity: "20ml",
+          price: "299.000 ₫",
+        },
+        {
+          capacity: "100ml",
+          price: "400.000 ₫",
+        },
+        {
+          capacity: "200ml",
+          price: "620.000 ₫",
+        },
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Cam Bergamot, Lavender",
+        heart: "Caumarin, Rêu cây sồi, Táo đỏ",
+        base: "Gỗ đàn hương, Đậu Tonka",
+      },
+      topIds: ["bergamot"],
+      heartIds: [],
+      baseIds: ["sandalwood", "vanilla-tonka"],
+      allNoteIds: ["bergamot", "sandalwood", "vanilla-tonka"],
+      desc: "Tinh Dầu Khuếch Tán Kim Ngưu , bạn thuộc cung Kim Ngưu – người luôn trân trọng sự ổn định và biết tận hưởng từng khoảnh khắc bình yên trong cuộc sống.",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – L’ombre des Merveilles",
+      shortName: "L’ombre des Merveilles",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-merveilles-hermes/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "729.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Trà đen",
+        heart: "Khói trầm hương",
+        base: "Đậu Tonka",
+      },
+      topIds: ["white-tea"],
+      heartIds: ["agarwood"],
+      baseIds: ["vanilla-tonka"],
+      allNoteIds: ["white-tea", "agarwood", "vanilla-tonka"],
+      desc: "Tinh Dầu Khuếch Tán L’Ombre Des Merveilles là tinh dầu mang đến cảm giác như lạc bước giữa màn đêm lấp lánh – nơi có trà đen nồng nàn, khói trầm ấm áp và đậu Tonka dịu ngọt len lỏi vào từng giác quan. Không dành cho s...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – LV Moon",
+      shortName: "LV Moon",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-lv-moon/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "810.000 ₫ – 3.290.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "810.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.620.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "3.290.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Sả, chanh",
+        heart: "Trà trắng Nam Mỹ",
+        base: "Cam Bergamot, Xương rồng",
+      },
+      topIds: ["lemongrass", "amalfi-lemon"],
+      heartIds: ["white-tea"],
+      baseIds: ["green-tea-bamboo", "bergamot"],
+      allNoteIds: [
+        "lemongrass",
+        "amalfi-lemon",
+        "white-tea",
+        "green-tea-bamboo",
+        "bergamot",
+      ],
+      desc: "Tinh Dầu Khuếch Tán LV Moon gợi liên tưởng đến những nhánh xương rồng nơi hoang mạc – bên ngoài gai góc nhưng bên trong lại ẩn chứa sự mềm mại, thanh tao. Hương sả chanh mở đầu đầy sảng khoái, tiếp nối bằng trà trắng ...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Ma Kết",
+      shortName: "Ma Kết",
+      collection: "BST Tinh Dầu 12 Cung Hoàng Đạo",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-ma-ket/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "280.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "50ml",
+          price: "280.000 ₫",
+        },
+        {
+          capacity: "20ml",
+          price: "299.000 ₫",
+        },
+        {
+          capacity: "100ml",
+          price: "400.000 ₫",
+        },
+        {
+          capacity: "200ml",
+          price: "620.000 ₫",
+        },
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Cam quýt, Lavender, Quả lý đen",
+        heart: "Hoa nhài, Hoa cam, Hoa lavender",
+        base: "Vanilla, Gỗ tuyết tùng",
+      },
+      topIds: ["sweet-orange"],
+      heartIds: ["night-jasmine", "orange-blossom"],
+      baseIds: ["cedarwood", "vanilla-tonka"],
+      allNoteIds: [
+        "sweet-orange",
+        "night-jasmine",
+        "orange-blossom",
+        "cedarwood",
+        "vanilla-tonka",
+      ],
+      desc: "Tinh Dầu Khuếch Tán Ma Kết , bạn là người thuộc cung Ma Kết, nổi bật với sự kiên định, thực tế và đầy tham vọng. Bạn luôn đặt ra những mục tiêu cao và làm việc chăm chỉ để đạt được những gì mình mong muốn.",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – MJacobs Perfect",
+      shortName: "MJacobs Perfect",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-perfect/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "890.000 ₫ – 2.580.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "890.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.350.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.580.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Đại hoàng, Hoa thuỷ tiên",
+        heart: "Sữa hạnh nhân",
+        base: "Gỗ tuyết tùng, Cashmer",
+      },
+      topIds: ["pear-berry-melon"],
+      heartIds: ["saffron-almond"],
+      baseIds: ["cedarwood"],
+      allNoteIds: ["pear-berry-melon", "saffron-almond", "cedarwood"],
+      desc: "Tinh Dầu Khuếch Tán MJacobs Perfect không tìm cách định nghĩa sự hoàn hảo bằng sự chỉn chu hay rực rỡ, mà bằng cảm xúc: mượt mà, bất ngờ, tươi mới – và đúng như tên gọi, là hoàn hảo theo một cách rất riêng. Mùi hương ...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Nhân Mã",
+      shortName: "Nhân Mã",
+      collection: "BST Tinh Dầu 12 Cung Hoàng Đạo",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-nhan-ma/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "280.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "50ml",
+          price: "280.000 ₫",
+        },
+        {
+          capacity: "20ml",
+          price: "299.000 ₫",
+        },
+        {
+          capacity: "100ml",
+          price: "400.000 ₫",
+        },
+        {
+          capacity: "200ml",
+          price: "620.000 ₫",
+        },
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Cam Bergamot, Hồng tiêu, Hạt hồ trăn",
+        heart: "Hoa nhài, Hoa huệ trắng, Ngọc lan tây",
+        base: "Dừa, Hổ phách, Đậu Tonka",
+      },
+      topIds: ["bergamot", "pink-pepper"],
+      heartIds: ["night-jasmine", "peony-lily"],
+      baseIds: ["golden-amber", "vanilla-tonka"],
+      allNoteIds: [
+        "bergamot",
+        "pink-pepper",
+        "night-jasmine",
+        "peony-lily",
+        "golden-amber",
+        "vanilla-tonka",
+      ],
+      desc: "Tinh Dầu Khuếch Tán Nhân Mã , bạn thuộc cung Nhân Mã, những người yêu thích tự do, khám phá và phiêu lưu.",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Omnia Bvlgari",
+      shortName: "Omnia Bvlgari",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-omina-crystal-hermes/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "729.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Trúc, Quả Lê",
+        heart: "Hoa Sen, Trà, Cassia",
+        base: "Xạ hương, Rêu sồi, Gỗ Balsa",
+      },
+      topIds: ["green-tea-bamboo", "pear-berry-melon"],
+      heartIds: ["white-lotus"],
+      baseIds: ["guaiac-teak", "vetiver-oakmoss", "white-musk"],
+      allNoteIds: [
+        "green-tea-bamboo",
+        "pear-berry-melon",
+        "white-lotus",
+        "guaiac-teak",
+        "vetiver-oakmoss",
+        "white-musk",
+      ],
+      desc: "Dưới ánh nắng ban mai, Tinh Dầu Khuếch Tán Omnia Bvlgari  tỏa ra hương thơm trong trẻo và thuần khiết như giọt sương đầu ngày – nhẹ nhàng, tinh tế nhưng đủ để chạm đến cảm xúc. Lấy cảm hứng từ vẻ đẹp mong manh của pha...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Rose 31",
+      shortName: "Rose 31",
+      collection: "BST Tinh Dầu Hương Nước Hoa Cao Cấp",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-rose-31/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "729.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Hoa hồng, Thì là (Ai Cập)",
+        heart: "Hoa hồng, Cỏ hương bài, Gỗ tuyết tùng",
+        base: "Xạ hương, Gỗ guaiac, Nhũ hương, Labdanum, Trầm hương",
+      },
+      topIds: ["damask-rose", "cardamom-cumin"],
+      heartIds: ["damask-rose", "cedarwood", "vetiver-oakmoss"],
+      baseIds: [
+        "agarwood",
+        "guaiac-teak",
+        "white-musk",
+        "frankincense-labdanum",
+      ],
+      allNoteIds: [
+        "damask-rose",
+        "cardamom-cumin",
+        "cedarwood",
+        "vetiver-oakmoss",
+        "agarwood",
+        "guaiac-teak",
+        "white-musk",
+        "frankincense-labdanum",
+      ],
+      desc: "Tinh Dầu Khuếch Tán Rose 31 là minh chứng rõ ràng rằng hoa hồng không chỉ dành cho sự nữ tính. Đây là mùi hương cho những tâm hồn cá tính, yêu thích sự bí ẩn, gợi cảm và khác biệt – một mùi hương “phi giới tính” đúng ...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Song Ngư",
+      shortName: "Song Ngư",
+      collection: "BST Tinh Dầu 12 Cung Hoàng Đạo",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-pisces/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/01/bia-tinh-dau-khuech-tan-web-800x800.jpg",
+      priceRange: "310.000 ₫ – 2.180.000 ₫",
+      volumes: [
+        {
+          capacity: "20ml",
+          price: "310.000 ₫",
+        },
+        {
+          capacity: "50ml",
+          price: "310.000 ₫",
+        },
+        {
+          capacity: "100ml",
+          price: "329.000 ₫",
+        },
+        {
+          capacity: "200ml",
+          price: "680.000 ₫",
+        },
+        {
+          capacity: "300ml",
+          price: "789.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.210.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.180.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Bergamot, chanh, cam",
+        heart: "Hoa oải hương",
+        base: "Gỗ tuyết tùng, xạ hương",
+      },
+      topIds: ["bergamot", "amalfi-lemon"],
+      heartIds: ["lavender"],
+      baseIds: ["cedarwood", "white-musk"],
+      allNoteIds: [
+        "bergamot",
+        "amalfi-lemon",
+        "lavender",
+        "cedarwood",
+        "white-musk",
+      ],
+      desc: "Bạn là Song Ngư – người sống theo cảm xúc, mang tâm hồn bay bổng và trái tim đầy yêu thương. Với khả năng thấu cảm và trí tưởng tượng phong phú, bạn luôn biết cách lan tỏa sự dịu dàng, nhẹ nhàng đến mọi người xung qua...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Song Tử",
+      shortName: "Song Tử",
+      collection: "BST Tinh Dầu 12 Cung Hoàng Đạo",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-song-tu/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-300ml-800x800.jpg",
+      priceRange: "310.000 ₫ – 2.180.000 ₫",
+      volumes: [
+        {
+          capacity: "20ml",
+          price: "310.000 ₫",
+        },
+        {
+          capacity: "50ml",
+          price: "310.000 ₫",
+        },
+        {
+          capacity: "100ml",
+          price: "440.000 ₫",
+        },
+        {
+          capacity: "200ml",
+          price: "680.000 ₫",
+        },
+        {
+          capacity: "300ml",
+          price: "789.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.210.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.180.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Hạnh nhân, Cà phê",
+        heart: "Hoà nhài Sambac, Hoa huệ trắng",
+        base: "Đậu Tonka, Cocoa",
+      },
+      topIds: ["saffron-almond", "coffee-cacao"],
+      heartIds: ["night-jasmine", "peony-lily"],
+      baseIds: ["vanilla-tonka"],
+      allNoteIds: [
+        "saffron-almond",
+        "coffee-cacao",
+        "night-jasmine",
+        "peony-lily",
+        "vanilla-tonka",
+      ],
+      desc: "Tinh Dầu Khuếch Tán Song Tử , Bạn là người thuộc cung Song Tử, nổi bật với sự linh hoạt, thông minh và đa dạng trong tính cách.",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Sư Tử",
+      shortName: "Sư Tử",
+      collection: "BST Tinh Dầu 12 Cung Hoàng Đạo",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-leo/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/01/bia-tinh-dau-khuech-tan-web-800x800.jpg",
+      priceRange: "280.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "50ml",
+          price: "280.000 ₫",
+        },
+        {
+          capacity: "20ml",
+          price: "299.000 ₫",
+        },
+        {
+          capacity: "100ml",
+          price: "400.000 ₫",
+        },
+        {
+          capacity: "200ml",
+          price: "620.000 ₫",
+        },
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Cam quýt, hoa cam",
+        heart: "Hoa mộc lan, hoa nhài",
+        base: "Hoắc hương, xạ hương, vani Tahitian",
+      },
+      topIds: ["orange-blossom", "sweet-orange"],
+      heartIds: ["night-jasmine"],
+      baseIds: ["white-musk", "vanilla-tonka", "patchouli"],
+      allNoteIds: [
+        "orange-blossom",
+        "sweet-orange",
+        "night-jasmine",
+        "white-musk",
+        "vanilla-tonka",
+        "patchouli",
+      ],
+      desc: "Sư Tử là biểu tượng của quyền lực, sự tự tin và niềm đam mê sống mãnh liệt. Bạn luôn biết cách để nổi bật giữa đám đông, sở hữu sức hút tự nhiên và phong thái của một nhà lãnh đạo bẩm sinh. Với trái tim nhiệt thành và...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Miyako Home – Thiên Bình",
+      shortName: "Thiên Bình",
+      collection: "BST Tinh Dầu 12 Cung Hoàng Đạo",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-home-thien-binh/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-500ml-1-800x800.jpg",
+      priceRange: "330.000 ₫ – 2.980.000 ₫",
+      volumes: [
+        {
+          capacity: "20ml",
+          price: "330.000 ₫",
+        },
+        {
+          capacity: "50ml",
+          price: "340.000 ₫",
+        },
+        {
+          capacity: "100ml",
+          price: "460.000 ₫",
+        },
+        {
+          capacity: "200ml",
+          price: "740.000 ₫",
+        },
+        {
+          capacity: "300ml",
+          price: "1.090.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.650.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "2.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Bạch đậu khấu, Hoa violet",
+        heart: "Gỗ đàn hương, Gỗ tuyết tùng",
+        base: "Xạ hương, Da thuộc, Hổ phách",
+      },
+      topIds: ["cardamom-cumin"],
+      heartIds: ["sandalwood", "cedarwood"],
+      baseIds: ["tobacco-leather", "golden-amber", "white-musk"],
+      allNoteIds: [
+        "cardamom-cumin",
+        "sandalwood",
+        "cedarwood",
+        "tobacco-leather",
+        "golden-amber",
+        "white-musk",
+      ],
+      desc: "Tinh Dầu Khuếch Tán Thiên Bình , bạn thuộc cung Thiên Bình , nổi bật với sự hòa đồng, duyên dáng và khả năng giao tiếp tinh tế. Bạn luôn tìm kiếm sự cân bằng và hài hòa trong mọi khía cạnh của cuộc sống, đồng thời lan...",
+    },
+    {
+      title: "Tinh dầu Khuếch Tán Miyako Home – Xử Nữ",
+      shortName: "Xử Nữ",
+      collection: "BST Tinh Dầu 12 Cung Hoàng Đạo",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-miyako-virgo/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/01/bia-tinh-dau-khuech-tan-web-800x800.jpg",
+      priceRange: "280.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "50ml",
+          price: "280.000 ₫",
+        },
+        {
+          capacity: "20ml",
+          price: "299.000 ₫",
+        },
+        {
+          capacity: "100ml",
+          price: "400.000 ₫",
+        },
+        {
+          capacity: "200ml",
+          price: "620.000 ₫",
+        },
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Hoa tiêu, hoa cam, quả lê",
+        heart: "Cà phê, hạnh nhân, hoa lài, cam thảo",
+        base: "Vanilla, hoắc hương, gỗ tuyết tùng, gỗ cashmere",
+      },
+      topIds: ["orange-blossom", "pear-berry-melon"],
+      heartIds: ["saffron-almond", "coffee-cacao"],
+      baseIds: ["cedarwood", "vanilla-tonka", "cashmere-wood", "patchouli"],
+      allNoteIds: [
+        "orange-blossom",
+        "pear-berry-melon",
+        "saffron-almond",
+        "coffee-cacao",
+        "cedarwood",
+        "vanilla-tonka",
+        "cashmere-wood",
+        "patchouli",
+      ],
+      desc: "Chỉn chu – Thanh lịch – Tinh tế đến từng chi tiết",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Thiên Nhiên MIYAKO HOME – Bạc Hà",
+      shortName: "Bạc Hà",
       collection: "BST Tinh Dầu Hương Thiên Nhiên",
-      image: "assets/images/custom-09.webp",
-      desc: "Thủy tinh trong trẻo ôm lấy sắc cam ấm áp như vệt nắng sớm, đánh thức nguồn năng lượng tươi mới mỗi ngày.",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-thien-nhien-miyako-home-bac-ha/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "729.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Lá bạc hà tươi nguyên chất",
+        heart: "Bạc hà, Thảo mộc thanh mát",
+        base: "Hương gỗ nhẹ",
+      },
+      topIds: ["peppermint"],
+      heartIds: ["rosemary-tea-tree", "peppermint"],
+      baseIds: ["guaiac-teak"],
+      allNoteIds: ["peppermint", "rosemary-tea-tree", "guaiac-teak"],
+      desc: "Mang đến làn hương the mát, tươi mới và đầy năng lượng, tinh dầu Bạc Hà là lựa chọn tuyệt vời để khơi dậy tinh thần, làm mới không gian và nâng cao sự tập trung. Chỉ vài giọt khuếch tán là đủ để xua tan cảm giác uể oả...",
     },
-    spicy: {
-      vessel: "Thiết kế SẮC — Đêm Huyền Sắc",
-      collection: "BST Tinh Dầu Dấu Ấn & 12 Cung Hoàng Đạo",
-      image: "assets/images/custom-05.webp",
-      desc: "Sắc đêm trầm mặc đầy chiều sâu, tôn vinh những tầng hương gia vị ấm nồng và cá tính độc bản của gia chủ.",
+    {
+      title: "Tinh Dầu Khuếch Tán Thiên Nhiên MIYAKO HOME – Cam Trong",
+      shortName: "Cam Trong",
+      collection: "BST Tinh Dầu Hương Thiên Nhiên",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-thien-nhien-miyako-home-cam-trong/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "589.000 ₫ – 1.520.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "589.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "859.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.520.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Vỏ cam ngọt, Quýt tươi",
+        heart: "Hoa cam, Tinh dầu cam nguyên chất",
+        base: "Hương gỗ ấm",
+      },
+      topIds: ["sweet-orange"],
+      heartIds: ["orange-blossom"],
+      baseIds: ["guaiac-teak"],
+      allNoteIds: ["sweet-orange", "orange-blossom", "guaiac-teak"],
+      desc: "Tinh Dầu Cam Trong – Tươi mới & Tràn đầy sức sống",
     },
-    amber: {
-      vessel: "Thiết kế NÉT — Sắc Lam Trời",
-      collection: "BST Tinh Dầu Dấu Ấn Cao Cấp",
-      image: "assets/images/custom-08.webp",
-      desc: "Vẻ đẹp giao thoa giữa truyền thống và hiện đại, giữ trọn dư âm hổ phách và xạ hương sang trọng trong không gian.",
+    {
+      title: "Tinh Dầu Khuếch Tán Thiên Nhiên MIYAKO HOME – Cherry",
+      shortName: "Cherry",
+      collection: "BST Tinh Dầu Hương Thiên Nhiên",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-thien-nhien-miyako-home-cherry/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "589.000 ₫ – 1.520.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "589.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "859.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.520.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Quả anh đào (Cherry) chín mọng",
+        heart: "Hoa hồng, Trái cây ngọt ngào",
+        base: "Vanilla, Xạ hương trắng",
+      },
+      topIds: ["pear-berry-melon"],
+      heartIds: ["damask-rose", "pear-berry-melon"],
+      baseIds: ["white-musk", "vanilla-tonka"],
+      allNoteIds: [
+        "pear-berry-melon",
+        "damask-rose",
+        "white-musk",
+        "vanilla-tonka",
+      ],
+      desc: "Tinh dầu thiên nhiên Cherry  còn có tác dụng nâng cao tinh thần, kích thích sự sáng tạo và cảm hứng trong công việc. Khuếch tán vài giọt trong không gian sống sẽ giúp bạn cảm thấy tràn đầy năng lượng, nâng cao hiệu su...",
     },
-  };
+    {
+      title: "Tinh Dầu Khuếch Tán Thiên Nhiên MIYAKO HOME – Hoa Nhài",
+      shortName: "Hoa Nhài",
+      collection: "BST Tinh Dầu Hương Thiên Nhiên",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-thien-nhien-miyako-home-hoa-nhai/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/12/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "589.000 ₫ – 1.520.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "589.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "859.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.520.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Lá xanh, Sương sớm",
+        heart: "Hoa nhài trắng nguyên chất",
+        base: "Xạ hương, Trà trắng",
+      },
+      topIds: ["green-tea-bamboo"],
+      heartIds: ["night-jasmine"],
+      baseIds: ["white-tea", "white-musk"],
+      allNoteIds: [
+        "green-tea-bamboo",
+        "night-jasmine",
+        "white-tea",
+        "white-musk",
+      ],
+      desc: "Hãy dịu dàng chăm sóc và nâng niu đứa trẻ bên trong bạn với hương hoa nhài – loài hoa chỉ nở vào ban đêm, mang vẻ đẹp lãng mạn và ngọt ngào.  Tinh dầu thiên nhiên Hoa Nhài  lan tỏa hương thơm thanh khiết, nhẹ nhàng nh...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Thiên Nhiên MIYAKO HOME – Long Não",
+      shortName: "Long Não",
+      collection: "BST Tinh Dầu Hương Thiên Nhiên",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-thien-nhien-huong-long-nao/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "589.000 ₫ – 1.520.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "589.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "859.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.520.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Lá khuynh diệp, Bạc hà",
+        heart: "Gỗ long não, Tràm trà",
+        base: "Gỗ thông, Hương gỗ trầm",
+      },
+      topIds: ["peppermint"],
+      heartIds: ["rosemary-tea-tree"],
+      baseIds: ["agarwood", "pine-wood", "guaiac-teak"],
+      allNoteIds: [
+        "peppermint",
+        "rosemary-tea-tree",
+        "agarwood",
+        "pine-wood",
+        "guaiac-teak",
+      ],
+      desc: "Tinh dầu thiên nhiên Long Não  nổi bật với hương thơm tươi mát, thanh nhẹ pha chút cay nhẹ đặc trưng, mang đến cảm giác dễ chịu và sảng khoái. Mùi hương này giúp làm dịu tinh thần, đồng thời kích thích sự tỉnh táo và ...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Thiên Nhiên MIYAKO HOME – Sả Chanh",
+      shortName: "Sả Chanh",
+      collection: "BST Tinh Dầu Hương Thiên Nhiên",
+      url: "https://vietbeauties.vn/san-pham/thien-nhien-sa-chanh/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "649.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "649.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Chanh tươi, Vỏ bưởi",
+        heart: "Sả chanh nguyên chất, Thảo mộc",
+        base: "Gỗ tuyết tùng nhẹ",
+      },
+      topIds: ["grapefruit", "amalfi-lemon"],
+      heartIds: ["lemongrass", "rosemary-tea-tree"],
+      baseIds: ["cedarwood"],
+      allNoteIds: [
+        "grapefruit",
+        "amalfi-lemon",
+        "lemongrass",
+        "rosemary-tea-tree",
+        "cedarwood",
+      ],
+      desc: "Sở hữu hương thơm tươi mát, thanh sạch và có chút chanh nhẹ nhàng,  tinh dầu thiên nhiên Sả Chanh  là lựa chọn lý tưởng để thanh lọc không khí, làm sạch năng lượng và cải thiện tinh thần.",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Thiên Nhiên MIYAKO HOME – Trà Xanh",
+      shortName: "Trà Xanh",
+      collection: "BST Tinh Dầu Hương Thiên Nhiên",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-thien-nhien-huong-tra-xanh/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "729.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Chanh vàng, Cam Bergamot",
+        heart: "Lá trà xanh non, Hoa nhài",
+        base: "Xạ hương trắng, Rêu sồi",
+      },
+      topIds: ["bergamot", "amalfi-lemon"],
+      heartIds: ["night-jasmine", "green-tea-bamboo"],
+      baseIds: ["vetiver-oakmoss", "white-musk"],
+      allNoteIds: [
+        "bergamot",
+        "amalfi-lemon",
+        "night-jasmine",
+        "green-tea-bamboo",
+        "vetiver-oakmoss",
+        "white-musk",
+      ],
+      desc: "Tinh dầu thiên nhiên Trà Xanh  không chỉ giúp thanh lọc không khí mà còn tạo nên một không gian sống thư giãn, trong trẻo và đầy an yên. Lý tưởng để sử dụng trong phòng làm việc, phòng ngủ hay những khoảnh khắc cần tĩ...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Thiên Nhiên MIYAKO HOME – Trà Trắng",
+      shortName: "Trà Trắng",
+      collection: "BST Tinh Dầu Hương Thiên Nhiên",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-thien-nhien-miyako-home-tra-trang/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "390.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "100ml",
+          price: "390.000 ₫",
+        },
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Cam Bergamot, Sương mai",
+        heart: "Búp trà trắng thượng hạng, Hoa sen",
+        base: "Gỗ đàn hương, Xạ hương trắng",
+      },
+      topIds: ["bergamot"],
+      heartIds: ["white-lotus", "white-tea"],
+      baseIds: ["sandalwood", "white-musk"],
+      allNoteIds: [
+        "bergamot",
+        "white-lotus",
+        "white-tea",
+        "sandalwood",
+        "white-musk",
+      ],
+      desc: "Được lấy cảm hứng từ vẻ đẹp thanh tao của những lá trà trắng, tinh dầu Trà Trắng mang đến hương thơm nhẹ nhàng, tinh tế và trong trẻo – như một làn gió mềm mại len qua không gian, giúp làm mới tâm trạng và tạo cảm giá...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Thiên Nhiên MIYAKO HOME – Tràm Trà",
+      shortName: "Tràm Trà",
+      collection: "BST Tinh Dầu Hương Thiên Nhiên",
+      url: "https://vietbeauties.vn/san-pham/thien-nhien-huong-tram-tra/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "729.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Lá tràm trà, Bạc hà",
+        heart: "Tinh dầu tràm trà nguyên chất, Hương thảo",
+        base: "Gỗ tuyết tùng, Thảo mộc",
+      },
+      topIds: ["rosemary-tea-tree", "peppermint"],
+      heartIds: ["rosemary-tea-tree"],
+      baseIds: ["cedarwood", "rosemary-tea-tree"],
+      allNoteIds: ["rosemary-tea-tree", "peppermint", "cedarwood"],
+      desc: "Được chiết xuất từ lá cây tràm trà, tinh dầu mang đến hương thơm tươi mát, cay nhẹ và đầy đặc trưng – như một làn gió trong lành giúp làm mới không gian và tinh thần. Với đặc tính kháng khuẩn, kháng viêm mạnh mẽ, tràm...",
+    },
+    {
+      title: "Tinh Dầu Khuếch Tán Thiên Nhiên MIYAKOHOME – Dưa Lưới",
+      shortName: "Dưa Lưới",
+      collection: "BST Tinh Dầu Hương Thiên Nhiên",
+      url: "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-thien-nhien-miyakohome-dua-luoi/",
+      image:
+        "https://vietbeauties.vn/wp-content/uploads/2025/11/chai-nhua-300ml-1536x1536-1.jpg",
+      priceRange: "729.000 ₫ – 1.980.000 ₫",
+      volumes: [
+        {
+          capacity: "300ml",
+          price: "729.000 ₫",
+        },
+        {
+          capacity: "500ml",
+          price: "1.099.000 ₫",
+        },
+        {
+          capacity: "1000ml",
+          price: "1.980.000 ₫",
+        },
+      ],
+      pyramid: {
+        top: "Dưa lưới chín mọng, Quả lê",
+        heart: "Hoa lan Nam Phi, Trái cây tươi",
+        base: "Xạ hương trắng, Vanilla",
+      },
+      topIds: ["pear-berry-melon"],
+      heartIds: ["freesia-orchid", "pear-berry-melon"],
+      baseIds: ["white-musk", "vanilla-tonka"],
+      allNoteIds: [
+        "pear-berry-melon",
+        "freesia-orchid",
+        "white-musk",
+        "vanilla-tonka",
+      ],
+      desc: "Mang hương thơm đặc trưng của trái cây mùa hè, tinh dầu Dưa Lưới là sự kết hợp hoàn hảo giữa vị ngọt nhẹ, thanh mát và cảm giác tươi mới. Mùi hương này không chỉ dễ chịu mà còn giúp tâm trí thư giãn, đánh thức sự vui ...",
+    },
+  ];
+
+  function findMatchingProduct(topNote, heartNote, baseNote) {
+    const pickedIds = [topNote.id, heartNote.id, baseNote.id];
+    let bestProduct = null;
+    let bestScore = -1;
+    let bestMatchedNotes = [];
+    let bestExactLayers = 0;
+
+    for (const prod of MIYAKO_PRODUCTS) {
+      const matchedNotes = pickedIds.filter((id) =>
+        prod.allNoteIds.includes(id),
+      );
+      const matchCount = matchedNotes.length;
+
+      let exactLayers = 0;
+      if (prod.topIds.includes(topNote.id)) exactLayers++;
+      if (prod.heartIds.includes(heartNote.id)) exactLayers++;
+      if (prod.baseIds.includes(baseNote.id)) exactLayers++;
+
+      const coverage =
+        matchCount / Math.max(1, Math.min(3, prod.allNoteIds.length));
+
+      // Weighted score: prioritize number of matched notes + exact pyramid layer match + specificity
+      const score =
+        matchCount * 32 +
+        exactLayers * 12 +
+        coverage * 15 -
+        prod.allNoteIds.length * 0.4;
+
+      if (score > bestScore) {
+        bestScore = score;
+        bestProduct = prod;
+        bestMatchedNotes = matchedNotes;
+        bestExactLayers = exactLayers;
+      }
+    }
+
+    // A user mix matches a Miyako Home product if all 3 notes are in the product,
+    // OR at least 2 of 3 notes are in the product with at least 1 exact pyramid layer (or a focused 2-note product)
+    const isMatched =
+      bestMatchedNotes.length === 3 ||
+      (bestMatchedNotes.length === 2 &&
+        (bestExactLayers >= 1 ||
+          (bestProduct && bestProduct.allNoteIds.length <= 3)));
+
+    const matchPercent =
+      bestMatchedNotes.length === 3
+        ? Math.min(99, 92 + bestExactLayers * 2)
+        : bestMatchedNotes.length === 2
+          ? Math.min(89, 78 + bestExactLayers * 4)
+          : 45;
+
+    return {
+      isMatched,
+      matchPercent,
+      matchedCount: bestMatchedNotes.length,
+      product: bestProduct || MIYAKO_PRODUCTS[0],
+    };
+  }
 
   const ARCHETYPES = [
     {
@@ -2070,6 +4142,35 @@
     }, 2750);
   });
 
+  let currentCustomScentName = "";
+  let currentMatchResult = null;
+
+  function applyCustomScentName(newName) {
+    const clean = (newName || "").trim();
+    if (!clean) return;
+    currentCustomScentName = clean;
+
+    const scentNameEl = document.getElementById("result-scent-name");
+    const ownerEl = document.getElementById("result-owner");
+    if (scentNameEl) scentNameEl.textContent = `“${clean}”`;
+    if (ownerEl) {
+      ownerEl.textContent =
+        "✦ Mùi hương độc bản do chính bạn đặt tên & chế tác";
+    }
+    if (finalBottleRatio) {
+      finalBottleRatio.textContent = clean.toUpperCase().slice(0, 22);
+    }
+
+    const saveBtn = document.getElementById("save-custom-name-btn");
+    if (saveBtn) {
+      const prev = saveBtn.textContent;
+      saveBtn.textContent = "✓ Đã lưu tên mùi hương!";
+      setTimeout(() => {
+        saveBtn.textContent = prev;
+      }, 1800);
+    }
+  }
+
   function openResultModal() {
     const top = slots.top.note;
     const heart = slots.heart.note;
@@ -2114,22 +4215,130 @@
       ),
     };
 
-    const bespokeName = `${heart.prefix} & ${base.suffix}`;
+    const generatedPoeticName = `${heart.prefix} & ${base.suffix}`;
+    currentCustomScentName = "";
+
     const codeNum =
       ((top.id.length * 19 + heart.id.length * 31 + base.id.length * 47) %
         899) +
       100;
     const archetype = ARCHETYPES.find((a) => a.condition(avgScores));
-    const dominantFamily = heart.familyId || base.familyId;
-    const productMatch =
-      MIYAKO_MATCHES[dominantFamily] || MIYAKO_MATCHES.floral;
 
-    // Populate Modal Fields
-    document.getElementById("result-serial").textContent =
-      `MIYAKO BESPOKE NO. ${codeNum} · CÔNG THỨC TỶ LỆ ${selectedFormula.code} (${selectedFormula.name.toUpperCase()})`;
-    document.getElementById("result-owner").textContent =
-      "Chế tác độc bản dành riêng cho bạn";
-    document.getElementById("result-scent-name").textContent = bespokeName;
+    // Match user's 3 chosen notes against the 47 real Miyako Home products
+    const matchResult = findMatchingProduct(top, heart, base);
+    currentMatchResult = matchResult;
+    const prod = matchResult.product;
+
+    const modalKicker = document.getElementById("modal-kicker");
+    const namingBox = document.getElementById("bespoke-naming-box");
+    const nameInput = document.getElementById("custom-scent-name-input");
+    const suggestChipsEl = document.getElementById("naming-suggest-chips");
+    const productCard = document.getElementById("modal-product-card");
+    const matchEyebrow = document.getElementById("match-eyebrow");
+    const matchScoreBadge = document.getElementById("match-score-badge");
+    const matchThumb = document.getElementById("match-thumb");
+    const matchVessel = document.getElementById("match-vessel");
+    const matchCollection = document.getElementById("match-collection");
+    const matchPriceRange = document.getElementById("match-price-range");
+    const matchPyramid = document.getElementById("match-pyramid");
+    const matchVolumes = document.getElementById("match-volumes");
+    const matchDesc = document.getElementById("match-desc");
+    const matchProductLink = document.getElementById("match-product-link");
+    const toggleRenameBtn = document.getElementById("toggle-rename-btn");
+    const primaryActionLink = document.getElementById(
+      "modal-primary-action-link",
+    );
+
+    // Generate 3 poetic name suggestions for custom naming
+    const poeticSuggestions = [
+      generatedPoeticName,
+      `${top.prefix} ${heart.prefix}`,
+      `Dấu Ấn ${heart.name} & ${base.name}`,
+    ];
+    if (suggestChipsEl) {
+      suggestChipsEl.innerHTML = poeticSuggestions
+        .map(
+          (s) =>
+            `<button type="button" class="suggest-chip" data-suggest="${s}">✨ ${s}</button>`,
+        )
+        .join("");
+      suggestChipsEl.querySelectorAll(".suggest-chip").forEach((chip) => {
+        chip.addEventListener("click", () => {
+          const val = chip.dataset.suggest;
+          if (nameInput) nameInput.value = val;
+          applyCustomScentName(val);
+        });
+      });
+    }
+
+    if (matchResult.isMatched) {
+      // CASE 1: Matches an existing Miyako Home product!
+      if (modalKicker) {
+        modalKicker.textContent = `✦ TƯƠNG ĐỒNG ${matchResult.matchPercent}% VỚI TUYỆT TÁC CÓ SẴN TẠI MIYAKO HOME ✦`;
+      }
+      document.getElementById("result-serial").textContent =
+        `MIYAKO SIGNATURE MATCH · CÔNG THỨC ${selectedFormula.code} (${selectedFormula.name.toUpperCase()})`;
+      document.getElementById("result-owner").textContent =
+        `Sự kết hợp của bạn trùng khớp với dòng tinh dầu chính hãng nhà Miyako Home:`;
+      document.getElementById("result-scent-name").textContent = prod.shortName;
+
+      if (namingBox) namingBox.hidden = true;
+      if (toggleRenameBtn) {
+        toggleRenameBtn.hidden = false;
+        toggleRenameBtn.textContent =
+          "✎ Muốn tự đặt tên riêng cho bản phối này?";
+      }
+      if (productCard) productCard.classList.add("is-exact-match");
+      if (matchEyebrow) {
+        matchEyebrow.textContent = "✦ SẢN PHẨM MIYAKO HOME TƯƠNG ĐỒNG";
+      }
+      if (matchScoreBadge) {
+        matchScoreBadge.textContent = `Độ trùng khớp ${matchResult.matchPercent}%`;
+      }
+      if (matchProductLink) {
+        matchProductLink.href = prod.url;
+        matchProductLink.textContent = `Xem chi tiết "${prod.shortName}" trên Vietbeauties.vn ↗`;
+      }
+      if (primaryActionLink) {
+        primaryActionLink.href = prod.url;
+        primaryActionLink.textContent = `Xem Sản Phẩm "${prod.shortName}" ↗`;
+      }
+    } else {
+      // CASE 2: Unique Bespoke Combination not yet in Miyako Home's catalog -> Let user name their scent!
+      if (modalKicker) {
+        modalKicker.textContent =
+          "✦ CÔNG THỨC ĐỘC BẢN MỚI — CHƯA TỪNG CÓ TRONG BỘ SƯU TẬP ✦";
+      }
+      document.getElementById("result-serial").textContent =
+        `MIYAKO BESPOKE NO. ${codeNum} · CÔNG THỨC TỶ LỆ ${selectedFormula.code} (${selectedFormula.name.toUpperCase()})`;
+      document.getElementById("result-owner").textContent =
+        "Mùi hương này là sáng tạo độc quyền của riêng bạn — Hãy đặt tên cho nó!";
+      document.getElementById("result-scent-name").textContent =
+        generatedPoeticName;
+
+      if (namingBox) namingBox.hidden = false;
+      if (nameInput) {
+        nameInput.value = "";
+        nameInput.placeholder = `VD: ${generatedPoeticName}...`;
+      }
+      if (toggleRenameBtn) toggleRenameBtn.hidden = true;
+      if (productCard) productCard.classList.remove("is-exact-match");
+      if (matchEyebrow) {
+        matchEyebrow.textContent = "GỢI Ý SẢN PHẨM GẦN NHẤT TẠI MIYAKO";
+      }
+      if (matchScoreBadge) {
+        matchScoreBadge.textContent = "Công thức Bespoke mới";
+      }
+      if (matchProductLink) {
+        matchProductLink.href = prod.url;
+        matchProductLink.textContent = `Tham khảo dòng gần nhất: "${prod.shortName}" ↗`;
+      }
+      if (primaryActionLink) {
+        primaryActionLink.href = "https://zalo.me/0356059224";
+        primaryActionLink.textContent = "Đặt Pha Chế Riêng Mùi Hương Này ↗";
+      }
+    }
+
     document.getElementById("result-poetic-sub").textContent =
       `Pha chế theo tỷ lệ ${selectedFormula.code}: ${top.name} (${wTop}%) · ${heart.name} (${wHeart}%) · ${base.name} (${wBase}%).`;
 
@@ -2161,14 +4370,74 @@
       .map((t) => `<span class="aura-tag">${t}</span>`)
       .join("");
 
-    document.getElementById("match-thumb").src = productMatch.image;
-    document.getElementById("match-vessel").textContent = productMatch.vessel;
-    document.getElementById("match-collection").textContent =
-      productMatch.collection;
-    document.getElementById("match-desc").textContent = productMatch.desc;
+    // Populate Product Card Details (Real image, collection, price range, pyramid, capacities & prices)
+    if (matchThumb) {
+      matchThumb.onerror = () => {
+        matchThumb.onerror = null;
+        matchThumb.src = "assets/images/custom-06.webp";
+      };
+      matchThumb.src = prod.image || "assets/images/custom-06.webp";
+      matchThumb.alt = prod.title || prod.shortName;
+    }
+    if (matchVessel) matchVessel.textContent = prod.shortName;
+    if (matchCollection) matchCollection.textContent = prod.collection;
+    if (matchPriceRange)
+      matchPriceRange.textContent = `Giá: ${prod.priceRange}`;
+
+    if (matchPyramid && prod.pyramid) {
+      matchPyramid.innerHTML = `
+        <div><strong>Hương đầu:</strong> ${prod.pyramid.top}</div>
+        <div><strong>Hương giữa:</strong> ${prod.pyramid.heart}</div>
+        <div><strong>Hương cuối:</strong> ${prod.pyramid.base}</div>
+      `;
+    }
+
+    if (matchVolumes) {
+      matchVolumes.innerHTML = (prod.volumes || [])
+        .map(
+          (v) =>
+            `<span class="volume-pill"><strong>${v.capacity}:</strong> ${v.price}</span>`,
+        )
+        .join("");
+    }
+
+    if (matchDesc) matchDesc.textContent = prod.desc;
 
     renderRadarChart(avgScores);
     resultModal.hidden = false;
+  }
+
+  // Custom Bespoke Scent Naming Events
+  const saveCustomNameBtn = document.getElementById("save-custom-name-btn");
+  const customScentNameInput = document.getElementById(
+    "custom-scent-name-input",
+  );
+  const toggleRenameBtn = document.getElementById("toggle-rename-btn");
+
+  if (saveCustomNameBtn && customScentNameInput) {
+    saveCustomNameBtn.addEventListener("click", () => {
+      SoundFX.playFormulaSwitch();
+      applyCustomScentName(customScentNameInput.value);
+    });
+    customScentNameInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        SoundFX.playFormulaSwitch();
+        applyCustomScentName(customScentNameInput.value);
+      }
+    });
+  }
+
+  if (toggleRenameBtn) {
+    toggleRenameBtn.addEventListener("click", () => {
+      const namingBox = document.getElementById("bespoke-naming-box");
+      if (namingBox) {
+        namingBox.hidden = !namingBox.hidden;
+        if (!namingBox.hidden && customScentNameInput) {
+          customScentNameInput.focus();
+        }
+      }
+    });
   }
 
   // Close Modal Events
@@ -2195,7 +4464,10 @@
       const scentName =
         document.getElementById("result-scent-name").textContent;
       const persona = document.getElementById("persona-title").textContent;
-      const text = `✦ Mùi Hương Độc Bản Miyako Home: "${scentName}"\n• Công thức pha: ${selectedFormula.code} (${selectedFormula.name})\n• Thành phần: Hương đầu ${slots.top.note?.name} (${selectedFormula.top}%) — Hương giữa ${slots.heart.note?.name} (${selectedFormula.heart}%) — Hương cuối ${slots.base.note?.name} (${selectedFormula.base}%)\n• Chân dung tính cách: ${persona}`;
+      const matchInfo = currentMatchResult?.isMatched
+        ? `\n• Sản phẩm Miyako tương đồng (${currentMatchResult.matchPercent}%): ${currentMatchResult.product.shortName} (${currentMatchResult.product.priceRange}) — ${currentMatchResult.product.url}`
+        : `\n• Phân loại: Công thức Bespoke Độc Bản Mới (Đặt tên: ${scentName})`;
+      const text = `✦ Mùi Hương Độc Bản Miyako Home: "${scentName}"\n• Công thức pha: ${selectedFormula.code} (${selectedFormula.name})\n• Thành phần: Hương đầu ${slots.top.note?.name} (${selectedFormula.top}%) — Hương giữa ${slots.heart.note?.name} (${selectedFormula.heart}%) — Hương cuối ${slots.base.note?.name} (${selectedFormula.base}%)\n• Chân dung tính cách: ${persona}${matchInfo}`;
       try {
         await navigator.clipboard.writeText(text);
         const btn = document.getElementById("copy-formula-btn");
