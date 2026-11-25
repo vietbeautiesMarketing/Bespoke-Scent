@@ -1,0 +1,84 @@
+<!-- ==========================================================================
+     MIYAKO HOME — HƯỚNG DẪN TỰ ĐỘNG ĐIỀN GHI CHÚ BESPOKE TẠI THANH TOÁN
+     Website chính: https://vietbeauties.vn/
+     ==========================================================================
+
+     1. Đăng nhập WordPress Admin của vietbeauties.vn
+     2. Vào Flatsome -> Theme Options -> Global Settings -> Footer Scripts
+        (hoặc WPCode / Insert Headers and Footers -> mục Footer)
+     3. Dán toàn bộ đoạn <script>...</script> bên dưới rồi bấm Lưu (Save).
+     ========================================================================== -->
+
+<script>
+(function () {
+  var STORAGE_KEY = "miyako_bespoke_note";
+  var TTL_MS = 7 * 24 * 60 * 60 * 1000; // Hết hạn sau 7 ngày
+
+  // 1. Bắt ?bespoke_note=... khi khách chuyển từ Mini Game sang vietbeauties.vn
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var incomingNote = params.get("bespoke_note");
+    if (incomingNote && incomingNote.trim()) {
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify({
+          note: incomingNote.trim(),
+          savedAt: Date.now(),
+        })
+      );
+    }
+  } catch (e) {}
+
+  // 2. Xóa ghi chú tạm khi khách đã hoàn tất đặt hàng (trang Cảm ơn / order-received)
+  if (
+    window.location.href.indexOf("order-received") !== -1 ||
+    document.body.classList.contains("woocommerce-order-received")
+  ) {
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch (e) {}
+    return;
+  }
+
+  // 3. Tự động điền vào ô "Ghi chú đơn hàng (tuỳ chọn)" tại trang Thanh toán
+  function fillCheckoutOrderNote() {
+    var textarea =
+      document.getElementById("order_comments") ||
+      document.querySelector('textarea[name="order_comments"]');
+    if (!textarea) return;
+
+    var raw = null;
+    try {
+      raw = localStorage.getItem(STORAGE_KEY);
+    } catch (e) {}
+    if (!raw) return;
+
+    try {
+      var parsed = JSON.parse(raw);
+      if (!parsed || !parsed.note) return;
+      if (parsed.savedAt && Date.now() - parsed.savedAt > TTL_MS) {
+        localStorage.removeItem(STORAGE_KEY);
+        return;
+      }
+
+      // Chỉ điền khi ô ghi chú đang trống (tránh ghi đè nội dung khách tự sửa)
+      if (!textarea.value.trim()) {
+        textarea.value = parsed.note;
+        textarea.dispatchEvent(new Event("input", { bubbles: true }));
+        textarea.dispatchEvent(new Event("change", { bubbles: true }));
+      }
+    } catch (e) {}
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", fillCheckoutOrderNote);
+  } else {
+    fillCheckoutOrderNote();
+  }
+
+  // Đảm bảo không bị mất khi WooCommerce tải lại khu vực checkout bằng AJAX
+  if (window.jQuery) {
+    window.jQuery(document.body).on("updated_checkout", fillCheckoutOrderNote);
+  }
+})();
+</script>

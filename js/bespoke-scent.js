@@ -5,6 +5,43 @@
 (() => {
   "use strict";
 
+  const BESPOKE_UTM_QUERY =
+    "utm_source=web-vetinh&utm_medium=bespoke-scent&utm_campaign=branding&utm_content=bio_link";
+
+  function withBespokeUtm(url) {
+    if (!url || !url.includes("vietbeauties.vn") || url.includes("utm_source=")) {
+      return url;
+    }
+    const separator = url.includes("?") ? "&" : "?";
+    return `${url}${separator}${BESPOKE_UTM_QUERY}`;
+  }
+
+  const CUSTOM_PRODUCT_URL =
+    "https://vietbeauties.vn/san-pham/tinh-dau-khuech-tan-custome/";
+
+  function buildCustomFormulaNote(scentName) {
+    const cleanName = (scentName || "").replace(/^[“"]|[”"]$/g, "").trim();
+    const top = slots.top.note;
+    const heart = slots.heart.note;
+    const base = slots.base.note;
+    if (!top || !heart || !base) return "";
+    return [
+      "[MIYAKO BESPOKE - PHA CHẾ RIÊNG]",
+      `Tên mùi: ${cleanName}`,
+      `Công thức tỷ lệ: ${selectedFormula.code} (${selectedFormula.name})`,
+      `Hương đầu (${selectedFormula.top}%): ${top.name}`,
+      `Hương giữa (${selectedFormula.heart}%): ${heart.name}`,
+      `Hương cuối (${selectedFormula.base}%): ${base.name}`,
+    ].join("\n");
+  }
+
+  function buildCustomProductOrderUrl(scentName) {
+    const baseUrl = withBespokeUtm(CUSTOM_PRODUCT_URL);
+    const note = buildCustomFormulaNote(scentName);
+    if (!note) return baseUrl;
+    return `${baseUrl}&bespoke_note=${encodeURIComponent(note)}`;
+  }
+
   const FRAGRANCE_FAMILIES = [
     {
       id: "floral",
@@ -3425,7 +3462,7 @@
 
     // Center circle with logo-miyako.png (links to https://vietbeauties.vn/)
     svgContent += `
-      <a href="https://vietbeauties.vn/" target="_blank" rel="noopener noreferrer" class="wheel-center-link" aria-label="Miyako Home - Vietbeauties">
+      <a href="https://vietbeauties.vn/?utm_source=web-vetinh&amp;utm_medium=bespoke-scent&amp;utm_campaign=branding&amp;utm_content=bio_link" target="_blank" rel="noopener noreferrer" class="wheel-center-link" aria-label="Miyako Home - Vietbeauties">
         <circle cx="${cx}" cy="${cy}" r="${rInner - 4}" class="wheel-center-circle" />
         <image
           href="assets/logo-miyako.png"
@@ -4161,6 +4198,17 @@
       finalBottleRatio.textContent = clean.toUpperCase().slice(0, 22);
     }
 
+    const primaryActionLink = document.getElementById(
+      "modal-primary-action-link",
+    );
+    if (
+      primaryActionLink &&
+      currentMatchResult &&
+      !currentMatchResult.isMatched
+    ) {
+      primaryActionLink.href = buildCustomProductOrderUrl(clean);
+    }
+
     const saveBtn = document.getElementById("save-custom-name-btn");
     if (saveBtn) {
       const prev = saveBtn.textContent;
@@ -4296,11 +4344,11 @@
         matchScoreBadge.textContent = `Độ trùng khớp ${matchResult.matchPercent}%`;
       }
       if (matchProductLink) {
-        matchProductLink.href = prod.url;
+        matchProductLink.href = withBespokeUtm(prod.url);
         matchProductLink.textContent = `Xem chi tiết "${prod.shortName}" trên Vietbeauties.vn ↗`;
       }
       if (primaryActionLink) {
-        primaryActionLink.href = prod.url;
+        primaryActionLink.href = withBespokeUtm(prod.url);
         primaryActionLink.textContent = `Xem Sản Phẩm "${prod.shortName}" ↗`;
       }
     } else {
@@ -4330,11 +4378,13 @@
         matchScoreBadge.textContent = "Công thức Bespoke mới";
       }
       if (matchProductLink) {
-        matchProductLink.href = prod.url;
+        matchProductLink.href = withBespokeUtm(prod.url);
         matchProductLink.textContent = `Tham khảo dòng gần nhất: "${prod.shortName}" ↗`;
       }
       if (primaryActionLink) {
-        primaryActionLink.href = "https://zalo.me/0356059224";
+        primaryActionLink.href = buildCustomProductOrderUrl(
+          generatedPoeticName,
+        );
         primaryActionLink.textContent = "Đặt Pha Chế Riêng Mùi Hương Này ↗";
       }
     }
@@ -4465,7 +4515,7 @@
         document.getElementById("result-scent-name").textContent;
       const persona = document.getElementById("persona-title").textContent;
       const matchInfo = currentMatchResult?.isMatched
-        ? `\n• Sản phẩm Miyako tương đồng (${currentMatchResult.matchPercent}%): ${currentMatchResult.product.shortName} (${currentMatchResult.product.priceRange}) — ${currentMatchResult.product.url}`
+        ? `\n• Sản phẩm Miyako tương đồng (${currentMatchResult.matchPercent}%): ${currentMatchResult.product.shortName} (${currentMatchResult.product.priceRange}) — ${withBespokeUtm(currentMatchResult.product.url)}`
         : `\n• Phân loại: Công thức Bespoke Độc Bản Mới (Đặt tên: ${scentName})`;
       const text = `✦ Mùi Hương Độc Bản Miyako Home: "${scentName}"\n• Công thức pha: ${selectedFormula.code} (${selectedFormula.name})\n• Thành phần: Hương đầu ${slots.top.note?.name} (${selectedFormula.top}%) — Hương giữa ${slots.heart.note?.name} (${selectedFormula.heart}%) — Hương cuối ${slots.base.note?.name} (${selectedFormula.base}%)\n• Chân dung tính cách: ${persona}${matchInfo}`;
       try {
