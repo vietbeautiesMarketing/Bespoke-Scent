@@ -3,6 +3,7 @@
      Website chính: https://vietbeauties.vn/
      ==========================================================================
 
+     CÁCH 1 (KHUYÊN DÙNG — KHÔNG CẦN SỬA CODE THEME):
      1. Đăng nhập WordPress Admin của vietbeauties.vn
      2. Vào Flatsome -> Theme Options -> Global Settings -> Footer Scripts
         (hoặc WPCode / Insert Headers and Footers -> mục Footer)
@@ -13,6 +14,11 @@
 (function () {
   var STORAGE_KEY = "miyako_bespoke_note";
   var TTL_MS = 7 * 24 * 60 * 60 * 1000; // Hết hạn sau 7 ngày
+  var CUSTOM_PRODUCT_KEYWORDS = [
+    "tinh-dau-khuech-tan-custome",
+    "custome",
+    "custom",
+  ];
 
   // 1. Bắt ?bespoke_note=... khi khách chuyển từ Mini Game sang vietbeauties.vn
   try {
@@ -32,7 +38,7 @@
   // 2. Xóa ghi chú tạm khi khách đã hoàn tất đặt hàng (trang Cảm ơn / order-received)
   if (
     window.location.href.indexOf("order-received") !== -1 ||
-    document.body.classList.contains("woocommerce-order-received")
+    (document.body && document.body.classList.contains("woocommerce-order-received"))
   ) {
     try {
       localStorage.removeItem(STORAGE_KEY);
@@ -40,7 +46,30 @@
     return;
   }
 
-  // 3. Tự động điền vào ô "Ghi chú đơn hàng (tuỳ chọn)" tại trang Thanh toán
+  // 3. Kiểm tra đơn hàng đang thanh toán có chứa sản phẩm Custom hay không
+  function checkoutHasCustomProduct() {
+    var productCells = document.querySelectorAll(
+      '#order_review .cart_item .product-name, .woocommerce-checkout-review-order-table .cart_item .product-name, .woocommerce-checkout-review-order-table td.product-name'
+    );
+    if (!productCells || productCells.length === 0) return false;
+
+    for (var i = 0; i < productCells.length; i++) {
+      var cell = productCells[i];
+      var text = (cell.textContent || "").toLowerCase();
+      var anchor = cell.querySelector ? cell.querySelector("a[href]") : null;
+      var href = anchor ? (anchor.getAttribute("href") || "").toLowerCase() : "";
+
+      for (var k = 0; k < CUSTOM_PRODUCT_KEYWORDS.length; k++) {
+        var kw = CUSTOM_PRODUCT_KEYWORDS[k];
+        if (text.indexOf(kw) !== -1 || href.indexOf(kw) !== -1) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  // 4. Chỉ điền vào ô "Ghi chú đơn hàng (tuỳ chọn)" khi đơn có sản phẩm Custom
   function fillCheckoutOrderNote() {
     var textarea =
       document.getElementById("order_comments") ||
@@ -61,9 +90,23 @@
         return;
       }
 
-      // Chỉ điền khi ô ghi chú đang trống (tránh ghi đè nội dung khách tự sửa)
-      if (!textarea.value.trim()) {
-        textarea.value = parsed.note;
+      var hasCustom = checkoutHasCustomProduct();
+
+      if (hasCustom) {
+        // Chỉ điền khi ô ghi chú đang trống (tránh ghi đè nội dung khách tự sửa)
+        if (!textarea.value.trim()) {
+          textarea.value = parsed.note;
+          textarea.dataset.miyakoAutofilled = "1";
+          textarea.dispatchEvent(new Event("input", { bubbles: true }));
+          textarea.dispatchEvent(new Event("change", { bubbles: true }));
+        }
+      } else if (
+        textarea.dataset.miyakoAutofilled === "1" &&
+        textarea.value.trim() === parsed.note.trim()
+      ) {
+        // Nếu khách bỏ sản phẩm Custom khỏi giỏ hàng và giữ SP khác, xóa ghi chú đã tự điền
+        textarea.value = "";
+        delete textarea.dataset.miyakoAutofilled;
         textarea.dispatchEvent(new Event("input", { bubbles: true }));
         textarea.dispatchEvent(new Event("change", { bubbles: true }));
       }
@@ -76,9 +119,230 @@
     fillCheckoutOrderNote();
   }
 
-  // Đảm bảo không bị mất khi WooCommerce tải lại khu vực checkout bằng AJAX
+  // Đảm bảo đồng bộ lại khi WooCommerce cập nhật khu vực thanh toán bằng AJAX
   if (window.jQuery) {
     window.jQuery(document.body).on("updated_checkout", fillCheckoutOrderNote);
   }
 })();
 </script>
+
+<!-- ==========================================================================
+     CÁCH 2 (NẾU DÁN VÀO FILE functions.php CỦA CHILD THEME):
+     ==========================================================================
+
+<?php
+add_action('wp_footer', function () {
+    ?>
+    <script>
+    (function () {
+      var STORAGE_KEY = "miyako_bespoke_note";
+      var TTL_MS = 7 * 24 * 60 * 60 * 1000;
+      var CUSTOM_PRODUCT_KEYWORDS = [
+        "tinh-dau-khuech-tan-custome",
+        "custome",
+        "custom",
+      ];
+
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var incomingNote = params.get("bespoke_note");
+        if (incomingNote && incomingNote.trim()) {
+          localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify({ note: incomingNote.trim(), savedAt: Date.now() })
+          );
+        }
+      } catch (e) {}
+
+      if (
+        window.location.href.indexOf("order-received") !== -1 ||
+        (document.body && document.body.classList.contains("woocommerce-order-received"))
+      ) {
+        try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+        return;
+      }
+
+      function checkoutHasCustomProduct() {
+        var productCells = document.querySelectorAll(
+          '#order_review .cart_item .product-name, .woocommerce-checkout-review-order-table .cart_item .product-name, .woocommerce-checkout-review-order-table td.product-name'
+        );
+        if (!productCells || productCells.length === 0) return false;
+
+        for (var i = 0; i < productCells.length; i++) {
+          var cell = productCells[i];
+          var text = (cell.textContent || "").toLowerCase();
+          var anchor = cell.querySelector ? cell.querySelector("a[href]") : null;
+          var href = anchor ? (anchor.getAttribute("href") || "").toLowerCase() : "";
+
+          for (var k = 0; k < CUSTOM_PRODUCT_KEYWORDS.length; k++) {
+            var kw = CUSTOM_PRODUCT_KEYWORDS[k];
+            if (text.indexOf(kw) !== -1 || href.indexOf(kw) !== -1) {
+              return true;
+            }
+          }
+        }
+        return false;
+      }
+
+      function fillCheckoutOrderNote() {
+        var textarea =
+          document.getElementById("order_comments") ||
+          document.querySelector('textarea[name="order_comments"]');
+        if (!textarea) return;
+
+        try {
+          var raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return;
+          var parsed = JSON.parse(raw);
+          if (!parsed || !parsed.note) return;
+          if (parsed.savedAt && Date.now() - parsed.savedAt > TTL_MS) {
+            localStorage.removeItem(STORAGE_KEY);
+            return;
+          }
+
+          var hasCustom = checkoutHasCustomProduct();
+          if (hasCustom) {
+            if (!textarea.value.trim()) {
+              textarea.value = parsed.note;
+              textarea.dataset.miyakoAutofilled = "1";
+              textarea.dispatchEvent(new Event("input", { bubbles: true }));
+              textarea.dispatchEvent(new Event("change", { bubbles: true }));
+            }
+          } else if (
+            textarea.dataset.miyakoAutofilled === "1" &&
+            textarea.value.trim() === parsed.note.trim()
+          ) {
+            textarea.value = "";
+            delete textarea.dataset.miyakoAutofilled;
+            textarea.dispatchEvent(new Event("input", { bubbles: true }));
+            textarea.dispatchEvent(new Event("change", { bubbles: true }));
+          }
+        } catch (e) {}
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", fillCheckoutOrderNote);
+      } else {
+        fillCheckoutOrderNote();
+      }
+
+      if (window.jQuery) {
+        window.jQuery(document.body).on("updated_checkout", fillCheckoutOrderNote);
+      }
+    })();
+    </script>
+    <?php
+});
+
+     ========================================================================== -->
+
+
+<!-- ==========================================================================
+     CÁCH 2 (NẾU DÁN VÀO FILE functions.php CỦA CHILD THEME):
+     ==========================================================================
+
+<?php
+add_action('wp_footer', function () {
+    ?>
+    <script>
+    (function () {
+      var STORAGE_KEY = "miyako_bespoke_note";
+      var TTL_MS = 7 * 24 * 60 * 60 * 1000;
+      var CUSTOM_PRODUCT_KEYWORDS = [
+        "tinh-dau-khuech-tan-custome",
+        "custome",
+        "custom",
+      ];
+
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var incomingNote = params.get("bespoke_note");
+        if (incomingNote && incomingNote.trim()) {
+          localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify({ note: incomingNote.trim(), savedAt: Date.now() })
+          );
+        }
+      } catch (e) {}
+
+      if (
+        window.location.href.indexOf("order-received") !== -1 ||
+        (document.body && document.body.classList.contains("woocommerce-order-received"))
+      ) {
+        try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+        return;
+      }
+
+      function checkoutHasCustomProduct() {
+        var productCells = document.querySelectorAll(
+          '#order_review .cart_item .product-name, .woocommerce-checkout-review-order-table .cart_item .product-name, .woocommerce-checkout-review-order-table td.product-name'
+        );
+        if (!productCells || productCells.length === 0) return false;
+
+        for (var i = 0; i < productCells.length; i++) {
+          var cell = productCells[i];
+          var text = (cell.textContent || "").toLowerCase();
+          var anchor = cell.querySelector ? cell.querySelector("a[href]") : null;
+          var href = anchor ? (anchor.getAttribute("href") || "").toLowerCase() : "";
+
+          for (var k = 0; k < CUSTOM_PRODUCT_KEYWORDS.length; k++) {
+            var kw = CUSTOM_PRODUCT_KEYWORDS[k];
+            if (text.indexOf(kw) !== -1 || href.indexOf(kw) !== -1) {
+              return true;
+            }
+          }
+        }
+        return false;
+      }
+
+      function fillCheckoutOrderNote() {
+        var textarea =
+          document.getElementById("order_comments") ||
+          document.querySelector('textarea[name="order_comments"]');
+        if (!textarea) return;
+
+        try {
+          var raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return;
+          var parsed = JSON.parse(raw);
+          if (!parsed || !parsed.note) return;
+          if (parsed.savedAt && Date.now() - parsed.savedAt > TTL_MS) {
+            localStorage.removeItem(STORAGE_KEY);
+            return;
+          }
+
+          var hasCustom = checkoutHasCustomProduct();
+          if (hasCustom) {
+            if (!textarea.value.trim()) {
+              textarea.value = parsed.note;
+              textarea.dataset.miyakoAutofilled = "1";
+              textarea.dispatchEvent(new Event("input", { bubbles: true }));
+              textarea.dispatchEvent(new Event("change", { bubbles: true }));
+            }
+          } else if (
+            textarea.dataset.miyakoAutofilled === "1" &&
+            textarea.value.trim() === parsed.note.trim()
+          ) {
+            textarea.value = "";
+            delete textarea.dataset.miyakoAutofilled;
+            textarea.dispatchEvent(new Event("input", { bubbles: true }));
+            textarea.dispatchEvent(new Event("change", { bubbles: true }));
+          }
+        } catch (e) {}
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", fillCheckoutOrderNote);
+      } else {
+        fillCheckoutOrderNote();
+      }
+
+      if (window.jQuery) {
+        window.jQuery(document.body).on("updated_checkout", fillCheckoutOrderNote);
+      }
+    })();
+    </script>
+    <?php
+});
+
+     ========================================================================== -->
