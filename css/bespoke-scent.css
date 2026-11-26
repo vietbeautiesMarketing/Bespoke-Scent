@@ -332,6 +332,11 @@ body {
   gap: 10px;
 }
 
+.col-head-row > .col-head {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
 .col-random-btn {
   width: 32px;
   height: 32px;
@@ -2789,9 +2794,17 @@ body.brew-overlay-open {
   }
   .game-hud {
     height: auto;
-    padding: 10px 16px;
-    flex-wrap: wrap;
-    gap: 10px;
+    padding: 10px 18px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .hud-brand {
+    min-width: 0;
+  }
+  .hud-actions {
+    flex-shrink: 0;
   }
   .hud-quests {
     display: none;
@@ -2802,5 +2815,60 @@ body.brew-overlay-open {
   }
   .modal-body-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-hud {
+    position: relative;
+    padding: 11px 16px 13px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .hud-brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+  .hud-brand img {
+    height: 30px;
+    max-width: calc(100% - 92px);
+  }
+  .hud-divider {
+    display: none;
+  }
+  .hud-title-wrap {
+    width: 100%;
+    padding-top: 9px;
+    border-top: 1px solid rgba(212, 163, 89, 0.2);
+    align-items: center;
+    text-align: center;
+    gap: 2px;
+  }
+  .hud-badge {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+  .hud-title-wrap h1 {
+    font-size: clamp(14.5px, 4.3vw, 18px);
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+  .hud-actions {
+    position: absolute;
+    top: 9px;
+    right: 16px;
+    gap: 7px;
+    z-index: 2;
+  }
+  .hud-btn-icon {
+    width: 34px;
+    height: 34px;
+  }
+  .hud-btn-icon svg {
+    width: 15px;
+    height: 15px;
   }
 }

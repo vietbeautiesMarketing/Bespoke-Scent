@@ -4098,7 +4098,7 @@
         iconEl.textContent = "＋";
         nameEl.textContent = "Chưa chọn";
         statusEl.textContent = isSelectedTarget
-          ? "✨ Chọn hương ở cột 1"
+          ? "✨ Chọn hương ở Bước 1"
           : "Bấm để chọn hương";
       } else if (!slot.poured) {
         vialEl.classList.add("ready");
@@ -4107,7 +4107,7 @@
         iconEl.textContent = slot.note.icon;
         nameEl.textContent = slot.note.name;
         statusEl.textContent = isSelectedTarget
-          ? "✨ Chọn hương ở cột 1"
+          ? "✨ Chọn hương ở Bước 1"
           : "Kéo thả / Bấm để rót";
       } else {
         vialEl.classList.add("poured");
@@ -4116,7 +4116,7 @@
         iconEl.textContent = "✓";
         nameEl.textContent = slot.note.name;
         statusEl.textContent = isSelectedTarget
-          ? "✨ Chọn hương ở cột 1"
+          ? "✨ Chọn hương ở Bước 1"
           : "Đã rót · Bấm để đổi";
       }
     });
@@ -4130,7 +4130,7 @@
 
     if (pouredCount === 3) {
       dropzoneHint.textContent =
-        "✨ Đã hội tụ đủ 3 tầng hương! Hãy chọn công thức ở cột 3";
+        "✨ Đã hội tụ đủ 3 tầng hương! Hãy chọn công thức ở Bước 3";
     } else if (pickedCount > 0) {
       dropzoneHint.textContent =
         "⬇ Kéo lọ hương mẫu thả vào đây (hoặc bấm vào lọ mẫu)";
@@ -4167,7 +4167,7 @@
 
     if (pickedCount < 3) {
       craftBtn.disabled = true;
-      craftBtn.textContent = `🔒 Chọn thêm ${3 - pickedCount} lọ hương mẫu ở Cột 1`;
+      craftBtn.textContent = `🔒 Chọn thêm ${3 - pickedCount} lọ hương mẫu ở Bước 1`;
     } else if (pouredCount < 3) {
       craftBtn.disabled = false;
       craftBtn.textContent = "⚡ Rót Nốt & Giải Mã Mùi Hương";
