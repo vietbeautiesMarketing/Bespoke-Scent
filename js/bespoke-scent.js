@@ -26,7 +26,7 @@
     const base = slots.base.note;
     if (!top || !heart || !base) return "";
     return [
-      "[MIYAKO BESPOKE - PHA CHẾ RIÊNG]",
+      "[MIYAKO HOME BESPOKE – PHA CHẾ RIÊNG]",
       `Tên mùi: ${cleanName}`,
       `Công thức tỷ lệ: ${selectedFormula.code} (${selectedFormula.name})`,
       `Hương đầu (${selectedFormula.top}%): ${top.name}`,
@@ -538,7 +538,7 @@
       name: "Gia Vị Ấm",
       sub: "Spicy · Quyến Rũ",
       color: "#a8422b",
-      desc: "Nghệ Tây, Tiêu Hồng, Cà Phê, Thuốc Lá, Bạch Đậu Khấu & Đinh Hương",
+      desc: "Nghệ Tây, Tiêu Hồng, Cà Phê, Khói & Da Thuộc, Bạch Đậu Khấu & Đinh Hương",
       notes: [
         {
           id: "saffron-almond",
@@ -599,7 +599,7 @@
         },
         {
           id: "tobacco-leather",
-          name: "Thuốc Lá & Da Thuộc",
+          name: "Khói & Da Thuộc",
           icon: "🍂",
           prefix: "Phong Trần",
           suffix: "Phòng Đọc Sách Cổ",
@@ -3265,9 +3265,22 @@
     base: 30,
   };
   let isPouringAnim = false;
+  let isBrewingMagic = false;
   let draggedLayer = null;
+  let hasClickedWheel = false;
+  let hasLearnedStep1 = false;
+  let hasLearnedStep2 = false;
+  let step1Anims = [];
+  let step2Anims = [];
 
   // DOM Elements
+  const colWheel = document.querySelector(".col-wheel");
+  const colAlchemy = document.querySelector(".col-alchemy");
+  const colBespoke = document.querySelector(".col-bespoke");
+  const tutorialStep1 = document.getElementById("tutorial-step1-overlay");
+  const tutorialStep1Path = document.getElementById("tutorial-step1-path");
+  const tutorialStep2 = document.getElementById("tutorial-step2-overlay");
+  let selectedSlotLayer = null;
   const wheelBox = document.getElementById("wheel-box");
   const wheelHoverCard = document.getElementById("wheel-hover-card");
   const wheelHoverTitle = document.getElementById("wheel-hover-title");
@@ -3277,6 +3290,9 @@
   const familyNameEl = document.getElementById("family-name");
   const familyDescEl = document.getElementById("family-desc");
   const notesGrid = document.getElementById("notes-grid");
+  const vialsTray = document.querySelector(".vials-tray");
+  const vialDiscardZone = document.getElementById("vial-discard-zone");
+  const vialDiscardText = document.getElementById("vial-discard-text");
   const dropzone = document.getElementById("alchemy-dropzone");
   const dropzoneHint = document.getElementById("dropzone-hint");
   const pouringActor = document.getElementById("pouring-actor");
@@ -3741,6 +3757,20 @@
 
   // Render Column 1 Fragrance Wheel
   function renderWheel() {
+    const existingSlices = wheelSvg.querySelectorAll(".wheel-slice");
+    if (existingSlices.length === FRAGRANCE_FAMILIES.length) {
+      existingSlices.forEach((sliceEl) => {
+        const isActive = sliceEl.dataset.family === activeFamilyId;
+        sliceEl.classList.toggle("active", isActive);
+        const pathEl = sliceEl.querySelector("path");
+        if (pathEl) {
+          pathEl.setAttribute("fill-opacity", isActive ? "0.95" : "0.7");
+          pathEl.setAttribute("stroke-width", isActive ? "2" : "1");
+        }
+      });
+      return;
+    }
+
     const cx = 210;
     const cy = 210;
     const rInner = 68;
@@ -3838,9 +3868,15 @@
     wheelSvg.querySelectorAll(".wheel-slice").forEach((el) => {
       el.addEventListener("click", () => {
         SoundFX.playWheelSelect();
+        hasClickedWheel = true;
         activeFamilyId = el.dataset.family;
         renderWheel();
         renderShelfNotes();
+        const pickedCount = Object.values(slots).filter((s) =>
+          Boolean(s.note),
+        ).length;
+        const pouredCount = Object.values(slots).filter((s) => s.poured).length;
+        updateGestureTutorials(pickedCount, pouredCount);
       });
 
       el.addEventListener("mouseenter", (e) => {
@@ -3883,7 +3919,9 @@
         );
         const tagLabel = assignedEntry
           ? `Lọ ${getLayerShortName(assignedEntry[0])}`
-          : "+ Chọn lọ mẫu";
+          : selectedSlotLayer
+            ? `+ Chọn cho ${getLayerShortName(selectedSlotLayer)}`
+            : "+ Chọn lọ mẫu";
 
         return `
           <button type="button" class="note-pick-btn ${assignedEntry ? "picked" : ""}" data-note-id="${note.id}" title="${note.name}">
@@ -3918,10 +3956,40 @@
 
   // Pick a note from Column 1 -> Spawn Sample Vial in Column 2
   function handlePickNote(noteId) {
-    // Check if already picked -> remove it
     const existingLayer = Object.keys(slots).find(
       (k) => slots[k].note && slots[k].note.id === noteId,
     );
+
+    // If user clicked a specific glowing vial slot in Column 2 first, assign directly to that slot
+    if (selectedSlotLayer) {
+      const noteObj = findNoteById(noteId);
+      if (!noteObj) return;
+
+      if (existingLayer === selectedSlotLayer) {
+        selectedSlotLayer = null;
+        updateAllColumns();
+        return;
+      }
+
+      if (existingLayer) {
+        const prevTargetNote = slots[selectedSlotLayer].note;
+        slots[existingLayer] = {
+          note: prevTargetNote || null,
+          poured: false,
+        };
+      }
+
+      slots[selectedSlotLayer] = {
+        note: noteObj,
+        poured: false,
+      };
+      SoundFX.playVialPick(true);
+      selectedSlotLayer = null;
+      updateAllColumns();
+      return;
+    }
+
+    // Check if already picked -> remove it
     if (existingLayer) {
       SoundFX.playVialPick(false);
       slots[existingLayer] = { note: null, poured: false };
@@ -4014,11 +4082,14 @@
       const iconEl = document.getElementById(`vial-icon-${layer}`);
       const nameEl = document.getElementById(`vial-name-${layer}`);
       const statusEl = document.getElementById(`vial-status-${layer}`);
-      const removeBtn = document.querySelector(
-        `.vial-remove-btn[data-remove="${layer}"]`,
-      );
 
+      const isSelectedTarget = selectedSlotLayer === layer;
+      const slotWrap = vialEl.closest(".vial-slot-wrap");
       vialEl.classList.remove("empty", "ready", "poured");
+      vialEl.classList.toggle("is-selected-slot", isSelectedTarget);
+      if (slotWrap) {
+        slotWrap.classList.toggle("is-selected-slot", isSelectedTarget);
+      }
 
       if (!slot.note) {
         vialEl.classList.add("empty");
@@ -4026,24 +4097,27 @@
         liquidEl.style.backgroundColor = "transparent";
         iconEl.textContent = "＋";
         nameEl.textContent = "Chưa chọn";
-        statusEl.textContent = "Chọn ở cột 1";
-        removeBtn.hidden = true;
+        statusEl.textContent = isSelectedTarget
+          ? "✨ Chọn hương ở cột 1"
+          : "Bấm để chọn hương";
       } else if (!slot.poured) {
         vialEl.classList.add("ready");
         vialEl.setAttribute("draggable", "true");
         liquidEl.style.backgroundColor = slot.note.color;
         iconEl.textContent = slot.note.icon;
         nameEl.textContent = slot.note.name;
-        statusEl.textContent = "Kéo thả / Bấm để rót";
-        removeBtn.hidden = false;
+        statusEl.textContent = isSelectedTarget
+          ? "✨ Chọn hương ở cột 1"
+          : "Kéo thả / Bấm để rót";
       } else {
         vialEl.classList.add("poured");
-        vialEl.setAttribute("draggable", "false");
+        vialEl.setAttribute("draggable", "true");
         liquidEl.style.backgroundColor = slot.note.color;
         iconEl.textContent = "✓";
         nameEl.textContent = slot.note.name;
-        statusEl.textContent = "Đã rót vào bình";
-        removeBtn.hidden = false;
+        statusEl.textContent = isSelectedTarget
+          ? "✨ Chọn hương ở cột 1"
+          : "Đã rót · Bấm để đổi";
       }
     });
 
@@ -4077,15 +4151,370 @@
     q2.className = `quest-step ${pouredCount === 3 ? "done" : pickedCount > 0 ? "active" : ""}`;
     q3.className = `quest-step ${pouredCount === 3 ? "active" : ""}`;
 
+    // Desktop subtle step-by-step glow guide (Col 1 -> Col 2 -> Col 3)
+    const guideStep1 =
+      !isBrewingMagic && (selectedSlotLayer !== null || pickedCount < 3);
+    const guideStep2 =
+      !isBrewingMagic &&
+      selectedSlotLayer === null &&
+      pickedCount === 3 &&
+      pouredCount < 3;
+    const guideStep3 =
+      !isBrewingMagic && selectedSlotLayer === null && pouredCount === 3;
+    if (colWheel) colWheel.classList.toggle("guide-step-active", guideStep1);
+    if (colAlchemy) colAlchemy.classList.toggle("guide-step-active", guideStep2);
+    if (colBespoke) colBespoke.classList.toggle("guide-step-active", guideStep3);
+
     if (pickedCount < 3) {
       craftBtn.disabled = true;
       craftBtn.textContent = `🔒 Chọn thêm ${3 - pickedCount} lọ hương mẫu ở Cột 1`;
     } else if (pouredCount < 3) {
       craftBtn.disabled = false;
-      craftBtn.textContent = `⚡ Rót Nốt & Giải Mã Mùi Hương (${selectedFormula.code})`;
+      craftBtn.textContent = "⚡ Rót Nốt & Giải Mã Mùi Hương";
     } else {
       craftBtn.disabled = false;
-      craftBtn.textContent = `✦ Lắc Bình & Giải Mã Bản Ngã (${selectedFormula.code}) ✦`;
+      craftBtn.textContent = "✦ Lắc Bình & Giải Mã Bản Ngã ✦";
+    }
+
+    updateGestureTutorials(pickedCount, pouredCount);
+  }
+
+  function cancelAnimList(list) {
+    list.forEach((anim) => {
+      try {
+        anim.cancel();
+      } catch {
+        // Ignore if already finished
+      }
+    });
+    return [];
+  }
+
+  function playSingleTapAnimation(x, y) {
+    step1Anims = cancelAnimList(step1Anims);
+    if (!tutorialStep1) return;
+    const hand = tutorialStep1.querySelector(".gesture-hand-step1");
+    const rA = tutorialStep1.querySelector(".gesture-ripple-s1a");
+    const rB = tutorialStep1.querySelector(".gesture-ripple-s1b");
+    if (rB) rB.style.opacity = "0";
+    if (tutorialStep1Path) tutorialStep1Path.setAttribute("d", "");
+
+    const dur = 1500;
+    if (hand && hand.animate) {
+      step1Anims.push(
+        hand.animate(
+          [
+            {
+              offset: 0,
+              opacity: 0.92,
+              transform: `translate3d(${x}px, ${y}px, 0) scale(1)`,
+            },
+            {
+              offset: 0.3,
+              opacity: 1,
+              transform: `translate3d(${x}px, ${y}px, 0) scale(1)`,
+            },
+            {
+              offset: 0.45,
+              opacity: 1,
+              transform: `translate3d(${x}px, ${y}px, 0) scale(0.8)`,
+            },
+            {
+              offset: 0.65,
+              opacity: 1,
+              transform: `translate3d(${x}px, ${y}px, 0) scale(1)`,
+            },
+            {
+              offset: 1,
+              opacity: 0.92,
+              transform: `translate3d(${x}px, ${y}px, 0) scale(1)`,
+            },
+          ],
+          { duration: dur, iterations: Infinity, easing: "ease-in-out" },
+        ),
+      );
+    }
+
+    if (rA && rA.animate) {
+      step1Anims.push(
+        rA.animate(
+          [
+            {
+              offset: 0,
+              opacity: 0,
+              transform: `translate3d(${x}px, ${y}px, 0) scale(0.45)`,
+            },
+            {
+              offset: 0.38,
+              opacity: 0,
+              transform: `translate3d(${x}px, ${y}px, 0) scale(0.45)`,
+            },
+            {
+              offset: 0.5,
+              opacity: 0.95,
+              transform: `translate3d(${x}px, ${y}px, 0) scale(0.95)`,
+            },
+            {
+              offset: 0.9,
+              opacity: 0,
+              transform: `translate3d(${x}px, ${y}px, 0) scale(1.8)`,
+            },
+            {
+              offset: 1,
+              opacity: 0,
+              transform: `translate3d(${x}px, ${y}px, 0) scale(1.8)`,
+            },
+          ],
+          { duration: dur, iterations: Infinity, easing: "ease-out" },
+        ),
+      );
+    }
+  }
+
+  function playStep2Animation(x1, y1, x2, y2) {
+    step2Anims = cancelAnimList(step2Anims);
+    if (!tutorialStep2) return;
+    const hand = tutorialStep2.querySelector(".gesture-hand-step2");
+    const ghostVial = tutorialStep2.querySelector(".gesture-ghost-vial");
+    const rStart = tutorialStep2.querySelector(".gesture-ripple-s2-start");
+    const rEnd = tutorialStep2.querySelector(".gesture-ripple-s2-end");
+    const dur = 2600;
+    const cx = Math.round((x1 + x2) / 2 - 24);
+    const cy = Math.round((y1 + y2) / 2);
+
+    if (hand && hand.animate) {
+      step2Anims.push(
+        hand.animate(
+          [
+            {
+              offset: 0,
+              opacity: 0,
+              transform: `translate3d(${x1}px, ${y1}px, 0) scale(1.08)`,
+            },
+            {
+              offset: 0.12,
+              opacity: 1,
+              transform: `translate3d(${x1}px, ${y1}px, 0) scale(1)`,
+            },
+            {
+              offset: 0.22,
+              opacity: 1,
+              transform: `translate3d(${x1}px, ${y1}px, 0) scale(0.84)`,
+            },
+            {
+              offset: 0.44,
+              opacity: 1,
+              transform: `translate3d(${cx}px, ${cy}px, 0) rotate(-10deg) scale(0.88)`,
+            },
+            {
+              offset: 0.66,
+              opacity: 1,
+              transform: `translate3d(${x2}px, ${y2}px, 0) rotate(-22deg) scale(0.9)`,
+            },
+            {
+              offset: 0.78,
+              opacity: 1,
+              transform: `translate3d(${x2}px, ${y2}px, 0) rotate(-22deg) scale(1)`,
+            },
+            {
+              offset: 0.92,
+              opacity: 0,
+              transform: `translate3d(${x2}px, ${y2}px, 0) scale(1)`,
+            },
+            {
+              offset: 1,
+              opacity: 0,
+              transform: `translate3d(${x1}px, ${y1}px, 0) scale(1)`,
+            },
+          ],
+          { duration: dur, iterations: Infinity, easing: "ease-in-out" },
+        ),
+      );
+    }
+
+    if (ghostVial && ghostVial.animate) {
+      step2Anims.push(
+        ghostVial.animate(
+          [
+            { offset: 0, opacity: 0, transform: "scale(0.8)" },
+            { offset: 0.16, opacity: 0, transform: "scale(0.8)" },
+            { offset: 0.22, opacity: 1, transform: "scale(1)" },
+            { offset: 0.72, opacity: 1, transform: "scale(1)" },
+            { offset: 0.84, opacity: 0, transform: "scale(0.7)" },
+            { offset: 1, opacity: 0, transform: "scale(0.7)" },
+          ],
+          { duration: dur, iterations: Infinity, easing: "ease-in-out" },
+        ),
+      );
+    }
+
+    if (rStart && rStart.animate) {
+      step2Anims.push(
+        rStart.animate(
+          [
+            {
+              offset: 0,
+              opacity: 0,
+              transform: `translate3d(${x1}px, ${y1}px, 0) scale(0.5)`,
+            },
+            {
+              offset: 0.14,
+              opacity: 0,
+              transform: `translate3d(${x1}px, ${y1}px, 0) scale(0.5)`,
+            },
+            {
+              offset: 0.2,
+              opacity: 0.9,
+              transform: `translate3d(${x1}px, ${y1}px, 0) scale(0.9)`,
+            },
+            {
+              offset: 0.34,
+              opacity: 0,
+              transform: `translate3d(${x1}px, ${y1}px, 0) scale(1.5)`,
+            },
+            {
+              offset: 1,
+              opacity: 0,
+              transform: `translate3d(${x1}px, ${y1}px, 0) scale(1.5)`,
+            },
+          ],
+          { duration: dur, iterations: Infinity, easing: "ease-out" },
+        ),
+      );
+    }
+
+    if (rEnd && rEnd.animate) {
+      step2Anims.push(
+        rEnd.animate(
+          [
+            {
+              offset: 0,
+              opacity: 0,
+              transform: `translate3d(${x2}px, ${y2}px, 0) scale(0.5)`,
+            },
+            {
+              offset: 0.64,
+              opacity: 0,
+              transform: `translate3d(${x2}px, ${y2}px, 0) scale(0.5)`,
+            },
+            {
+              offset: 0.7,
+              opacity: 0.95,
+              transform: `translate3d(${x2}px, ${y2}px, 0) scale(0.95)`,
+            },
+            {
+              offset: 0.9,
+              opacity: 0,
+              transform: `translate3d(${x2}px, ${y2}px, 0) scale(1.9)`,
+            },
+            {
+              offset: 1,
+              opacity: 0,
+              transform: `translate3d(${x2}px, ${y2}px, 0) scale(1.9)`,
+            },
+          ],
+          { duration: dur, iterations: Infinity, easing: "ease-out" },
+        ),
+      );
+    }
+  }
+
+  function updateGestureTutorials(pickedCount, pouredCount) {
+    if (pickedCount > 0) hasLearnedStep1 = true;
+    if (pouredCount > 0) hasLearnedStep2 = true;
+
+    const showStep1 =
+      !hasLearnedStep1 && pickedCount === 0 && !isBrewingMagic && colWheel;
+    const showStep2 =
+      !hasLearnedStep2 &&
+      pickedCount >= 1 &&
+      pouredCount === 0 &&
+      !isBrewingMagic &&
+      colAlchemy;
+
+    if (tutorialStep1) {
+      tutorialStep1.hidden = !showStep1;
+      if (!showStep1) {
+        step1Anims = cancelAnimList(step1Anims);
+      } else {
+        requestAnimationFrame(() => {
+          const colRect = colWheel.getBoundingClientRect();
+          if (!colRect.width || !colRect.height) return;
+
+          if (!hasClickedWheel) {
+            // Stage 1A: Suggest clicking a fragrance family on the wheel
+            const sliceTarget =
+              colWheel.querySelector('.wheel-slice[data-family="woody"]') ||
+              wheelBox;
+            let x = colRect.width * 0.64;
+            let y = colRect.height * 0.36;
+            if (sliceTarget) {
+              const r = sliceTarget.getBoundingClientRect();
+              if (r.width && r.height) {
+                x = r.left - colRect.left + r.width * 0.56;
+                y = r.top - colRect.top + r.height * 0.52;
+              }
+            }
+            playSingleTapAnimation(Math.round(x), Math.round(y));
+          } else {
+            // Stage 1B: After clicking a wheel family, suggest clicking a sub-note below
+            const noteTarget = notesGrid.querySelector(".note-pick-btn");
+            let x = colRect.width * 0.34;
+            let y = colRect.height * 0.78;
+            if (noteTarget) {
+              const r = noteTarget.getBoundingClientRect();
+              if (r.width && r.height) {
+                x = r.left - colRect.left + r.width * 0.52;
+                y = r.top - colRect.top + r.height * 0.52;
+              }
+            }
+            playSingleTapAnimation(Math.round(x), Math.round(y));
+          }
+        });
+      }
+    }
+
+    if (tutorialStep2) {
+      tutorialStep2.hidden = !showStep2;
+      if (!showStep2) {
+        step2Anims = cancelAnimList(step2Anims);
+      } else {
+        requestAnimationFrame(() => {
+          const colRect = colAlchemy.getBoundingClientRect();
+          if (!colRect.width || !colRect.height) return;
+
+          const vialTarget =
+            colAlchemy.querySelector(".sample-vial.ready") ||
+            document.getElementById("vial-top");
+          const flaskTarget = document.getElementById("mixing-flask-svg");
+
+          let x1 = colRect.width * 0.22;
+          let y1 = colRect.height * 0.25;
+          if (vialTarget) {
+            const r1 = vialTarget.getBoundingClientRect();
+            if (r1.width && r1.height) {
+              x1 = r1.left - colRect.left + r1.width * 0.5;
+              y1 = r1.top - colRect.top + r1.height * 0.52;
+            }
+          }
+
+          let x2 = colRect.width * 0.5;
+          let y2 = colRect.height * 0.56;
+          if (flaskTarget) {
+            const r2 = flaskTarget.getBoundingClientRect();
+            if (r2.width && r2.height) {
+              x2 = r2.left - colRect.left + r2.width * 0.5;
+              y2 = r2.top - colRect.top + r2.height * 0.22;
+            }
+          }
+
+          const rx1 = Math.round(x1);
+          const ry1 = Math.round(y1);
+          const rx2 = Math.round(x2);
+          const ry2 = Math.round(y2);
+          playStep2Animation(rx1, ry1, rx2, ry2);
+        });
+      }
     }
   }
 
@@ -4210,48 +4639,293 @@
     finalBottleRatio.textContent = `CÔNG THỨC ${selectedFormula.code.replace(/-/g, " · ")}`;
   }
 
-  // Drag & Drop + Click Event Listeners for Sample Vials
+  function selectTargetSlot(layer) {
+    if (!slots[layer]) return;
+    selectedSlotLayer = selectedSlotLayer === layer ? null : layer;
+    SoundFX.playWheelSelect();
+    updateAllColumns();
+
+    if (
+      selectedSlotLayer &&
+      window.matchMedia("(max-width: 1024px)").matches &&
+      colWheel
+    ) {
+      colWheel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+  }
+
+  function removeVialSlot(layer) {
+    if (!layer || !slots[layer] || !slots[layer].note) return;
+    SoundFX.playVialPick(false);
+    slots[layer] = { note: null, poured: false };
+    if (selectedSlotLayer === layer) selectedSlotLayer = null;
+    updateAllColumns();
+  }
+
+  let dragStartY = 0;
+  let isDiscardArmed = false;
+  let dragHandled = false;
+  let dragCancelled = false;
+  let touchGhostEl = null;
+
+  function showDiscardZone() {
+    if (!vialDiscardZone) return;
+    vialDiscardZone.hidden = false;
+    vialDiscardZone.classList.remove("is-active");
+    const iconSpan = vialDiscardZone.querySelector(".discard-zone-icon");
+    if (iconSpan) iconSpan.textContent = "↑";
+    if (vialDiscardText) {
+      vialDiscardText.textContent = "Kéo lên trên để bỏ hương này";
+    }
+  }
+
+  function setDiscardArmed(armed, layer) {
+    isDiscardArmed = Boolean(armed);
+    const noteName =
+      layer && slots[layer] && slots[layer].note ? slots[layer].note.name : "";
+    if (vialDiscardZone) {
+      vialDiscardZone.classList.toggle("is-active", isDiscardArmed);
+      const iconSpan = vialDiscardZone.querySelector(".discard-zone-icon");
+      if (iconSpan) iconSpan.textContent = isDiscardArmed ? "✕" : "↑";
+      if (vialDiscardText) {
+        vialDiscardText.textContent = isDiscardArmed
+          ? `Thả ra để bỏ "${noteName}"`
+          : "Kéo lên trên để bỏ hương này";
+      }
+    }
+    document.querySelectorAll(".sample-vial").forEach((el) => {
+      el.classList.toggle("is-discard-armed", isDiscardArmed && el.dataset.layer === layer);
+    });
+    if (touchGhostEl) {
+      touchGhostEl.classList.toggle("is-discard", isDiscardArmed);
+    }
+  }
+
+  function resetVialDragUI() {
+    if (vialDiscardZone) {
+      vialDiscardZone.hidden = true;
+      vialDiscardZone.classList.remove("is-active");
+    }
+    document
+      .querySelectorAll(".sample-vial")
+      .forEach((el) => el.classList.remove("is-discard-armed"));
+    dropzone.classList.remove("drag-over");
+    if (touchGhostEl) {
+      touchGhostEl.remove();
+      touchGhostEl = null;
+    }
+    draggedLayer = null;
+    isDiscardArmed = false;
+    dragStartY = 0;
+  }
+
+  function isPointInUpwardDiscard(clientX, clientY, startY, overDropzone) {
+    if (overDropzone) return false;
+    if (vialDiscardZone && !vialDiscardZone.hidden) {
+      const dzRect = vialDiscardZone.getBoundingClientRect();
+      if (
+        clientX >= dzRect.left - 24 &&
+        clientX <= dzRect.right + 24 &&
+        clientY > 0 &&
+        clientY <= dzRect.bottom + 8
+      ) {
+        return true;
+      }
+    }
+    const trayRect = vialsTray ? vialsTray.getBoundingClientRect() : null;
+    const aboveTray = trayRect && clientY > 0 && clientY < trayRect.top - 22;
+    const draggedUpFar =
+      clientY > 0 && startY > 0 && startY - clientY >= 68;
+    return Boolean(aboveTray || draggedUpFar);
+  }
+
+  // Drag & Drop + Touch + Click Event Listeners for Sample Vials
   ["top", "heart", "base"].forEach((layer) => {
     const vialEl = document.getElementById(`vial-${layer}`);
 
     vialEl.addEventListener("dragstart", (e) => {
-      if (!slots[layer].note || slots[layer].poured) {
+      if (!slots[layer].note) {
         e.preventDefault();
         return;
       }
+      hasLearnedStep2 = true;
+      if (tutorialStep2) tutorialStep2.hidden = true;
       draggedLayer = layer;
+      dragStartY = e.clientY || 0;
+      dragHandled = false;
+      dragCancelled = false;
+      isDiscardArmed = false;
       e.dataTransfer.setData("text/plain", layer);
       e.dataTransfer.effectAllowed = "move";
+      showDiscardZone();
     });
 
     vialEl.addEventListener("dragend", () => {
-      draggedLayer = null;
-      dropzone.classList.remove("drag-over");
+      if (!dragHandled && !dragCancelled && isDiscardArmed && draggedLayer) {
+        dragHandled = true;
+        const layerToRemove = draggedLayer;
+        resetVialDragUI();
+        removeVialSlot(layerToRemove);
+      } else {
+        resetVialDragUI();
+      }
     });
 
-    // Click to pour (great for mobile & quick interaction)
-    vialEl.addEventListener("click", () => {
-      if (slots[layer].note && !slots[layer].poured) {
+    // Touch drag support (down to pour into flask, or up far to discard)
+    let touchState = null;
+
+    vialEl.addEventListener(
+      "touchstart",
+      (e) => {
+        if (!slots[layer].note || e.touches.length !== 1) return;
+        const t = e.touches[0];
+        touchState = {
+          startX: t.clientX,
+          startY: t.clientY,
+          lastX: t.clientX,
+          lastY: t.clientY,
+          active: false,
+        };
+      },
+      { passive: true },
+    );
+
+    vialEl.addEventListener(
+      "touchmove",
+      (e) => {
+        if (!touchState || e.touches.length !== 1 || !slots[layer].note) return;
+        const t = e.touches[0];
+        touchState.lastX = t.clientX;
+        touchState.lastY = t.clientY;
+        const dx = t.clientX - touchState.startX;
+        const dy = t.clientY - touchState.startY;
+        if (!touchState.active && Math.hypot(dx, dy) > 14) {
+          touchState.active = true;
+          hasLearnedStep2 = true;
+          if (tutorialStep2) tutorialStep2.hidden = true;
+          draggedLayer = layer;
+          dragStartY = touchState.startY;
+          showDiscardZone();
+          touchGhostEl = document.createElement("div");
+          touchGhostEl.className = "vial-touch-ghost";
+          touchGhostEl.textContent = `${slots[layer].note.icon} ${slots[layer].note.name}`;
+          document.body.appendChild(touchGhostEl);
+        }
+        if (!touchState.active) return;
+        e.preventDefault();
+        if (touchGhostEl) {
+          touchGhostEl.style.left = `${t.clientX}px`;
+          touchGhostEl.style.top = `${t.clientY}px`;
+        }
+        const dzRect = dropzone.getBoundingClientRect();
+        const overDropzone =
+          t.clientX >= dzRect.left &&
+          t.clientX <= dzRect.right &&
+          t.clientY >= dzRect.top &&
+          t.clientY <= dzRect.bottom;
+        const canPour = overDropzone && !slots[layer].poured;
+        dropzone.classList.toggle("drag-over", canPour);
+        setDiscardArmed(
+          isPointInUpwardDiscard(t.clientX, t.clientY, touchState.startY, overDropzone),
+          layer,
+        );
+      },
+      { passive: false },
+    );
+
+    vialEl.addEventListener("touchend", (e) => {
+      if (!touchState) return;
+      const wasActive = touchState.active;
+      const endX = touchState.lastX;
+      const endY = touchState.lastY;
+      touchState = null;
+      if (!wasActive) return;
+
+      e.preventDefault();
+      const dzRect = dropzone.getBoundingClientRect();
+      const overDropzone =
+        endX >= dzRect.left &&
+        endX <= dzRect.right &&
+        endY >= dzRect.top &&
+        endY <= dzRect.bottom;
+      const shouldDiscard = isDiscardArmed;
+      resetVialDragUI();
+
+      if (overDropzone && !slots[layer].poured) {
         pourVialIntoFlask(layer);
+      } else if (shouldDiscard) {
+        removeVialSlot(layer);
+      }
+    });
+
+    vialEl.addEventListener("touchcancel", () => {
+      if (touchState && touchState.active) {
+        resetVialDragUI();
+      }
+      touchState = null;
+    });
+
+    function handleVialActivate() {
+      if (!slots[layer].note || slots[layer].poured) {
+        selectTargetSlot(layer);
+      } else {
+        if (selectedSlotLayer === layer) {
+          selectedSlotLayer = null;
+        }
+        pourVialIntoFlask(layer);
+      }
+    }
+
+    // Click to select/glow (empty or poured) or pour into flask (ready)
+    vialEl.addEventListener("click", handleVialActivate);
+    vialEl.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        handleVialActivate();
       }
     });
   });
 
-  // Remove Vial Button
-  document.querySelectorAll(".vial-remove-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      SoundFX.playVialPick(false);
-      const layer = btn.dataset.remove;
-      slots[layer] = { note: null, poured: false };
-      updateAllColumns();
-    });
+  // Document-level DnD handlers for dragging upward to discard
+  document.addEventListener("dragover", (e) => {
+    if (!draggedLayer) return;
+    const overDropzone = dropzone.contains(e.target);
+    if (isPointInUpwardDiscard(e.clientX, e.clientY, dragStartY, overDropzone)) {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = "move";
+      dropzone.classList.remove("drag-over");
+      setDiscardArmed(true, draggedLayer);
+    } else {
+      setDiscardArmed(false, draggedLayer);
+    }
+  });
+
+  document.addEventListener("drop", (e) => {
+    if (!draggedLayer || dragHandled) return;
+    if (isDiscardArmed && !dropzone.contains(e.target)) {
+      e.preventDefault();
+      dragHandled = true;
+      const layerToRemove = draggedLayer;
+      resetVialDragUI();
+      removeVialSlot(layerToRemove);
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && draggedLayer) {
+      dragCancelled = true;
+      setDiscardArmed(false, draggedLayer);
+    }
   });
 
   // Dropzone Drag Events
   dropzone.addEventListener("dragover", (e) => {
+    if (draggedLayer && (!slots[draggedLayer] || slots[draggedLayer].poured)) {
+      return;
+    }
     e.preventDefault();
     e.dataTransfer.dropEffect = "move";
+    setDiscardArmed(false, draggedLayer);
     dropzone.classList.add("drag-over");
   });
 
@@ -4263,13 +4937,17 @@
     e.preventDefault();
     dropzone.classList.remove("drag-over");
     const layer = draggedLayer || e.dataTransfer.getData("text/plain");
-    if (layer && slots[layer]) {
+    if (layer && slots[layer] && slots[layer].note && !slots[layer].poured) {
+      dragHandled = true;
+      resetVialDragUI();
       pourVialIntoFlask(layer);
     }
   });
 
   // Quick Pour All Button
   quickPourBtn.addEventListener("click", () => {
+    hasLearnedStep2 = true;
+    if (tutorialStep2) tutorialStep2.hidden = true;
     const unpoured = ["top", "heart", "base"].filter(
       (k) => slots[k].note && !slots[k].poured,
     );
@@ -4306,7 +4984,9 @@
   });
 
   // Random Pick Button in HUD
-  document.getElementById("random-spin-btn").addEventListener("click", () => {
+  let wheelSpinAngle = 0;
+  let diceSpinAngle = 0;
+  document.getElementById("random-spin-btn").addEventListener("click", (e) => {
     SoundFX.playRandomSpin();
     const allNotes = [];
     FRAGRANCE_FAMILIES.forEach((fam) => {
@@ -4319,12 +4999,17 @@
     slots.top = { note: shuffled[0], poured: false };
     slots.heart = { note: shuffled[1], poured: false };
     slots.base = { note: shuffled[2], poured: false };
+    selectedSlotLayer = null;
 
     activeFamilyId = shuffled[1].familyId;
-    wheelSvg.style.transform = "rotate(360deg)";
-    setTimeout(() => {
-      wheelSvg.style.transform = "rotate(0deg)";
-    }, 750);
+    wheelSpinAngle += 720;
+    wheelSvg.style.transform = `rotate(${wheelSpinAngle}deg) translateZ(0)`;
+
+    const diceSvg = e.currentTarget.querySelector("svg");
+    if (diceSvg) {
+      diceSpinAngle += 360;
+      diceSvg.style.transform = `rotate(${diceSpinAngle}deg)`;
+    }
 
     renderWheel();
     updateAllColumns();
@@ -4335,6 +5020,7 @@
     slots.top = { note: null, poured: false };
     slots.heart = { note: null, poured: false };
     slots.base = { note: null, poured: false };
+    selectedSlotLayer = null;
     resultModal.hidden = true;
     if (mobileBrewOverlay) {
       mobileBrewOverlay.hidden = true;
@@ -4347,9 +5033,6 @@
     updateAllColumns();
   }
 
-  document
-    .getElementById("reset-board-btn")
-    .addEventListener("click", resetGame);
   document
     .getElementById("modal-replay-btn")
     .addEventListener("click", resetGame);
@@ -4472,8 +5155,6 @@
     }
   }
 
-  let isBrewingMagic = false;
-
   // Final Craft & Open Pop-up Modal
   craftBtn.addEventListener("click", () => {
     if (
@@ -4486,6 +5167,7 @@
     }
 
     isBrewingMagic = true;
+    selectedSlotLayer = null;
 
     // Auto-pour any unpoured vials first
     ["top", "heart", "base"].forEach((k) => {
@@ -4619,12 +5301,7 @@
     currentCustomScentName = clean;
 
     const scentNameEl = document.getElementById("result-scent-name");
-    const ownerEl = document.getElementById("result-owner");
     if (scentNameEl) scentNameEl.textContent = `“${clean}”`;
-    if (ownerEl) {
-      ownerEl.textContent =
-        "✦ Mùi hương độc bản do chính bạn đặt tên & chế tác";
-    }
     if (finalBottleRatio) {
       finalBottleRatio.textContent = clean.toUpperCase().slice(0, 22);
     }
@@ -4697,10 +5374,6 @@
     const generatedPoeticName = `${heart.prefix} & ${base.suffix}`;
     currentCustomScentName = "";
 
-    const codeNum =
-      ((top.id.length * 19 + heart.id.length * 31 + base.id.length * 47) %
-        899) +
-      100;
     const archetype = resolvePersonaStory(
       avgScores,
       top,
@@ -4738,16 +5411,14 @@
       "matched-product-story-desc",
     );
     const matchProductLink = document.getElementById("match-product-link");
-    const toggleRenameBtn = document.getElementById("toggle-rename-btn");
     const primaryActionLink = document.getElementById(
       "modal-primary-action-link",
     );
 
-    // Generate 3 poetic name suggestions for custom naming
+    // Generate 2 concise poetic name suggestions for custom naming
     const poeticSuggestions = [
       generatedPoeticName,
       `${top.prefix} ${heart.prefix}`,
-      `Dấu Ấn ${heart.name} & ${base.name}`,
     ];
     if (suggestChipsEl) {
       suggestChipsEl.innerHTML = poeticSuggestions
@@ -4770,18 +5441,9 @@
       if (modalKicker) {
         modalKicker.textContent = `✦ TƯƠNG ĐỒNG ${matchResult.matchPercent}% VỚI TUYỆT TÁC CÓ SẴN TẠI MIYAKO HOME ✦`;
       }
-      document.getElementById("result-serial").textContent =
-        `MIYAKO SIGNATURE MATCH · CÔNG THỨC ${selectedFormula.code} (${selectedFormula.name.toUpperCase()})`;
-      document.getElementById("result-owner").textContent =
-        `Sự kết hợp của bạn trùng khớp với dòng tinh dầu chính hãng nhà Miyako Home:`;
       document.getElementById("result-scent-name").textContent = prod.shortName;
 
       if (namingBox) namingBox.hidden = true;
-      if (toggleRenameBtn) {
-        toggleRenameBtn.hidden = false;
-        toggleRenameBtn.textContent =
-          "✎ Muốn tự đặt tên riêng cho bản phối này?";
-      }
       if (productCard) productCard.classList.add("is-exact-match");
       if (matchEyebrow) {
         matchEyebrow.textContent = "✦ SẢN PHẨM MIYAKO HOME TƯƠNG ĐỒNG";
@@ -4791,7 +5453,7 @@
       }
       if (matchProductLink) {
         matchProductLink.href = withBespokeUtm(prod.url);
-        matchProductLink.textContent = `Xem chi tiết "${prod.shortName}" trên Vietbeauties.vn ↗`;
+        matchProductLink.textContent = "Xem chi tiết trên Vietbeauties.vn ↗";
       }
       if (primaryActionLink) {
         primaryActionLink.href = withBespokeUtm(prod.url);
@@ -4809,10 +5471,6 @@
         modalKicker.textContent =
           "✦ CÔNG THỨC ĐỘC BẢN MỚI — CHƯA TỪNG CÓ TRONG BỘ SƯU TẬP ✦";
       }
-      document.getElementById("result-serial").textContent =
-        `MIYAKO BESPOKE NO. ${codeNum} · CÔNG THỨC TỶ LỆ ${selectedFormula.code} (${selectedFormula.name.toUpperCase()})`;
-      document.getElementById("result-owner").textContent =
-        "Mùi hương này là sáng tạo độc quyền của riêng bạn — Hãy đặt tên cho nó!";
       document.getElementById("result-scent-name").textContent =
         generatedPoeticName;
 
@@ -4821,7 +5479,6 @@
         nameInput.value = "";
         nameInput.placeholder = `VD: ${generatedPoeticName}...`;
       }
-      if (toggleRenameBtn) toggleRenameBtn.hidden = true;
       if (productCard) productCard.classList.remove("is-exact-match");
       if (matchEyebrow) {
         matchEyebrow.textContent = "GỢI Ý SẢN PHẨM GẦN NHẤT TẠI MIYAKO";
@@ -4831,18 +5488,18 @@
       }
       if (matchProductLink) {
         matchProductLink.href = withBespokeUtm(prod.url);
-        matchProductLink.textContent = `Tham khảo dòng gần nhất: "${prod.shortName}" ↗`;
+        matchProductLink.textContent = "Xem chi tiết trên Vietbeauties.vn ↗";
       }
       if (primaryActionLink) {
         primaryActionLink.href = buildCustomProductOrderUrl(
           generatedPoeticName,
         );
-        primaryActionLink.textContent = "Đặt Pha Chế Riêng Mùi Hương Này ↗";
+        primaryActionLink.textContent = "Đặt trải nghiệm thử miễn phí ngay ↗";
       }
     }
 
     document.getElementById("result-poetic-sub").textContent =
-      `Pha chế theo tỷ lệ ${selectedFormula.code}: ${top.name} (${wTop}%) · ${heart.name} (${wHeart}%) · ${base.name} (${wBase}%).`;
+      `${top.name} (${wTop}%), ${heart.name} (${wHeart}%), ${base.name} (${wBase}%)`;
 
     document.getElementById("persona-title").textContent = archetype.title;
     document.getElementById("persona-summary").textContent = archetype.summary;
@@ -4914,7 +5571,6 @@
   const customScentNameInput = document.getElementById(
     "custom-scent-name-input",
   );
-  const toggleRenameBtn = document.getElementById("toggle-rename-btn");
 
   if (saveCustomNameBtn && customScentNameInput) {
     saveCustomNameBtn.addEventListener("click", () => {
@@ -4930,23 +5586,46 @@
     });
   }
 
-  if (toggleRenameBtn) {
-    toggleRenameBtn.addEventListener("click", () => {
-      const namingBox = document.getElementById("bespoke-naming-box");
-      if (namingBox) {
-        namingBox.hidden = !namingBox.hidden;
-        if (!namingBox.hidden && customScentNameInput) {
-          customScentNameInput.focus();
-        }
-      }
+  // Drag-to-scroll & horizontal wheel scroll for volume price pills inside modal
+  const matchVolumesStrip = document.getElementById("match-volumes");
+  if (matchVolumesStrip) {
+    let isDraggingVols = false;
+    let volStartX = 0;
+    let volScrollLeft = 0;
+
+    matchVolumesStrip.addEventListener("mousedown", (e) => {
+      isDraggingVols = true;
+      volStartX = e.pageX - matchVolumesStrip.offsetLeft;
+      volScrollLeft = matchVolumesStrip.scrollLeft;
+      matchVolumesStrip.classList.add("is-dragging");
     });
+
+    window.addEventListener("mouseup", () => {
+      if (!isDraggingVols) return;
+      isDraggingVols = false;
+      matchVolumesStrip.classList.remove("is-dragging");
+    });
+
+    matchVolumesStrip.addEventListener("mousemove", (e) => {
+      if (!isDraggingVols) return;
+      e.preventDefault();
+      const x = e.pageX - matchVolumesStrip.offsetLeft;
+      matchVolumesStrip.scrollLeft = volScrollLeft - (x - volStartX) * 1.3;
+    });
+
+    matchVolumesStrip.addEventListener(
+      "wheel",
+      (e) => {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+          e.preventDefault();
+          matchVolumesStrip.scrollLeft += e.deltaY;
+        }
+      },
+      { passive: false },
+    );
   }
 
   // Close Modal Events
-  document.getElementById("close-modal-btn").addEventListener("click", () => {
-    resultModal.hidden = true;
-  });
-
   resultModal.addEventListener("click", (e) => {
     if (e.target === resultModal) {
       resultModal.hidden = true;
@@ -4954,36 +5633,35 @@
   });
 
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && !resultModal.hidden) {
-      resultModal.hidden = true;
+    if (e.key === "Escape") {
+      if (!resultModal.hidden) {
+        resultModal.hidden = true;
+      } else if (selectedSlotLayer) {
+        selectedSlotLayer = null;
+        updateAllColumns();
+      }
     }
   });
 
-  // Copy Formula Button
-  document
-    .getElementById("copy-formula-btn")
-    .addEventListener("click", async () => {
-      const scentName =
-        document.getElementById("result-scent-name").textContent;
-      const persona = document.getElementById("persona-title").textContent;
-      const matchInfo = currentMatchResult?.isMatched
-        ? `\n• Sản phẩm Miyako tương đồng (${currentMatchResult.matchPercent}%): ${currentMatchResult.product.shortName} (${currentMatchResult.product.priceRange}) — ${withBespokeUtm(currentMatchResult.product.url)}`
-        : `\n• Phân loại: Công thức Bespoke Độc Bản Mới (Đặt tên: ${scentName})`;
-      const text = `✦ Mùi Hương Độc Bản Miyako Home: "${scentName}"\n• Công thức pha: ${selectedFormula.code} (${selectedFormula.name})\n• Thành phần: Hương đầu ${slots.top.note?.name} (${selectedFormula.top}%) — Hương giữa ${slots.heart.note?.name} (${selectedFormula.heart}%) — Hương cuối ${slots.base.note?.name} (${selectedFormula.base}%)\n• Chân dung tính cách: ${persona}${matchInfo}`;
-      try {
-        await navigator.clipboard.writeText(text);
-        const btn = document.getElementById("copy-formula-btn");
-        const old = btn.textContent;
-        btn.textContent = "✓ Đã sao chép công thức!";
-        setTimeout(() => {
-          btn.textContent = old;
-        }, 2200);
-      } catch {
-        // Ignore clipboard error
-      }
-    });
+  // Keep wordless tutorial trails aligned when viewport resizes or fonts finish loading
+  function syncActiveTutorialCoords() {
+    if (
+      (tutorialStep1 && !tutorialStep1.hidden) ||
+      (tutorialStep2 && !tutorialStep2.hidden)
+    ) {
+      const pickedCount = Object.values(slots).filter((s) =>
+        Boolean(s.note),
+      ).length;
+      const pouredCount = Object.values(slots).filter((s) => s.poured).length;
+      updateGestureTutorials(pickedCount, pouredCount);
+    }
+  }
+
+  window.addEventListener("resize", syncActiveTutorialCoords);
+  window.addEventListener("load", syncActiveTutorialCoords);
 
   // Initialize Game
   renderWheel();
   updateAllColumns();
+  setTimeout(syncActiveTutorialCoords, 180);
 })();

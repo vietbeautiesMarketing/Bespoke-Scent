@@ -87,23 +87,6 @@
               />
             </svg>
           </button>
-          <button
-            id="random-spin-btn"
-            class="hud-btn-gold"
-            type="button"
-            title="Chọn ngẫu nhiên 3 lọ hương mẫu"
-          >
-            🎲 Chọn Ngẫu Nhiên
-          </button>
-          <button
-            id="reset-board-btn"
-            class="hud-btn-ghost"
-            type="button"
-            title="Làm mới bàn pha chế"
-          >
-            ↻ Chơi lại
-          </button>
-          <a class="hud-btn-back" href="index.html">← Trang chủ</a>
         </div>
       </header>
 
@@ -116,13 +99,39 @@
           class="arena-col col-wheel"
           aria-label="Cột 1: Khám phá vòng hương"
         >
-          <div class="col-head">
-            <span class="col-step-tag">BƯỚC 01 · NGUYÊN LIỆU</span>
-            <h2>Khám Phá Vòng Hương</h2>
-            <p>
-              Chạm vào vòng tròn để mở nhóm hương, bấm chọn 3 mùi hương bạn yêu
-              thích.
-            </p>
+          <div class="col-head-row">
+            <div class="col-head">
+              <span class="col-step-tag">BƯỚC 01 · NGUYÊN LIỆU</span>
+              <p>
+                Chạm vào vòng tròn để mở nhóm hương, bấm chọn 3 mùi hương bạn yêu
+                thích.
+              </p>
+            </div>
+            <button
+              id="random-spin-btn"
+              class="hud-btn-gold col-random-btn"
+              type="button"
+              aria-label="Chọn ngẫu nhiên 3 lọ hương mẫu"
+              title="Chọn ngẫu nhiên 3 lọ hương mẫu"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <circle cx="8" cy="8" r="1.4" fill="currentColor" />
+                <circle cx="16" cy="8" r="1.4" fill="currentColor" />
+                <circle cx="12" cy="12" r="1.4" fill="currentColor" />
+                <circle cx="8" cy="16" r="1.4" fill="currentColor" />
+                <circle cx="16" cy="16" r="1.4" fill="currentColor" />
+              </svg>
+            </button>
           </div>
 
           <!-- Interactive SVG Fragrance Wheel -->
@@ -156,6 +165,36 @@
             </div>
             <div id="notes-grid" class="shelf-notes-grid"></div>
           </div>
+
+          <!-- Wordless Visual Gesture Tutorial: Step 1 (Tap Wheel -> Tap Note) -->
+          <div
+            id="tutorial-step1-overlay"
+            class="gesture-tutorial-overlay"
+            aria-hidden="true"
+            hidden
+          >
+            <svg class="gesture-trail-svg" width="100%" height="100%">
+              <path
+                id="tutorial-step1-path"
+                class="gesture-trail-path"
+                d=""
+                fill="none"
+              />
+            </svg>
+            <span class="gesture-ripple gesture-ripple-s1a"></span>
+            <span class="gesture-ripple gesture-ripple-s1b"></span>
+            <div class="gesture-hand gesture-hand-step1">
+              <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                <path
+                  d="M15 4.5a2.2 2.2 0 0 1 4.4 0v10.2h1.2a2.1 2.1 0 0 1 2.1 2.1v.9h1a2.1 2.1 0 0 1 2.1 2.1v1.2h.7a2 2 0 0 1 2 2v4.2c0 3.7-2.8 6.8-6.6 6.8h-5.3c-2.6 0-5-1.4-6.3-3.7l-3.4-5.9a2.1 2.1 0 0 1 3.3-2.5l2.8 2.6V4.5Z"
+                  fill="#fff8ee"
+                  stroke="#6b241d"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
         </section>
 
         <!-- ================================================================
@@ -167,12 +206,24 @@
         >
           <div class="col-head">
             <span class="col-step-tag">BƯỚC 02 · PHA CHẾ TƯƠNG TÁC</span>
-            <h2>Bàn Pha Chế Giả Kim</h2>
             <p id="alchemy-instruction">
               Dùng chuột <strong>kéo từng lọ hương mẫu</strong> bên dưới thả vào
               miệng <strong>Bình Pha Chế</strong> (hoặc bấm trực tiếp vào lọ mẫu
               để rót).
             </p>
+          </div>
+
+          <!-- Floating Discard Zone (appears above vials tray when dragging a vial) -->
+          <div
+            id="vial-discard-zone"
+            class="vial-discard-zone"
+            hidden
+            aria-hidden="true"
+          >
+            <span class="discard-zone-icon" aria-hidden="true">↑</span>
+            <span id="vial-discard-text" class="discard-zone-text"
+              >Kéo lên trên để bỏ hương này</span
+            >
           </div>
 
           <!-- Sample Vials Tray (3 Picked Vials to Drag) -->
@@ -199,18 +250,9 @@
                 </div>
                 <span class="vial-name" id="vial-name-top">Chưa chọn</span>
                 <span class="vial-status" id="vial-status-top"
-                  >Chọn ở cột 1</span
+                  >Bấm để chọn hương</span
                 >
               </div>
-              <button
-                type="button"
-                class="vial-remove-btn"
-                data-remove="top"
-                title="Đổi lọ hương này"
-                hidden
-              >
-                ×
-              </button>
             </div>
 
             <!-- Vial Slot 2: Heart Note -->
@@ -235,18 +277,9 @@
                 </div>
                 <span class="vial-name" id="vial-name-heart">Chưa chọn</span>
                 <span class="vial-status" id="vial-status-heart"
-                  >Chọn ở cột 1</span
+                  >Bấm để chọn hương</span
                 >
               </div>
-              <button
-                type="button"
-                class="vial-remove-btn"
-                data-remove="heart"
-                title="Đổi lọ hương này"
-                hidden
-              >
-                ×
-              </button>
             </div>
 
             <!-- Vial Slot 3: Base Note -->
@@ -271,18 +304,9 @@
                 </div>
                 <span class="vial-name" id="vial-name-base">Chưa chọn</span>
                 <span class="vial-status" id="vial-status-base"
-                  >Chọn ở cột 1</span
+                  >Bấm để chọn hương</span
                 >
               </div>
-              <button
-                type="button"
-                class="vial-remove-btn"
-                data-remove="base"
-                title="Đổi lọ hương này"
-                hidden
-              >
-                ×
-              </button>
             </div>
           </div>
 
@@ -563,6 +587,35 @@
               </button>
             </div>
           </div>
+
+          <!-- Wordless Visual Gesture Tutorial: Step 2 (Drag Vial -> Drop into Flask) -->
+          <div
+            id="tutorial-step2-overlay"
+            class="gesture-tutorial-overlay"
+            aria-hidden="true"
+            hidden
+          >
+            <span class="gesture-ripple gesture-ripple-s2-start"></span>
+            <span class="gesture-ripple gesture-ripple-s2-end"></span>
+            <div class="gesture-hand gesture-hand-step2">
+              <span class="gesture-ghost-vial"></span>
+              <svg viewBox="0 0 36 36" fill="none" aria-hidden="true">
+                <path
+                  d="M11.5 14.5a2 2 0 0 1 4 0v2.5h.5v-3.2a2 2 0 0 1 4 0V17h.5v-2.7a2 2 0 0 1 4 0v3.2h.5v-1.7a1.9 1.9 0 0 1 3.8 0v6.7c0 4.4-3.3 7.8-7.7 7.8h-4.6c-3 0-5.7-1.6-7.1-4.3l-2.3-4.6a2.1 2.1 0 0 1 3.6-2.1l.8 1.2v-6Z"
+                  fill="#fff8ee"
+                  stroke="#6b241d"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M15.5 14.5v4.5M20 14.2v4.8M24.5 15v4"
+                  stroke="#6b241d"
+                  stroke-width="1.4"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+          </div>
         </section>
 
         <!-- ================================================================
@@ -574,7 +627,6 @@
         >
           <div class="col-head">
             <span class="col-step-tag">BƯỚC 03 · ĐỊNH LƯỢNG &amp; ĐỘC BẢN</span>
-            <h2>Bình Hương Độc Bản</h2>
             <p>
               Chọn 1 trong 3 công thức tỷ lệ pha chế cho bình hương độc bản của
               bạn.
@@ -1195,24 +1247,6 @@
       hidden
     >
       <div class="result-modal-dialog">
-        <button
-          id="close-modal-btn"
-          class="modal-close-btn"
-          type="button"
-          aria-label="Đóng cửa sổ kết quả"
-        >
-          ×
-        </button>
-
-        <div class="modal-top-banner">
-          <span id="result-serial" class="modal-serial">
-            MIYAKO BESPOKE NO. 108 · CÔNG THỨC 40 - 30 - 30
-          </span>
-          <span id="result-owner" class="modal-owner">
-            Chế tác độc bản dành cho: Bạn
-          </span>
-        </div>
-
         <div class="modal-body-grid">
           <!-- Left: Scent Identity & Personality Analysis -->
           <div class="modal-main-col">
@@ -1223,8 +1257,7 @@
               Sương Liên &amp; Giữa Đêm Sâu
             </h2>
             <p id="result-poetic-sub" class="modal-scent-sub">
-              Hợp hương theo tỷ lệ 40 - 30 - 30: Trà Trắng, Hoa Sen Trắng &amp;
-              Trầm Hương.
+              Trà Trắng (40%), Hoa Sen Trắng (30%), Trầm Hương (30%)
             </p>
 
             <!-- Custom Scent Naming Box (Shown when scent is not in Miyako catalog, or when user clicks rename) -->
@@ -1366,16 +1399,8 @@
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  🛒 Xem &amp; Mua Sản Phẩm Này Trên Vietbeauties.vn ↗
+                  Xem chi tiết trên Vietbeauties.vn ↗
                 </a>
-                <button
-                  id="toggle-rename-btn"
-                  type="button"
-                  class="match-rename-toggle-btn"
-                  hidden
-                >
-                  ✏️ Tự đặt tên riêng cho công thức của bạn
-                </button>
               </div>
             </div>
 
@@ -1401,15 +1426,8 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            Đặt Pha Chế Riêng Mùi Hương Này ↗
+            Đặt trải nghiệm thử miễn phí ngay ↗
           </a>
-          <button
-            id="copy-formula-btn"
-            type="button"
-            class="modal-btn-secondary"
-          >
-            📋 Sao Chép Công Thức &amp; Tính Cách
-          </button>
           <button
             id="modal-replay-btn"
             type="button"
