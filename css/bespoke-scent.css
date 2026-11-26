@@ -2122,6 +2122,142 @@ body {
   background: rgba(36, 25, 18, 0.14);
 }
 
+body.brew-overlay-open {
+  overflow: hidden;
+}
+
+.mobile-brew-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 950;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(68, 43, 24, 0.92) 0%,
+    rgba(18, 12, 9, 0.96) 72%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: mobile-brew-fade-in 0.25s ease forwards;
+}
+
+.mobile-brew-overlay[hidden] {
+  display: none !important;
+}
+
+@media (min-width: 1025px) {
+  .mobile-brew-overlay {
+    display: none !important;
+  }
+}
+
+@keyframes mobile-brew-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mobile-brew-card {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.mobile-brew-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--accent-gold-bright);
+  text-transform: uppercase;
+}
+
+.mobile-brew-stage {
+  position: relative;
+  width: 260px;
+  height: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-brew-overlay.brewing-magic .dropzone-watermark-img {
+  opacity: 0.2;
+  transform: scale(1.15) rotate(8deg);
+  filter: brightness(2.2) sepia(0.5)
+    drop-shadow(0 0 18px rgba(243, 200, 120, 0.6));
+}
+
+.mobile-brew-overlay.brewing-magic .alchemy-magic-stage {
+  opacity: 1;
+}
+
+.mobile-brew-overlay.brewing-magic .magic-rune-ring {
+  width: 248px;
+  height: 248px;
+  animation: magic-rune-spin 2.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.mobile-brew-overlay.brewing-magic .magic-core-glow {
+  animation: magic-core-pulse 2.75s ease-in-out forwards;
+}
+
+.mobile-brew-overlay.brewing-magic .magic-shockwave {
+  animation: magic-shockwave-burst 2.75s ease-out forwards;
+}
+
+.mobile-brew-overlay .mixing-flask-svg {
+  width: 175px;
+  height: auto;
+  position: relative;
+  z-index: 3;
+}
+
+.mobile-brew-overlay .mixing-flask-svg.flask-shake #mobile-flask-layer-top,
+.mobile-brew-overlay .mixing-flask-svg.flask-shake #mobile-flask-layer-heart,
+.mobile-brew-overlay .mixing-flask-svg.flask-shake #mobile-flask-layer-base {
+  animation: liquid-alchemy-swirl 2.75s ease-in-out forwards;
+  transform-origin: center;
+}
+
+.mobile-brew-notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.mobile-brew-note-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(212, 163, 89, 0.18);
+  border: 1px solid rgba(212, 163, 89, 0.42);
+  color: var(--text-cream);
+}
+
+.mobile-brew-status {
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #fff8ee;
+  background: rgba(243, 200, 120, 0.2);
+  border: 1px solid rgba(243, 200, 120, 0.65);
+  box-shadow: 0 0 18px rgba(243, 200, 120, 0.32);
+}
+
 /* Responsive Fallback for small tablets / mobile phones */
 @media (max-width: 1024px) {
   html,

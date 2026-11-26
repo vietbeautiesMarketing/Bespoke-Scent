@@ -3288,6 +3288,11 @@
   const craftBtn = document.getElementById("craft-btn");
   const finalBottleRatio = document.getElementById("final-bottle-ratio");
   const resultModal = document.getElementById("result-modal");
+  const mobileBrewOverlay = document.getElementById("mobile-brew-overlay");
+  const mobileBrewFlaskSvg = document.getElementById("mobile-brew-flask-svg");
+  const mobileBrewParticles = document.getElementById("mobile-brew-particles");
+  const mobileBrewNotes = document.getElementById("mobile-brew-notes");
+  const mobileBrewStatus = document.getElementById("mobile-brew-status");
   const soundToggleBtn = document.getElementById("sound-toggle-btn");
   const musicToggleBtn = document.getElementById("music-toggle-btn");
 
@@ -3978,7 +3983,8 @@
     }, 900);
   }
 
-  function spawnAromaBubbles(color) {
+  function spawnAromaBubbles(color, container = particlesBox) {
+    if (!container) return;
     for (let i = 0; i < 10; i++) {
       const b = document.createElement("span");
       b.className = "aroma-bubble";
@@ -3986,7 +3992,7 @@
       b.style.boxShadow = `0 0 8px ${color}`;
       b.style.left = `${38 + Math.random() * 24}%`;
       b.style.animationDelay = `${i * 65}ms`;
-      particlesBox.appendChild(b);
+      container.appendChild(b);
       setTimeout(() => b.remove(), 1500);
     }
   }
@@ -4330,6 +4336,14 @@
     slots.heart = { note: null, poured: false };
     slots.base = { note: null, poured: false };
     resultModal.hidden = true;
+    if (mobileBrewOverlay) {
+      mobileBrewOverlay.hidden = true;
+      mobileBrewOverlay.classList.remove("brewing-magic");
+    }
+    if (mobileBrewFlaskSvg) {
+      mobileBrewFlaskSvg.classList.remove("flask-shake");
+    }
+    document.body.classList.remove("brew-overlay-open");
     updateAllColumns();
   }
 
@@ -4398,7 +4412,8 @@
   }
 
   // Spawn Magic Alchemy Sparkles during Flask Shake
-  function spawnMagicSparkles(colors, count = 16) {
+  function spawnMagicSparkles(colors, count = 16, container = particlesBox) {
+    if (!container) return;
     const glyphs = ["✦", "✧", "⋆", "✵", "✺"];
     for (let i = 0; i < count; i++) {
       const sp = document.createElement("span");
@@ -4415,8 +4430,45 @@
       sp.style.setProperty("--sparkle-color", color);
       sp.style.fontSize = `${11 + Math.round(Math.random() * 9)}px`;
       sp.style.animationDelay = `${Math.round(Math.random() * 180)}ms`;
-      particlesBox.appendChild(sp);
+      container.appendChild(sp);
       setTimeout(() => sp.remove(), 1600);
+    }
+  }
+
+  function syncMobileBrewFlask() {
+    if (!mobileBrewOverlay) return;
+    [
+      ["flask-layer-base", "mobile-flask-layer-base"],
+      ["flask-layer-heart", "mobile-flask-layer-heart"],
+      ["flask-layer-top", "mobile-flask-layer-top"],
+    ].forEach(([srcId, dstId]) => {
+      const src = document.getElementById(srcId);
+      const dst = document.getElementById(dstId);
+      if (src && dst) {
+        dst.setAttribute("y", src.getAttribute("y") || "244");
+        dst.setAttribute("height", src.getAttribute("height") || "0");
+        dst.setAttribute("fill", src.getAttribute("fill") || "#d49b38");
+      }
+    });
+
+    const srcMeniscus = document.getElementById("flask-meniscus");
+    const dstMeniscus = document.getElementById("mobile-flask-meniscus");
+    if (srcMeniscus && dstMeniscus) {
+      dstMeniscus.setAttribute("cy", srcMeniscus.getAttribute("cy") || "244");
+      dstMeniscus.setAttribute(
+        "opacity",
+        srcMeniscus.getAttribute("opacity") || "0",
+      );
+    }
+
+    if (mobileBrewNotes) {
+      mobileBrewNotes.innerHTML = [
+        `${slots.top.note.icon} ${slots.top.note.name} (${selectedFormula.top}%)`,
+        `${slots.heart.note.icon} ${slots.heart.note.name} (${selectedFormula.heart}%)`,
+        `${slots.base.note.icon} ${slots.base.note.name} (${selectedFormula.base}%)`,
+      ]
+        .map((label) => `<span class="mobile-brew-note-pill">${label}</span>`)
+        .join("");
     }
   }
 
@@ -4453,6 +4505,9 @@
 
     const flaskSvg = document.getElementById("mixing-flask-svg");
     const finalBottleSvg = document.getElementById("final-bottle-svg");
+    const useMobileOverlay =
+      window.matchMedia("(max-width: 1024px)").matches &&
+      Boolean(mobileBrewOverlay);
 
     // Lock button & start multi-stage magic alchemy sequence (2.75s)
     SoundFX.playMagicAlchemyRitual();
@@ -4466,29 +4521,67 @@
     void flaskSvg.offsetWidth;
     flaskSvg.classList.add("flask-shake");
 
+    if (useMobileOverlay) {
+      syncMobileBrewFlask();
+      if (mobileBrewStatus) {
+        mobileBrewStatus.textContent =
+          "✨ Đang kích hoạt vòng tròn giả kim & lắc đều 3 tầng hương...";
+      }
+      mobileBrewOverlay.hidden = false;
+      document.body.classList.add("brew-overlay-open");
+      mobileBrewOverlay.classList.add("brewing-magic");
+      if (mobileBrewFlaskSvg) {
+        mobileBrewFlaskSvg.classList.remove("flask-shake");
+        void mobileBrewFlaskSvg.offsetWidth;
+        mobileBrewFlaskSvg.classList.add("flask-shake");
+      }
+    }
+
     // Wave 1: Initial levitation & rune activation
     spawnMagicSparkles(noteColors, 14);
     spawnAromaBubbles(slots.top.note.color);
+    if (useMobileOverlay) {
+      spawnMagicSparkles(noteColors, 14, mobileBrewParticles);
+      spawnAromaBubbles(slots.top.note.color, mobileBrewParticles);
+    }
 
     // Wave 2: Vigorous rhythmic shaking
     setTimeout(() => {
-      dropzoneHint.textContent =
-        "🌟 Đang hòa quyện tinh hoa theo công thức tỷ lệ...";
+      const msg2 = "🌟 Đang hòa quyện tinh hoa theo công thức tỷ lệ...";
+      dropzoneHint.textContent = msg2;
       spawnMagicSparkles(noteColors, 18);
       spawnAromaBubbles(slots.heart.note.color);
+      if (useMobileOverlay) {
+        if (mobileBrewStatus) mobileBrewStatus.textContent = msg2;
+        spawnMagicSparkles(noteColors, 18, mobileBrewParticles);
+        spawnAromaBubbles(slots.heart.note.color, mobileBrewParticles);
+      }
     }, 750);
 
     // Wave 3: Peak alchemical swirling
     setTimeout(() => {
       spawnMagicSparkles(noteColors, 20);
       spawnAromaBubbles(slots.base.note.color);
+      if (useMobileOverlay) {
+        spawnMagicSparkles(noteColors, 20, mobileBrewParticles);
+        spawnAromaBubbles(slots.base.note.color, mobileBrewParticles);
+      }
     }, 1450);
 
     // Wave 4: Climactic golden transmutation & shockwave burst
     setTimeout(() => {
-      dropzoneHint.textContent = "✦ Kết tinh mùi hương độc bản hoàn tất! ✦";
+      const msg4 = "✦ Kết tinh mùi hương độc bản hoàn tất! ✦";
+      dropzoneHint.textContent = msg4;
       craftBtn.textContent = "✦ Đã giải mã bản ngã! ✦";
       spawnMagicSparkles(["#fff8ee", "#f3c878", ...noteColors], 26);
+      if (useMobileOverlay) {
+        if (mobileBrewStatus) mobileBrewStatus.textContent = msg4;
+        spawnMagicSparkles(
+          ["#fff8ee", "#f3c878", ...noteColors],
+          26,
+          mobileBrewParticles,
+        );
+      }
       if (finalBottleSvg) {
         finalBottleSvg.classList.remove("bottle-enchanted");
         void finalBottleSvg.offsetWidth;
@@ -4500,6 +4593,14 @@
     setTimeout(() => {
       flaskSvg.classList.remove("flask-shake");
       dropzone.classList.remove("brewing-magic");
+      if (mobileBrewOverlay) {
+        mobileBrewOverlay.hidden = true;
+        mobileBrewOverlay.classList.remove("brewing-magic");
+      }
+      if (mobileBrewFlaskSvg) {
+        mobileBrewFlaskSvg.classList.remove("flask-shake");
+      }
+      document.body.classList.remove("brew-overlay-open");
       if (finalBottleSvg) {
         finalBottleSvg.classList.remove("bottle-enchanted");
       }
