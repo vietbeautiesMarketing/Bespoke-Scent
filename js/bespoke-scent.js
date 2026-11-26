@@ -6,7 +6,7 @@
   "use strict";
 
   const BESPOKE_UTM_QUERY =
-    "utm_source=web-vetinh&utm_medium=bespoke-scent&utm_campaign=branding&utm_content=bio_link";
+    "utm_source=web-bespoke&utm_medium=bespoke-scent&utm_campaign=branding&utm_content=bio_link";
 
   function withBespokeUtm(url) {
     if (!url || !url.includes("vietbeauties.vn") || url.includes("utm_source=")) {
@@ -2888,37 +2888,367 @@
   }
 
   const ARCHETYPES = [
+    // 20 cặp trục (primary, secondary) phân biệt theo 5 chiều: depth, elegance, warmth, freedom, mystery
     {
-      condition: (s) => s.depth >= 90 && s.mystery >= 88,
+      id: "depth-mystery",
+      primary: "depth",
+      secondary: "mystery",
       title: "Người Kể Chuyện Thầm Lặng (The Poetic Old Soul)",
-      summary:
-        "Bạn là người có thế giới nội tâm vô cùng phong phú và sâu sắc. Bạn không thích sự ồn ào phô trương mà chọn cách cảm nhận cuộc sống qua từng chi tiết tinh tế. Những người bước vào thế giới của bạn đều bị cuốn hút bởi sự điềm tĩnh, từng trải và chiều sâu tri thức khó đoán.",
+      stories: [
+        "Bạn sở hữu thế giới nội tâm sâu lắng và giàu tầng nghĩa. Không ưa sự ồn ào phô trương, bạn chọn chạm vào cuộc sống qua những chi tiết tinh vi mà người vội vã thường bỏ qua.",
+        "Ở bạn luôn có một khoảng tĩnh khiến người đối diện muốn chậm lại để lắng nghe. Sự từng trải và chiều sâu tri thức của bạn toát ra nhẹ nhàng như dư âm lưu mãi sau câu chuyện khuya.",
+      ],
     },
     {
-      condition: (s) => s.freedom >= 90,
-      title: "Kẻ Lữ Hành Tự Do Giữa Sương Mai (The Free Spirit)",
-      summary:
-        "Tâm hồn bạn thuộc về những khoảng trời rộng mở, những làn gió mới và sự sáng tạo không giới hạn. Bạn sống chân thật với cảm xúc của mình, ghét sự rập khuôn và luôn mang đến nguồn năng lượng tươi mới, trong lành cho những người xung quanh.",
+      id: "depth-warmth",
+      primary: "depth",
+      secondary: "warmth",
+      title: "Người Gác Đêm Bên Cửa Sổ (The Hearthside Keeper)",
+      stories: [
+        "Vững chãi mà dịu dàng, bạn là nơi người thân quen tìm về mỗi khi cần một điểm tựa bình yên. Bạn suy nghĩ thấu đáo nhưng luôn đặt sự tử tế và ấm áp lên trước mọi lý lẽ.",
+        "Bên trong vẻ điềm đạm của bạn là một trái tim bao dung, nhớ kỹ từng thói quen nhỏ của những người bạn thương. Căn phòng có bạn lúc nào cũng mang cảm giác an toàn và được chở che.",
+      ],
     },
     {
-      condition: (s) => s.elegance >= 92,
-      title: "Biểu Tượng Của Sự Thanh Lịch Tối Giản (The Quiet Luxury Soul)",
-      summary:
-        "Ở bạn toát lên một khí chất tao nhã tự nhiên không cần gắng gượng. Bạn có gu thẩm mỹ tinh tường, yêu sự chỉn chu và biết cách biến không gian sống của mình thành một ốc đảo nghệ thuật đầy chất thơ.",
+      id: "depth-elegance",
+      primary: "depth",
+      secondary: "elegance",
+      title: "Kiến Trúc Sư Của Những Khoảng Lặng (The Quiet Architect)",
+      stories: [
+        "Bạn nhìn cuộc sống với con mắt điềm tĩnh của người hiểu rõ giá trị cốt lõi. Mọi lựa chọn từ lời ăn tiếng nói đến không gian sống của bạn đều gọn ghẽ, sâu sắc và không thừa một nét nào.",
+        "Không chạy theo những xu hướng sớm nở tối tàn, bạn đầu tư trọn vẹn cho những thứ có thể đồng hành qua năm tháng. Gu thẩm mỹ chín chắn giúp bạn luôn giữ được phong thái đĩnh đạc.",
+      ],
     },
     {
-      condition: (s) => s.warmth >= 92,
+      id: "depth-freedom",
+      primary: "depth",
+      secondary: "freedom",
+      title: "Kẻ Mộng Mơ Trong Rừng Sương (The Cedarwood Dreamer)",
+      stories: [
+        "Bạn mang trong mình nét trầm tư của triết gia nhưng lại sở hữu đôi chân không chịu đứng yên trước những chân trời mới. Bạn vừa cần sự tĩnh tại để nghĩ sâu, vừa cần không gian mở để hít thở tự do.",
+        "Những chuyến đi một mình hay buổi sáng ngồi nhìn sương tan ngoài hiên là lúc bạn nạp lại năng lượng tốt nhất. Bạn độc lập trong tư duy và trung thực với tiếng nói bên trong mình.",
+      ],
+    },
+    {
+      id: "elegance-depth",
+      primary: "elegance",
+      secondary: "depth",
+      title: "Biểu Tượng Thanh Lịch Tối Giản (The Quiet Luxury Soul)",
+      stories: [
+        "Khí chất tao nhã nơi bạn đến từ sự tiết chế tinh tế chứ không phải phô diễn cầu kỳ. Bạn biết biến góc nhỏ đời thường thành một ốc đảo nghệ thuật đầy chất thơ và sự chỉn chu.",
+        "Người ta nhớ về bạn bởi sự chuẩn mực nhẹ nhàng và chiều sâu văn hóa ẩn sau nụ cười điềm nhiên. Bạn trân trọng chất lượng hơn số lượng trong cả đồ vật lẫn các mối quan hệ.",
+      ],
+    },
+    {
+      id: "elegance-freedom",
+      primary: "elegance",
+      secondary: "freedom",
+      title: "Nghệ Sĩ Giữa Vườn Sớm (The Morning-Garden Aesthete)",
+      stories: [
+        "Bạn mang vẻ đẹp thanh thoát như làn nắng sớm lướt qua tán lá còn đọng sương. Tâm hồn bạn yêu cái đẹp tự nhiên, mềm mại nhưng luôn giữ cho mình khoảng trời riêng phóng khoáng.",
+        "Khéo léo mà không gò bó, bạn sống theo nhịp điệu riêng đầy cảm hứng. Ở gần bạn, người khác dễ dàng cảm thấy nhẹ nhõm như vừa mở tung cửa sổ đón gió mai.",
+      ],
+    },
+    {
+      id: "elegance-mystery",
+      primary: "elegance",
+      secondary: "mystery",
+      title: "Kẻ Lưu Giữ Ánh Hoàng Hôn (The Dusk Connoisseur)",
+      stories: [
+        "Bạn có sức hút sang trọng đầy ý nhị — đủ gần để người khác ngưỡng mộ, đủ xa để họ mãi tò mò khám phá. Mọi cử chỉ của bạn đều chừng mực nhưng để lại dư vị khó phai.",
+        "Giống như khoảnh khắc chuyển giao giữa chiều tà và màn đêm, vẻ đẹp của bạn nằm ở nét giao thoa tinh xảo giữa lý trí sắc sảo và cảm xúc kín đáo.",
+      ],
+    },
+    {
+      id: "elegance-warmth",
+      primary: "elegance",
+      secondary: "warmth",
+      title: "Người Ướp Thơ Cho Đời Thường (The Everyday Poet)",
+      stories: [
+        "Bạn biến những điều giản dị như tách trà chiều, bình hoa mới cắm hay ánh đèn vàng ấm trở thành kỷ niệm đáng nhớ. Sự tinh tế của bạn luôn đi cùng tấm lòng chu đáo hiếm thấy.",
+        "Dịu dàng, lịch thiệp và giàu lòng trắc ẩn, bạn sưởi ấm bầu không khí xung quanh một cách thật tự nhiên. Ai từng trò chuyện cùng bạn đều mang về cảm giác được trân quý.",
+      ],
+    },
+    {
+      id: "warmth-elegance",
+      primary: "warmth",
+      secondary: "elegance",
       title: "Người Giữ Lửa Dịu Dàng (The Warm Empathetic Healer)",
-      summary:
-        "Bạn là hiện thân của sự ấm áp, bao dung và chữa lành. Sự hiện diện của bạn giống như ánh đèn vàng ấm cúng sau một ngày mưa lạnh — luôn khiến người khác cảm thấy được lắng nghe, trân trọng và thuộc về.",
+      stories: [
+        "Bạn là hiện thân của sự ân cần, bao dung và tinh tế trong từng cách đối nhân xử thế. Chỉ cần có bạn hiện diện, bầu không khí căng thẳng cũng dần dịu lại như chiều mưa có ánh đèn vàng.",
+        "Trái tim ấm áp giúp bạn lắng nghe điều người khác chưa kịp nói thành lời. Bạn chữa lành mọi người bằng sự chân thành điềm nhã chứ không bao giờ ồn ào.",
+      ],
     },
     {
-      condition: () => true,
+      id: "warmth-depth",
+      primary: "warmth",
+      secondary: "depth",
+      title: "Chủ Nhân Căn Phòng Ánh Nến (The Candlelight Confidant)",
+      stories: [
+        "Bạn yêu những kết nối bền chặt và những cuộc trò chuyện kéo dài thâu đêm bên tách trà ấm. Sự chân thành của bạn có sức nặng của người từng trải, khiến ai cũng muốn tin cậy gửi gắm tâm sự.",
+        "Nồng hậu nhưng không hời hợt, bạn dành hết tâm huyết cho gia đình và vài người tri kỷ thực sự. Tình cảm nơi bạn giống như rượu ủ lâu năm — càng qua thời gian càng đằm.",
+      ],
+    },
+    {
+      id: "warmth-freedom",
+      primary: "warmth",
+      secondary: "freedom",
+      title: "Kẻ Mang Nắng Về Hiên Nhà (The Sunlit Host)",
+      stories: [
+        "Bạn tỏa ra nguồn năng lượng rạng rỡ, cởi mở và hiếu khách ngay từ ánh nhìn đầu tiên. Niềm vui sống thuần khiết nơi bạn dễ dàng lan sang cả căn phòng, xua tan mọi âu lo.",
+        "Dù bận rộn với bao dự định mới, bạn vẫn biết cách tận hưởng trọn vẹn từng buổi tụ họp ấm cúng. Bạn sống hết mình, cười hết lòng và truyền cảm hứng lạc quan cho mọi người.",
+      ],
+    },
+    {
+      id: "warmth-mystery",
+      primary: "warmth",
+      secondary: "mystery",
+      title: "Người Đưa Tin Của Mùa Thu (The Autumn Storyteller)",
+      stories: [
+        "Bạn vừa ngọt ngào dễ mến lại vừa giữ một góc riêng trầm mặc đầy hoài niệm. Có những lúc bạn nhiệt thành sôi nổi, nhưng ngay sau đó lại lặng lẽ thu mình đọc lại trang ký ức cũ.",
+        "Sự pha trộn giữa hơi ấm thân thuộc và nét bí ẩn nhẹ nhàng khiến bạn trở nên đặc biệt khó quên. Người ta luôn muốn ngồi cạnh bạn lâu hơn để nghe thêm một câu chuyện nữa.",
+      ],
+    },
+    {
+      id: "freedom-elegance",
+      primary: "freedom",
+      secondary: "elegance",
+      title: "Kẻ Lữ Hành Giữa Sương Mai (The Free Spirit)",
+      stories: [
+        "Tâm hồn bạn thuộc về những khoảng trời rộng mở, những làn gió mới và tinh thần sáng tạo không rập khuôn. Bạn chọn sự tự do nhưng vẫn luôn giữ được nét thanh lịch rất riêng.",
+        "Trong veo, thẳng thắn và tràn đầy sinh khí, bạn bước qua cuộc sống nhẹ tênh như giọt sương đầu ngày. Sự xuất hiện của bạn luôn thổi một luồng gió mát lành vào tập thể.",
+      ],
+    },
+    {
+      id: "freedom-warmth",
+      primary: "freedom",
+      secondary: "warmth",
+      title: "Người Đọc Sóng Bình Minh (The Horizon Seeker)",
+      stories: [
+        "Bạn hào sảng, yêu trải nghiệm và luôn sẵn lòng rủ bạn bè cùng bước ra khỏi vùng an toàn. Trái tim bạn rộng mở đón nắng mới, nhưng vẫn đủ ấm để không ai bị bỏ lại phía sau.",
+        "Năng lượng dồi dào và tư duy tích cực giúp bạn nhìn thấy cơ hội ngay giữa lúc thử thách nhất. Với bạn, mỗi ngày mới đều xứng đáng bắt đầu bằng một cảm hứng tươi vui.",
+      ],
+    },
+    {
+      id: "freedom-depth",
+      primary: "freedom",
+      secondary: "depth",
+      title: "Đốm Lửa Của Những Chuyến Đi (The Restless Philosopher)",
+      stories: [
+        "Bạn đi nhiều để hiểu mình hơn và ngắm thế giới bằng đôi mắt tò mò sâu sắc. Đằng sau vẻ ngoài phóng khoáng, tự tại là một khối óc luôn suy ngẫm về ý nghĩa của tự do và bình yên.",
+        "Bạn không sợ đi một mình trên con đường ít người chọn. Với bạn, trưởng thành là biết giữ cái đầu tỉnh táo giữa muôn vàn biến động mà vẫn giữ nguyên chất riêng.",
+      ],
+    },
+    {
+      id: "freedom-mystery",
+      primary: "freedom",
+      secondary: "mystery",
+      title: "Gió Lạ Giữa Phố Đêm (The Midnight Wanderer)",
+      stories: [
+        "Khó đoán, sắc sảo và luôn mang một góc nhìn khác biệt, bạn không bao giờ chịu đứng yên trong bất kỳ khuôn mẫu nào. Cá tính độc lập khiến người khác vừa nể phục vừa bị cuốn theo.",
+        "Bạn thích những hành trình ngẫu hứng lúc thành phố đã lên đèn và những ý tưởng táo bạo chưa từng có tiền lệ. Năng lượng nơi bạn là sự giao thoa giữa tự do và nét mê hoặc ngầm.",
+      ],
+    },
+    {
+      id: "mystery-depth",
+      primary: "mystery",
+      secondary: "depth",
+      title: "Người Giữ Khóa Màn Đêm (The Velvet-Hour Keeper)",
+      stories: [
+        "Bạn ít nói về bản thân, nhưng mỗi lời bạn thốt ra đều cho thấy một chiều sâu trải nghiệm hiếm có. Bạn giữ cho riêng mình một thế giới nội tâm kín đáo, chỉ mở cửa cho người thật sự đồng điệu.",
+        "Khí chất điềm nhiên pha chút bí ẩn khiến bạn có sức nặng tự nhiên trong mọi căn phòng. Bạn giống như một bản nhạc cổ điển — càng nghe kỹ càng thấy nhiều lớp cảm xúc.",
+      ],
+    },
+    {
+      id: "mystery-elegance",
+      primary: "mystery",
+      secondary: "elegance",
+      title: "Bóng Hình Sau Tấm Rèm Nhung (The Enigmatic Muse)",
+      stories: [
+        "Cuốn hút một cách lặng lẽ, bạn sở hữu nét duyên dáng sắc sảo không cần cố gắng. Gu thẩm mỹ tinh tường giúp bạn luôn nổi bật dù chọn cho mình tông màu trầm tối giản nhất.",
+        "Người khác bị bạn hấp dẫn bởi sự tự chủ và vẻ điềm tĩnh đầy kiêu hãnh. Bạn không chạy theo sự chú ý, bởi chính khoảng lặng của bạn đã đủ tạo nên sức hút.",
+      ],
+    },
+    {
+      id: "mystery-warmth",
+      primary: "mystery",
+      secondary: "warmth",
+      title: "Nhà Sưu Tầm Ký Ức Cũ (The Memory Collector)",
+      stories: [
+        "Bạn lưu giữ cảm xúc lâu hơn bất kỳ ai: một mùi hương quen, một bản nhạc xưa hay ánh chiều qua khung cửa đều có thể đánh thức cả bầu trời kỷ niệm bên trong bạn.",
+        "Vẻ ngoài trầm lắng nhưng bên trong bạn lại vô cùng nồng hậu và chung thủy. Ai được bạn xem là người thân thuộc sẽ luôn có một vị trí ấm áp không thể thay thế.",
+      ],
+    },
+    {
+      id: "mystery-freedom",
+      primary: "mystery",
+      secondary: "freedom",
+      title: "Kẻ Độc Hành Đầy Mê Hoặc (The Magnetic Maverick)",
+      stories: [
+        "Bạn sống theo luật chơi của riêng mình — bản lĩnh, khác biệt và hoàn toàn làm chủ nhịp điệu cuộc đời. Sự tự tin thầm lặng giúp bạn biến cá tính độc bản thành dấu ấn không thể nhầm lẫn.",
+        "Bạn yêu những trải nghiệm có cá tính mạnh và không ngại rẽ lối khỏi số đông. Chính nét bất kham nhưng tinh tế ấy tạo nên sức quyến rũ rất riêng nơi bạn.",
+      ],
+    },
+    // 4 hình mẫu đặc biệt theo cấu trúc nhóm hương & độ cân bằng
+    {
+      id: "pure-family",
+      special: "pure-family",
+      title: "Tâm Hồn Thuần Khiết Một Sắc Hương (The Devoted Purist)",
+      stories: [
+        "Bạn không cần pha tạp quá nhiều lớp mặt nạ: khi đã tìm thấy điều hợp với bản chất mình, bạn theo đuổi nó một cách trọn vẹn và thuần khiết nhất.",
+        "Sự nhất quán từ bên ngoài đến nội tâm giúp bạn toát lên vẻ chân thật đầy tin cậy. Bạn hiểu rõ mình thích gì, cần gì và không dễ bị nhiễu bởi những tiếng ồn xung quanh.",
+      ],
+    },
+    {
+      id: "balanced-harmonious",
+      special: "balanced-harmonious",
       title: "Nhà Giả Kim Của Cảm Xúc (The Harmonious Alchemist)",
-      summary:
-        "Bạn sở hữu sự cân bằng hiếm có giữa lý trí và cảm xúc, giữa nét truyền thống sâu lắng và tinh thần hiện đại phóng khoáng. Bạn biết mình là ai, biết tận hưởng từng khoảnh khắc và luôn lưu lại một dấu ấn riêng biệt khó trộn lẫn.",
+      stories: [
+        "Bạn sở hữu sự cân bằng hiếm có giữa lý trí và cảm xúc, giữa nét truyền thống sâu lắng và tinh thần hiện đại phóng khoáng.",
+        "Biết nhu biết cương đúng lúc, bạn dễ dàng hòa nhập vào nhiều không gian khác nhau mà vẫn giữ trọn bản sắc. Sự hài hòa nội tại chính là nguồn năng lượng bền bỉ nhất của bạn.",
+      ],
+    },
+    {
+      id: "balanced-contrast",
+      special: "balanced-contrast",
+      title: "Người Điều Phối Ánh Sáng & Bóng Tối (The Chiaroscuro Soul)",
+      stories: [
+        "Bên trong bạn cùng tồn tại hai thái cực thú vị: vẻ ngoài tươi sáng, cởi mở nhưng lại ẩn chứa một nội tâm sâu thẳm và quyết liệt đến bất ngờ.",
+        "Bạn biết cách biến sự đối lập thành nét quyến rũ riêng, giống như tia nắng sớm chiếu lên nền gỗ trầm. Chính những tầng hương tương phản này khiến bạn luôn mới mẻ trong mắt người đối diện.",
+      ],
+    },
+    {
+      id: "balanced-seasons",
+      special: "balanced-seasons",
+      title: "Bản Giao Hưởng Của Bốn Mùa (The Four-Season Symphony)",
+      stories: [
+        "Bạn là người đa sắc thái và linh hoạt đáng kinh ngạc — có lúc nhẹ nhàng như gió xuân, khi lại nồng ấm như thu sang hay trầm ổn như đêm đông.",
+        "Trí tuệ cảm xúc phong phú giúp bạn kết nối với nhiều kiểu người và cảm nhận trọn vẹn từng cung bậc của đời sống. Ở bên bạn, mỗi ngày đều có một gam màu mới để khám phá.",
+      ],
     },
   ];
+
+  const recentPersonaIds = [];
+
+  function hashString(str) {
+    let h = 2166136261;
+    for (let i = 0; i < str.length; i++) {
+      h ^= str.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return h >>> 0;
+  }
+
+  function resolvePersonaStory(avgScores, top, heart, base, formula) {
+    const mixSeed = hashString(
+      `${top.id}|${heart.id}|${base.id}|${formula.code}`,
+    );
+
+    const axisKeys = ["depth", "elegance", "warmth", "freedom", "mystery"];
+    const rankedAxes = axisKeys
+      .map((key, idx) => {
+        // Nudge ties deterministically based on mixSeed so equal scores spread evenly across archetypes
+        const jitter = (((mixSeed >>> (idx * 3)) & 7) - 3.5) * 0.12;
+        return {
+          key,
+          score: (avgScores[key] || 80) + jitter,
+          raw: avgScores[key] || 80,
+        };
+      })
+      .sort((a, b) => b.score - a.score);
+
+    const rawValues = rankedAxes.map((a) => a.raw);
+    const spread = Math.max(...rawValues) - Math.min(...rawValues);
+
+    const sameFamily =
+      top.familyId === heart.familyId && heart.familyId === base.familyId;
+    const allDistinctFamilies =
+      new Set([top.familyId, heart.familyId, base.familyId]).size === 3;
+    const brightFamilies = new Set(["citrus", "herbal", "floral"]);
+    const deepFamilies = new Set(["woody", "spicy", "amber"]);
+    const hasFamilyContrast =
+      [top.familyId, heart.familyId, base.familyId].some((f) =>
+        brightFamilies.has(f),
+      ) &&
+      [top.familyId, heart.familyId, base.familyId].some((f) =>
+        deepFamilies.has(f),
+      );
+
+    const findPair = (p, s) =>
+      ARCHETYPES.find((a) => a.primary === p && a.secondary === s);
+    const findSpecial = (sp) => ARCHETYPES.find((a) => a.special === sp);
+
+    const candidates = [];
+
+    if (sameFamily) {
+      candidates.push(findSpecial("pure-family"));
+    }
+    if (hasFamilyContrast && spread >= 14) {
+      candidates.push(findSpecial("balanced-contrast"));
+    }
+    if (spread <= 6) {
+      candidates.push(findSpecial("balanced-harmonious"));
+    }
+    if (allDistinctFamilies && spread <= 10) {
+      candidates.push(findSpecial("balanced-seasons"));
+    }
+
+    const [a1, a2, a3, a4] = rankedAxes.map((a) => a.key);
+    candidates.push(
+      findPair(a1, a2),
+      findPair(a2, a1),
+      findPair(a1, a3),
+      findPair(a3, a1),
+      findPair(a2, a3),
+      findPair(a1, a4),
+    );
+
+    const uniqueCandidates = [];
+    const seenIds = new Set();
+    for (const cand of candidates) {
+      if (cand && !seenIds.has(cand.id)) {
+        seenIds.add(cand.id);
+        uniqueCandidates.push(cand);
+      }
+    }
+
+    const chosen =
+      uniqueCandidates.find((c) => !recentPersonaIds.includes(c.id)) ||
+      uniqueCandidates[0] ||
+      ARCHETYPES[0];
+
+    const prevIndex = recentPersonaIds.indexOf(chosen.id);
+    if (prevIndex !== -1) recentPersonaIds.splice(prevIndex, 1);
+    recentPersonaIds.unshift(chosen.id);
+    if (recentPersonaIds.length > 4) recentPersonaIds.pop();
+
+    const variantIndex =
+      prevIndex !== -1 ? (mixSeed + 1) % chosen.stories.length : mixSeed % chosen.stories.length;
+    const baseStory = chosen.stories[variantIndex];
+
+    const closingPools = {
+      "40-30-30": [
+        `Cách bạn kết hợp ${top.name}, ${heart.name} và ${base.name} theo tỷ lệ cân bằng 40-30-30 phản ánh rõ nét tính cách điềm đạm, biết dung hòa mọi sắc thái của riêng bạn.`,
+        `Dư âm của ${top.name} quyện cùng ${heart.name} trên nền ${base.name} theo nhịp 40-30-30 cho thấy bạn luôn ưu tiên sự tròn vị và chiều sâu bền lâu.`,
+      ],
+      "50-40-20": [
+        `Nhịp pha phóng khoáng 50-40-20 với ${top.name} dẫn lối, ${heart.name} nâng cảm xúc và ${base.name} chốt hạ cho thấy nguồn năng lượng giàu cảm hứng luôn bừng sáng trong bạn.`,
+        `Tỷ lệ bùng nổ 50-40-20 giữa ${top.name}, ${heart.name} và ${base.name} bộc lộ tinh thần cởi mở, sống động và luôn sẵn sàng lan tỏa thiện cảm của bạn.`,
+      ],
+      "50-40-10": [
+        `Công thức thanh thoát 50-40-10 để ${top.name} và ${heart.name} tỏa sáng nhẹ nhàng trên vệt nền ${base.name} khắc họa trọn vẹn gu thẩm mỹ trong trẻo, không gượng ép của bạn.`,
+        `Sự tiết chế khéo léo ở tỷ lệ 50-40-10 khi ghép ${top.name}, ${heart.name} cùng ${base.name} gợi nhắc phong thái tự tại và tinh thần yêu sự nhẹ nhõm bên trong bạn.`,
+      ],
+    };
+
+    const pool = closingPools[formula.code] || closingPools["40-30-30"];
+    const closingLine = pool[(mixSeed >>> 5) % pool.length];
+
+    return {
+      title: chosen.title,
+      summary: `${baseStory} ${closingLine}`,
+    };
+  }
 
   // Game State
   let activeFamilyId = "floral";
@@ -3462,7 +3792,7 @@
 
     // Center circle with logo-miyako.png (links to https://vietbeauties.vn/)
     svgContent += `
-      <a href="https://vietbeauties.vn/?utm_source=web-vetinh&amp;utm_medium=bespoke-scent&amp;utm_campaign=branding&amp;utm_content=bio_link" target="_blank" rel="noopener noreferrer" class="wheel-center-link" aria-label="Miyako Home - Vietbeauties">
+      <a href="https://vietbeauties.vn/?utm_source=web-bespoke&amp;utm_medium=bespoke-scent&amp;utm_campaign=branding&amp;utm_content=bio_link" target="_blank" rel="noopener noreferrer" class="wheel-center-link" aria-label="Miyako Home - Vietbeauties">
         <circle cx="${cx}" cy="${cy}" r="${rInner - 4}" class="wheel-center-circle" />
         <image
           href="assets/logo-miyako.png"
@@ -4270,7 +4600,13 @@
       ((top.id.length * 19 + heart.id.length * 31 + base.id.length * 47) %
         899) +
       100;
-    const archetype = ARCHETYPES.find((a) => a.condition(avgScores));
+    const archetype = resolvePersonaStory(
+      avgScores,
+      top,
+      heart,
+      base,
+      selectedFormula,
+    );
 
     // Match user's 3 chosen notes against the 47 real Miyako Home products
     const matchResult = findMatchingProduct(top, heart, base);
@@ -4291,6 +4627,15 @@
     const matchPyramid = document.getElementById("match-pyramid");
     const matchVolumes = document.getElementById("match-volumes");
     const matchDesc = document.getElementById("match-desc");
+    const matchedStoryBox = document.getElementById(
+      "matched-product-story-box",
+    );
+    const matchedStoryName = document.getElementById(
+      "matched-product-story-name",
+    );
+    const matchedStoryDesc = document.getElementById(
+      "matched-product-story-desc",
+    );
     const matchProductLink = document.getElementById("match-product-link");
     const toggleRenameBtn = document.getElementById("toggle-rename-btn");
     const primaryActionLink = document.getElementById(
@@ -4351,8 +4696,14 @@
         primaryActionLink.href = withBespokeUtm(prod.url);
         primaryActionLink.textContent = `Xem Sản Phẩm "${prod.shortName}" ↗`;
       }
+      if (matchDesc) matchDesc.hidden = true;
+      if (matchedStoryBox) matchedStoryBox.hidden = false;
+      if (matchedStoryName) matchedStoryName.textContent = prod.shortName;
+      if (matchedStoryDesc) matchedStoryDesc.textContent = prod.desc;
     } else {
       // CASE 2: Unique Bespoke Combination not yet in Miyako Home's catalog -> Let user name their scent!
+      if (matchDesc) matchDesc.hidden = false;
+      if (matchedStoryBox) matchedStoryBox.hidden = true;
       if (modalKicker) {
         modalKicker.textContent =
           "✦ CÔNG THỨC ĐỘC BẢN MỚI — CHƯA TỪNG CÓ TRONG BỘ SƯU TẬP ✦";

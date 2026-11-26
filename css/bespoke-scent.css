@@ -1990,6 +1990,53 @@ body {
   margin-bottom: 10px;
 }
 
+.modal-product-match.is-exact-match .match-volumes {
+  margin-bottom: 10px;
+}
+
+.modal-product-story-card {
+  margin-top: 10px;
+  padding: 13px 15px;
+  border-radius: 14px;
+  background: linear-gradient(155deg, #fffdf9 0%, #f6ebda 100%);
+  border: 1.5px solid rgba(181, 130, 56, 0.42);
+  border-left: 3.5px solid #b58238;
+  box-shadow: 0 4px 14px rgba(181, 130, 56, 0.12);
+}
+
+.product-story-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.product-story-kicker {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--accent-wine);
+}
+
+.product-story-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: rgba(181, 130, 56, 0.18);
+  border: 1px solid rgba(181, 130, 56, 0.35);
+  color: #4a2d13;
+}
+
+.product-story-text {
+  font-size: 12.6px;
+  line-height: 1.55;
+  color: #3a2a20;
+  margin: 0;
+}
+
 .match-cta-wrap {
   display: flex;
   flex-direction: column;
